@@ -1,151 +1,103 @@
 <!doctype html>
-<html lang="en">
+<html>
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/jpeg" href="https://media.istockphoto.com/id/1206806317/es/vector/icono-del-carrito-de-compras-aislado-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=sdScWRH_AeHdG6vHzMn8xUHCpe7iM6O1Skgi2lPuKG0=" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoMarket - EcoMarket</title>
-
-    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <title>Bienvenidos</title>
+    <style>
+      .nav-btn {
+        background-color: #ffffff;
+        color: #000;
+        border: 2px solid #333;
+        padding: 8px 16px;
+        font-size: 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .nav-btn:hover {
+        background-color: #f0f0f0;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        border: 2px solid #333;
+        padding: 15px;
+        margin: 0;
+        border-radius: 8px;
+        background-color: #ffffff;
+      }
+    </style>
   </head>
-  <body style="background-color: #63574e;">
-    <header class="navbar-fija shadow-sm" style="background-color: #F5F5DC; border-bottom: 1px solid #D2B48C;">
-      <div class="container-fluid d-flex align-items-center gap-3 py-2 px-4">
-    
-        <a href="javascript:void(0)" id="btn-logo-inicio" class="d-flex align-items-center text-decoration-none" title="Volver al Inicio">
-          <img src="/logo.png" 
-            alt="Logo EcoMarket" 
-            style="height: 80px; width: auto; 
-            object-fit: contain; 
-            cursor: pointer; 
-            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));  
-            border-radius: 50px; 
-            padding: 5px;">
-        </a>
+  <body>
+    <!--ESTO ES UN COMENTARIO-->
+    <header>
+      <a href="index.html">
+        <img src="images/logo.png" alt="esto me manda al inicio" />
+      </a>
 
-       <button class="btn rounded-pill px-4" 
-        type="button" 
-        data-bs-toggle="offcanvas" 
-        data-bs-target="#menuCategorias"
-        style="background-color: #977c6b; color: white; border: none; font-weight: 500;"> 
-        <iconify-icon icon="mdi:menu" class="me-2"></iconify-icon> Categorías </button>
+      <h1>William</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-btn">Inicio</a></li>
+        <li><a href="Mi Primera pagina.html" class="nav-btn">Primera pagina</a></li>
+        <li><a href="Segunda Pagina.html" class="nav-btn">Segunda pagina</a></li>
+        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera pagina Web</a></li>
+        <li><a href="Cuarta Pagina web.html" class="nav-btn">Cuarta pagina </a></li>
+      </ul>
+    </nav>
+    <main>
+      <section>
+        <h1>Hola soy William</h1>
+        <h2>Soy del tercer semestre pero repeti este curso xd</h2>
+        <h3>Instructor Brian</h3>
+        <h4>La primera pagina</h4>
+        <h5>En esta pagina estaran las tareas</h5>
+        <h6>En este curso estaran 6 tareas</h6>
 
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="menuCategorias">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" style="color: #382819; font-weight: bold;">Productos</h5> 
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div class="list-group list-group-flush" id="lista-categorias-menu"></div>
-        </div>
-      </div>
+        <article>
+          <img src="images/Golden R.png" alt="Descripción de imagen 1" />
+          <p>
+            El Golden Retriever es una de las razas de perros más populares y
+            queridas en todo el mundo, conocida por su carácter amigable, su
+            inteligencia y su hermosa apariencia.
+          </p>
+        </article>
 
-        <div class="input-group flex-grow-2 mx-4">
-          <input id="busqueda-input" type="text" class="form-control rounded-start-pill border-end-0" placeholder="Buscar productos..." aria-label="Buscar">
-          <button id="btn-buscar" class="input-group-text bg-white rounded-end-pill border-start-0" type="button" aria-label="Buscar productos">
-            <iconify-icon icon="mdi:magnify" style="color: var(--primary-violet); font-size: 1rem;"></iconify-icon>
-          </button>
-        </div>
-      <a href="javascript:void(0)" 
-          class="text-decoration-none" 
-          style="color: #6F4E37;" 
-          data-bs-toggle="modal" 
-          data-bs-target="#modalLogin">
-          <iconify-icon icon="mdi:account-outline" style="font-size: 1.8rem;"></iconify-icon>
-        </a>
+        <article>
+          <img src="images/Fenix.png" alt="Descripción de imagen 2" />
+          <p>
+            Es un ave mitológica legendaria que simboliza el renacimiento, la
+            inmortalidad, el ciclo de la vida y la resiliencia frente a la
+            adversidad.
+          </p>
+        </article>
 
-          <button class="btn d-flex gap-3 fs-4 p-0 border-0 bg-transparent" 
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#carritoCollapse"
-              aria-expanded="false"
-              aria-controls="carritoCollapse"
-              style="color: #6F4E37; position: relative; cursor: pointer;">
-          <iconify-icon icon="mdi:cart-outline"></iconify-icon>
-          <span id="carrito-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="font-size: 0.6rem;">
-            0
-          </span>
-      </button>
-    </div>
-      </header>
-
-<div class="collapse carrito-collapse" id="carritoCollapse">
-      <div class="card shadow carrito-popup border-0">
-        <div class="card-body">
-          <h6 class="fw-bold mb-3" style="color: #6F4E37;">Mi carrito</h6>
-          <div id="carrito-items">
-            <p class="text-muted small mb-0">Tu carrito está vacío.</p>
-          </div>
-          <hr>
-          <div class="d-flex justify-content-between fw-bold">
-            <span>Total</span>
-            <span id="carrito-total">S/ 0.00</span>
-          </div>
-          <button type="button" class="btn w-100 mt-3 text-white fw-bold rounded-pill" style="background-color: #6F4E37; border: none;">
-            Pagar
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div id="app"></div>
-
-    <div class="modal fade" id="modalDetalles" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="background-color: #F5F5DC; border-radius: 20px;">
-          <div class="modal-header border-0">
-            <h5 class="modal-title fw-bold" id="detalleNombre" style="color: #382819;"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-          </div>
-          <div class="modal-body text-center" id="detalleCuerpo">
-            </div>
-        </div>
-      </div>
-    </div>
-
-    <script type="module" src="/src/main.js"></script>
-
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="background-color: #F5F5DC; border-radius: 20px; border: none;">
-          
-          <div class="modal-header border-0">
-            <h5 class="modal-title fw-bold" style="color: #6F4E37;">Bienvenido de nuevo</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-
-          <div class="modal-body px-4 pb-4">
-            <form id="formLogin">
-              <div class="mb-3">
-                <label class="form-label small fw-bold" style="color: #6F4E37;">Correo Electrónico</label>
-                <input type="email" class="form-control rounded-pill border-0 shadow-sm" placeholder="ejemplo@correo.com" required>
-              </div>
-              <div class="mb-4">
-                <label class="form-label small fw-bold" style="color: #6F4E37;">Contraseña</label>
-                <input type="password" class="form-control rounded-pill border-0 shadow-sm" placeholder="••••••••" required>
-              </div>
-              
-              <div class="d-grid gap-2">
-                <button type="submit" class="btn text-white rounded-pill fw-bold py-2 shadow-sm" style="background-color: #6F4E37; border: none;">
-                  Iniciar Sesión
-                </button>
-                <button type="button" class="btn btn-link btn-sm text-decoration-none" style="color: #6F4E37;">
-                  ¿Olvidaste tu contraseña?
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <div class="modal-footer border-0 justify-content-center bg-white rounded-bottom-4 py-3" style="border-radius: 0 0 20px 20px;">
-            <span class="small text-muted">¿No tienes cuenta?</span>
-            <a href="#" class="small fw-bold text-decoration-none" style="color: #6F4E37;">Regístrate aquí</a>
-          </div>
-
-        </div>
-      </div>
-</div>
+        <article>
+          <img src="images/Camaleon.png" alt="Descripción de imagen 3" />
+          <p>
+            El camaleón es un reptil escamoso perteneciente a la familia de
+            los camaleónidos, famoso por su capacidad de cambiar de color y
+            sus adaptaciones anatómicas únicas.
+          </p>
+        </article>
+      </section>
+    </main>
+    <aside></aside>
+    <footer>
+      <h4>Enlaces de Interes</h4>
+      <ul>
+        <li>
+          <a href="https://senati.blackboard.com/" target="_blank"
+            >Blackboard</a
+          >
+        </li>
+        <li><a href="#" target="_blank">Mi Repositorio</a></li>
+        <li><a href="#">Pagina del Instructor</a></li>
+        <li><a href="#">Repositorio del Instructor</a></li>
+      </ul>
+    </footer>
   </body>
 </html>
