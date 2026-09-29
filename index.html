@@ -4,98 +4,230 @@
     <meta charset="UTF-8" />
     <title>Bienvenidos</title>
     <style>
-      .nav-btn {
-        background-color: #ffffff;
-        color: #000;
-        border: 2px solid #333;
-        padding: 8px 16px;
-        font-size: 1rem;
-        border-radius: 4px;
-        text-decoration: none;
-        display: inline-block;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #222;
+        background: linear-gradient(120deg, #ffbe0b, #ff006e, #8338ec, #3a86ff, #ffbe0b) fixed;
+        background-size: 300% 300%;
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "section aside"
+          "footer footer";
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 10px;
       }
-      .nav-btn:hover {
-        background-color: #f0f0f0;
+
+      header {
+        grid-area: header;
+        background: linear-gradient(90deg, #8338ec, #ff006e, #fb5607, #8338ec);
+        background-size: 250% 100%;
+        color: #ffffff;
+        border-bottom: 5px solid #ffbe0b;
+        text-align: center;
+        padding: 20px;
       }
+
+      nav {
+        grid-area: nav;
+        background-color: #10002b;
+        border: 3px solid #3a86ff;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
       nav ul {
         list-style: none;
         display: flex;
+        justify-content: center;
         gap: 20px;
-        align-items: center;
-        border: 2px solid #333;
-        padding: 15px;
         margin: 0;
-        border-radius: 8px;
+        padding: 0;
+      }
+
+      .nav-btn {
+        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
+        background-size: 200% 100%;
+        color: #ffffff;
+        border: 2px solid #ffbe0b;
+        padding: 8px 16px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+
+      .nav-btn:hover {
+        background: #ffbe0b;
+        color: #10002b;
+      }
+
+      section {
+        grid-area: section;
         background-color: #ffffff;
+        padding: 15px;
+        border: 3px solid #8338ec;
+        border-radius: 8px;
+      }
+
+      article {
+        background-color: #fff5fa;
+        border: 3px solid #3a86ff;
+        border-left: 10px solid #ff006e;
+        border-radius: 6px;
+        padding: 10px;
+        margin-bottom: 15px;
+      }
+
+      article img {
+        width: 100%;
+        max-width: 300px;
+        display: block;
+        margin: 0 auto 10px;
+        border-radius: 10px;
+        border: 3px solid #8338ec;
+      }
+
+      aside {
+        grid-area: aside;
+        background: linear-gradient(160deg, #ffbe0b, #fb5607);
+        color: #3a1200;
+        border: 3px solid #ff006e;
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      footer {
+        grid-area: footer;
+        background: linear-gradient(90deg, #10002b, #8338ec);
+        color: #ffffff;
+        border-top: 5px solid #ffbe0b;
+        text-align: center;
+        padding: 15px;
+      }
+
+      footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      footer li {
+        margin: 5px 0;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #ffbe0b;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* ===== ANIMACIONES ===== */
+      @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+      @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
+      @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+      @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
+      @keyframes borde { 0%,100% { border-left-color: #ff006e; } 25% { border-left-color: #fb5607; } 50% { border-left-color: #ffbe0b; } 75% { border-left-color: #8338ec; } }
+
+      body { animation: fondo 12s ease infinite; }
+      header { animation: fondo 8s ease infinite; }
+      header h1 { animation: brillo 3s ease-in-out infinite; }
+      header img { animation: flotar 3s ease-in-out infinite; }
+      .nav-btn { animation: fondo 4s ease infinite; }
+
+      nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
+      section { animation-delay: .15s; }
+      aside { animation-delay: .3s; }
+      footer { animation-delay: .5s; }
+
+      article { animation: entrar .8s ease-out backwards, borde 6s linear infinite; }
+      article:nth-child(2) { animation-delay: .25s, 0s; }
+      article:nth-child(3) { animation-delay: .4s, 0s; }
+
+      nav a, footer a { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
+      nav a:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
+      footer a:hover { transform: scale(1.15); color: #fff; }
+
+      article { transition: transform .3s, box-shadow .3s; }
+      article:hover { transform: translateY(-8px) rotate(-.6deg); box-shadow: 0 14px 28px rgba(131,56,236,.45); }
+      article img { transition: transform .5s, box-shadow .5s; }
+      article img:hover { transform: scale(1.12) rotate(3deg); box-shadow: 0 10px 25px rgba(255,0,110,.5); }
+
+      aside { transition: transform .3s, box-shadow .3s; }
+      aside:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(251,86,7,.5); }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; transition: none !important; }
       }
     </style>
   </head>
   <body>
-    <!--ESTO ES UN COMENTARIO-->
     <header>
       <a href="index.html">
         <img src="images/logo.png" alt="esto me manda al inicio" />
       </a>
-
       <h1>William</h1>
     </header>
+
     <nav>
       <ul>
         <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="Mi Primera pagina.html" class="nav-btn">Primera pagina</a></li>
-        <li><a href="Segunda Pagina.html" class="nav-btn">Segunda pagina</a></li>
-        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera pagina Web</a></li>
-        <li><a href="Cuarta Pagina web.html" class="nav-btn">Cuarta pagina </a></li>
+        <li><a href="Segunda pagina.html" class="nav-btn">Segunda página</a></li>
+        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera página Web</a></li>
+        <li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta página</a></li>
       </ul>
     </nav>
-    <main>
-      <section>
-        <h1>Hola soy William</h1>
-        <h2>Soy del tercer semestre pero repeti este curso xd</h2>
-        <h3>Instructor Brian</h3>
-        <h4>La primera pagina</h4>
-        <h5>En esta pagina estaran las tareas</h5>
-        <h6>En este curso estaran 6 tareas</h6>
 
-        <article>
-          <img src="images/Golden R.png" alt="Descripción de imagen 1" />
-          <p>
-            El Golden Retriever es una de las razas de perros más populares y
-            queridas en todo el mundo, conocida por su carácter amigable, su
-            inteligencia y su hermosa apariencia.
-          </p>
-        </article>
+    <section>
+      <article>
+        <img src="images/Golde R.png" alt="Golden Retriever" />
+        <p>
+          El Golden Retriever es una de las razas de perros más populares y
+          queridas en todo el mundo, conocida por su carácter amigable, su
+          inteligencia y su hermosa apariencia.
+        </p>
+      </article>
 
-        <article>
-          <img src="images/Fenix.png" alt="Descripción de imagen 2" />
-          <p>
-            Es un ave mitológica legendaria que simboliza el renacimiento, la
-            inmortalidad, el ciclo de la vida y la resiliencia frente a la
-            adversidad.
-          </p>
-        </article>
+      <article>
+        <img src="images/Feni.png" alt="Fénix" />
+        <p>
+          Es un ave mitológica legendaria que simboliza el renacimiento, la
+          inmortalidad, el ciclo de la vida y la resiliencia frente a la
+          adversidad.
+        </p>
+      </article>
 
-        <article>
-          <img src="images/Camaleon.png" alt="Descripción de imagen 3" />
-          <p>
-            El camaleón es un reptil escamoso perteneciente a la familia de
-            los camaleónidos, famoso por su capacidad de cambiar de color y
-            sus adaptaciones anatómicas únicas.
-          </p>
-        </article>
-      </section>
-    </main>
-    <aside></aside>
+      <article>
+        <img src="images/Camaleo.png" alt="Camaleón" />
+        <p>
+          El camaleón es un reptil escamoso perteneciente a la familia de los
+          camaleónidos, famoso por su capacidad de cambiar de color y sus
+          adaptaciones anatómicas únicas.
+        </p>
+      </article>
+    </section>
+
+    <aside>
+      <h3>Notas del curso</h3>
+      <p>
+        Aquí puedes colocar recordatorios, enlaces rápidos o información
+        adicional sobre tus tareas y proyectos.
+      </p>
+    </aside>
+
     <footer>
-      <h4>Enlaces de Interes</h4>
+      <h4>Enlaces de Interés</h4>
       <ul>
-        <li>
-          <a href="https://senati.blackboard.com/" target="_blank"
-            >Blackboard</a
-          >
-        </li>
+        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
         <li><a href="#" target="_blank">Mi Repositorio</a></li>
-        <li><a href="#">Pagina del Instructor</a></li>
+        <li><a href="#">Página del Instructor</a></li>
         <li><a href="#">Repositorio del Instructor</a></li>
       </ul>
     </footer>
