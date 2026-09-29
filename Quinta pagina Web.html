@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quinta Página Web</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #222;
+        background: linear-gradient(120deg, #ffbe0b, #ff006e, #8338ec, #3a86ff, #ffbe0b) fixed;
+        background-size: 300% 300%;
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "section aside"
+          "footer footer";
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 10px;
+      }
+
+      header {
+        grid-area: header;
+        background: linear-gradient(90deg, #8338ec, #ff006e, #fb5607, #8338ec);
+        background-size: 250% 100%;
+        color: #ffffff;
+        border-bottom: 5px solid #ffbe0b;
+        text-align: center;
+        padding: 20px;
+      }
+
+      nav {
+        grid-area: nav;
+        background-color: #10002b;
+        border: 3px solid #3a86ff;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-btn {
+        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
+        background-size: 200% 100%;
+        color: #ffffff;
+        border: 2px solid #ffbe0b;
+        padding: 8px 16px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+
+      .nav-btn:hover {
+        background: #ffbe0b;
+        color: #10002b;
+      }
+
+      section {
+        grid-area: section;
+        background-color: #ffffff;
+        padding: 20px;
+        border: 3px solid #8338ec;
+        border-radius: 8px;
+      }
+
+      section h2 {
+        margin-top: 0;
+        color: #8338ec;
+      }
+
+      /* Estilos para el formulario interactivo */
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .form-group label {
+        font-weight: bold;
+        color: #10002b;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        padding: 10px;
+        border: 2px solid #8338ec;
+        border-radius: 6px;
+        font-size: 1rem;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: #ff006e;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin: 20px 0 10px 0;
+        padding: 15px;
+        background-color: #f0f4f8;
+        border-radius: 8px;
+        border: 1px solid #d0d7de;
+      }
+
+      .action-btn {
+        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
+        background-size: 200% 100%;
+        color: #ffffff;
+        border: 2px solid #ffbe0b;
+        padding: 10px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      aside {
+        grid-area: aside;
+        background: linear-gradient(160deg, #ffbe0b, #fb5607);
+        color: #3a1200;
+        border: 3px solid #ff006e;
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      footer {
+        grid-area: footer;
+        background: linear-gradient(90deg, #10002b, #8338ec);
+        color: #ffffff;
+        border-top: 5px solid #ffbe0b;
+        text-align: center;
+        padding: 15px;
+      }
+
+      footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      footer li {
+        margin: 5px 0;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #ffbe0b;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      .regresar {
+        display: block;
+        text-align: center;
+        margin: 25px auto 0;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff006e;
+        text-decoration: none;
+        border: 3px solid #ffbe0b;
+        padding: 10px 24px;
+        border-radius: 30px;
+        width: fit-content;
+      }
+
+      .regresar:hover {
+        background-color: #ffbe0b;
+        color: #10002b;
+      }
+
+      /* ===== ANIMACIONES ===== */
+      @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+      @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
+      @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+      @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
+      @keyframes latido { 0% { box-shadow: 0 0 0 0 rgba(255,0,110,.8); } 70% { box-shadow: 0 0 0 18px rgba(255,0,110,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,110,0); } }
+
+      body { animation: fondo 12s ease infinite; }
+      header { animation: fondo 8s ease infinite; }
+      header h1 { animation: brillo 3s ease-in-out infinite; }
+      header img { animation: flotar 3s ease-in-out infinite; }
+      .nav-btn { animation: fondo 4s ease infinite; }
+      .action-btn { animation: fondo 4s ease infinite; }
+
+      nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
+      section { animation-delay: .15s; }
+      aside { animation-delay: .3s; }
+      footer { animation-delay: .5s; }
+
+      nav a, footer a, .action-btn { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
+      nav a:hover, .action-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
+      footer a:hover { transform: scale(1.15); color: #fff; }
+
+      aside { transition: transform .3s, box-shadow .3s; }
+      aside:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(251,86,7,.5); }
+
+      .regresar { animation: latido 2s infinite; transition: transform .25s, background-color .25s; }
+      .regresar:hover { transform: scale(1.12); animation: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="images/logo.png" alt="esto me manda al inicio" />
+      </a>
+      <h1>Quinta Página Web</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html" class="nav-btn">Inicio</a></li>
+        <li><a href="Segunda pagina.html" class="nav-btn">Segunda página</a></li>
+        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera página Web</a></li>
+        <li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta página</a></li>
+        <li><a href="Quinta pagina Web.html" class="nav-btn">Quinta página</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <h2 id="tituloDinamico">Formulario de Contacto</h2>
+      <p>Completa el formulario para enviar tus comentarios o presiona la tecla <strong>F4</strong> para cambiar el título principal.</p>
+
+      <form id="contactForm" onsubmit="event.preventDefault(); enviarFormulario();">
+        <div class="form-container">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre..." required />
+          </div>
+
+          <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" placeholder="ejemplo@correo.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button type="submit" class="action-btn">
+            Enviar Datos
+          </button>
+
+          <button type="button" class="action-btn" onclick="limpiarFormulario()">
+            Limpiar Formulario
+          </button>
+
+          <button type="button" class="action-btn" onclick="saludoEspecial()">
+            Saludo Personalizado
+          </button>
+        </div>
+      </form>
+
+      <a href="index.html" class="regresar">Regresar al Inicio</a>
+    </section>
+
+    <aside>
+      <h3>Notas sobre F4</h3>
+      <p>
+        En esta quinta página, presionar la tecla <strong>F4</strong> te permitirá modificar en tiempo real el título principal de la sección.
+      </p>
+    </aside>
+
+    <footer>
+      <h4>Enlaces de Interés</h4>
+      <ul>
+        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
+        <li><a href="#" target="_blank">Mi Repositorio</a></li>
+        <li><a href="#">Página del Instructor</a></li>
+        <li><a href="#">Repositorio del Instructor</a></li>
+      </ul>
+    </footer>
+
+    <script>
+      function enviarFormulario() {
+        var nom = document.getElementById("nombre").value;
+        var mail = document.getElementById("correo").value;
+        alert("¡Gracias " + nom + "! Hemos recibido tu mensaje desde " + mail + ".");
+      }
+
+      function limpiarFormulario() {
+        document.getElementById("contactForm").reset();
+        alert("El formulario ha sido limpiado.");
+      }
+
+      function saludoEspecial() {
+        var nom = document.getElementById("nombre").value;
+        if (nom.trim() !== "") {
+          alert("¡Un saludo especial para ti, " + nom + "!");
+        } else {
+          alert("Por favor escribe tu nombre en el primer campo para saludarte.");
+        }
+      }
+
+      // Capturar tecla F4 para renombrar el título dinámico
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "F4") {
+          event.preventDefault();
+          var nuevoTitulo = prompt("Ingresa el nuevo título para esta sección:");
+          if (nuevoTitulo !== null && nuevoTitulo.trim() !== "") {
+            document.getElementById("tituloDinamico").innerText = nuevoTitulo;
+            alert("¡El título principal ha sido actualizado!");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
