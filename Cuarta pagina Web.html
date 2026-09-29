@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Instituto Superior EducaTech</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #222;
+        background: linear-gradient(120deg, #ffbe0b, #ff006e, #8338ec, #3a86ff, #ffbe0b) fixed;
+        background-size: 300% 300%;
+      }
+
+      header {
+        background: linear-gradient(90deg, #8338ec, #ff006e, #fb5607, #8338ec);
+        background-size: 250% 100%;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 5px solid #ffbe0b;
+      }
+
+      nav {
+        background-color: #10002b;
+        color: #ffffff;
+        text-align: center;
+        padding: 12px;
+        border-bottom: 3px solid #3a86ff;
+      }
+
+      nav a {
+        color: #ffbe0b;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+      }
+
+      nav a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      article {
+        background-color: #ffffff;
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 3px solid #3a86ff;
+        border-left: 10px solid #ff006e;
+        border-radius: 8px;
+      }
+
+      article img {
+        width: 250px;
+        height: auto;
+        border-radius: 8px;
+        border: 3px solid #8338ec;
+        display: block;
+        margin: 10px auto;
+      }
+
+      footer {
+        background: linear-gradient(90deg, #10002b, #8338ec);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-top: 5px solid #ffbe0b;
+      }
+
+      h2 {
+        color: #8338ec;
+      }
+
+      /* 👇 Scroll suave */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .regresar:hover {
+        background-color: #ffbe0b;
+        color: #10002b;
+      }
+
+      /* ===== ANIMACIONES ===== */
+      @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+      @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
+      @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
+      @keyframes borde { 0%,100% { border-left-color: #ff006e; } 25% { border-left-color: #fb5607; } 50% { border-left-color: #ffbe0b; } 75% { border-left-color: #8338ec; } }
+      @keyframes latido { 0% { box-shadow: 0 0 0 0 rgba(255,0,110,.8); } 70% { box-shadow: 0 0 0 18px rgba(255,0,110,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,110,0); } }
+
+      body { animation: fondo 12s ease infinite; }
+      header { animation: fondo 8s ease infinite; }
+      header h1 { animation: brillo 3s ease-in-out infinite; }
+
+      nav, footer { animation: entrar .8s ease-out backwards; }
+      footer { animation-delay: .5s; }
+
+      article { animation: entrar .8s ease-out backwards, borde 6s linear infinite; }
+      #charter article { animation-delay: .25s, 0s; }
+      #conclusiones article { animation-delay: .4s, 0s; }
+
+      nav a { display: inline-block; transition: transform .25s, color .25s; }
+      nav a:hover { transform: translateY(-5px) scale(1.15); }
+
+      article { transition: transform .3s, box-shadow .3s; }
+      article:hover { transform: translateY(-8px) rotate(-.6deg); box-shadow: 0 14px 28px rgba(131,56,236,.45); }
+      article img { transition: transform .5s, box-shadow .5s; }
+      article img:hover { transform: scale(1.12) rotate(3deg); box-shadow: 0 10px 25px rgba(255,0,110,.5); }
+
+      .regresar { animation: latido 2s infinite; transition: transform .25s, background-color .25s; }
+      .regresar:hover { transform: scale(1.12); animation: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 👇 Identificador para el inicio -->
+    <header id="inicio">
+      <h1>Instituto Superior EducaTech</h1>
+      <h3>Innovación y Tecnología para el Futuro</h3>
+    </header>
+
+    <nav>
+      <a href="#inicio">Inicio</a> |
+      <a href="#galeria">Galería</a> |
+      <a href="#charter">Project Charter</a> |
+      <a href="#conclusiones">Conclusiones</a>
+    </nav>
+
+    <!-- resto de secciones -->
+    <section id="galeria">
+      <article>
+        <h2>Galería Institucional</h2>
+        <img src="images/aula.jpg" alt="Aula moderna EducaTech" />
+        <p>Aulas equipadas con tecnología moderna para el aprendizaje.</p>
+      </article>
+    </section>
+
+    <section id="charter">
+      <article>
+        <h2>Project Charter - EducaTech</h2>
+        <p>Definir la identidad institucional y crear un entregable académico.</p>
+      </article>
+    </section>
+
+    <section id="conclusiones">
+      <article>
+        <h2>Conclusiones</h2>
+        <p>
+          EducaTech representa el compromiso con la innovación y el aprendizaje
+          continuo.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <p>© 2026 Instituto Superior EducaTech - Todos los derechos reservados</p>
+    </footer>
+  </body>
+</html>
