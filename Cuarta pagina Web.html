@@ -79,7 +79,6 @@
         color: #8338ec;
       }
 
-      /* Estilos para los botones de mensajes */
       .button-container {
         display: flex;
         flex-direction: column;
@@ -137,7 +136,6 @@
         text-decoration: underline;
       }
 
-      /* Estilo para el enlace/botón "Regresar" */
       .regresar {
         display: block;
         text-align: center;
@@ -157,7 +155,7 @@
         color: #10002b;
       }
 
-      /* ===== ANIMACIONES IDÉNTICAS ===== */
+      /* ===== ANIMACIONES ===== */
       @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
       @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
       @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -209,20 +207,20 @@
     </nav>
 
     <section>
-      <h2>Mensajes Interactivos</h2>
-      <p>Haz clic en los botones para ver los mensajes o presiona la tecla <strong>F4</strong> para cambiar el texto del primer botón.</p>
+      <h2>Botones Interactivos</h2>
+      <p>Haz clic en cualquier botón o presiona la tecla <strong>F4</strong> para cambiar el texto de <strong>Botón 1</strong>.</p>
 
       <div class="button-container">
-        <button id="btnDinamico" class="action-btn" onclick="mostrarMensaje1()">
-          Botón Personalizable (Presiona F4)
+        <button id="btnDinamico" class="action-btn" onclick="mostrarMensaje(1)">
+          Botón 1
         </button>
 
-        <button class="action-btn" onclick="mostrarMensaje2()">
-          Mostrar Mensaje de Bienvenida
+        <button class="action-btn" onclick="mostrarMensaje(2)">
+          Botón 2
         </button>
 
-        <button class="action-btn" onclick="mostrarMensaje3()">
-          Mostrar Alerta del Sistema
+        <button class="action-btn" onclick="mostrarMensaje(3)">
+          Botón 3
         </button>
       </div>
 
@@ -232,7 +230,7 @@
     <aside>
       <h3>Notas sobre F4</h3>
       <p>
-        Si presionas la tecla <strong>F4</strong> en tu teclado mientras navegas en esta página, un cuadro emergente te pedirá ingresar un nuevo texto que reemplazará el nombre del primer botón.
+        Si presionas la tecla <strong>F4</strong> en tu teclado, podrás personalizar el texto del <strong>Botón 1</strong>.
       </p>
     </aside>
 
@@ -246,30 +244,24 @@
       </ul>
     </footer>
 
-    <!-- LÓGICA DE EVENTOS Y TECLA F4 -->
     <script>
-      function mostrarMensaje1() {
-        var textoActual = document.getElementById("btnDinamico").innerText;
-        alert("Has presionado el botón con texto: '" + textoActual + "'");
+      function mostrarMensaje(numeroBoton) {
+        if (numeroBoton === 1) {
+          var textoBoton1 = document.getElementById("btnDinamico").innerText;
+          alert("Has presionado: " + textoBoton1);
+        } else {
+          alert("Has presionado el Botón " + numeroBoton);
+        }
       }
 
-      function mostrarMensaje2() {
-        alert("¡Bienvenido a la Cuarta Página!");
-      }
-
-      function mostrarMensaje3() {
-        alert("¡Alerta! Notificación generada correctamente.");
-      }
-
-      // Evento para capturar la tecla F4
+      // Capturar tecla F4 para renombrar el Botón 1
       document.addEventListener("keydown", function (event) {
         if (event.key === "F4") {
-          event.preventDefault(); // Evita el comportamiento nativo de F4
-          
-          var nuevoTexto = prompt("Ingresa el nuevo texto para el primer botón:");
+          event.preventDefault();
+          var nuevoTexto = prompt("Ingresa el nuevo texto para el Botón 1:");
           if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
             document.getElementById("btnDinamico").innerText = nuevoTexto;
-            alert("¡El texto del botón ha sido modificado!");
+            alert("¡El nombre del Botón 1 ha sido actualizado!");
           }
         }
       });
