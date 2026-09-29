@@ -216,26 +216,26 @@
 
     <section>
       <h2>Botones Interactivos</h2>
-      <p>Haz clic en cualquier botón o presiona la tecla <strong>F4</strong> para cambiar el nombre del <strong>boton 1</strong>.</p>
+      <p>Haz clic en cualquier botón para ver su función o presiona la tecla <strong>F4</strong> para renombrar el <strong>boton 1</strong>.</p>
 
       <div class="button-container">
-        <button class="action-btn" onclick="mostrarMensaje('Haz Clic')">
+        <button class="action-btn" onclick="mensajeHazClic()">
           Haz Clic
         </button>
 
-        <button class="action-btn" onclick="mostrarMensaje('multiplicar')">
+        <button class="action-btn" onclick="calcularMultiplicacion()">
           multiplicar
         </button>
 
-        <button id="btnDinamico" class="action-btn" onclick="mostrarMensaje(1)">
+        <button id="btnDinamico" class="action-btn" onclick="mensajeBoton1()">
           boton 1
         </button>
 
-        <button class="action-btn" onclick="mostrarMensaje(2)">
+        <button class="action-btn" onclick="mensajeBoton2()">
           boton 2
         </button>
 
-        <button class="action-btn" onclick="mostrarMensaje(3)">
+        <button class="action-btn" onclick="mensajeBoton3()">
           boton 3
         </button>
       </div>
@@ -246,7 +246,7 @@
     <aside>
       <h3>Notas sobre F4</h3>
       <p>
-        Si presionas la tecla <strong>F4</strong> en tu teclado, se abrirá un cuadro para renombrar el <strong>boton 1</strong>.
+        Si presionas la tecla <strong>F4</strong> en tu teclado, se abrirá un cuadro para cambiar el texto del <strong>boton 1</strong>.
       </p>
     </aside>
 
@@ -261,18 +261,47 @@
     </footer>
 
     <script>
-      function mostrarMensaje(valor) {
-        if (valor === 1) {
-          var textoBoton = document.getElementById("btnDinamico").innerText;
-          alert("Has presionado: " + textoBoton);
-        } else if (typeof valor === 'number') {
-          alert("Has presionado el boton " + valor);
-        } else {
-          alert("Has presionado la opción: " + valor);
+      // Funciones individuales para cada botón
+      function mensajeHazClic() {
+        alert("¡Hola! Gracias por interactuar con este botón.");
+      }
+
+      function calcularMultiplicacion() {
+        var num1 = prompt("Ingresa el primer número:");
+        var num2 = prompt("Ingresa el segundo número:");
+        
+        if (num1 !== null && num2 !== null && num1 !== "" && num2 !== "") {
+          var n1 = parseFloat(num1);
+          var n2 = parseFloat(num2);
+          if (!isNaN(n1) && !isNaN(n2)) {
+            var resultado = n1 * n2;
+            alert("El resultado de multiplicar " + n1 + " x " + n2 + " es: " + resultado);
+          } else {
+            alert("Por favor ingresa números válidos.");
+          }
         }
       }
 
-      // Capturar tecla F4
+      function mensajeBoton1() {
+        var textoBoton = document.getElementById("btnDinamico").innerText;
+        alert("Has activado el primer botón dinámico con el nombre: '" + textoBoton + "'");
+      }
+
+      function mensajeBoton2() {
+        var confirmacion = confirm("¿Deseas confirmar la acción del Botón 2?");
+        if (confirmacion) {
+          alert("Has aceptado la confirmación.");
+        } else {
+          alert("Cancelaste la operación.");
+        }
+      }
+
+      function mensajeBoton3() {
+        var horaActual = new Date().toLocaleTimeString();
+        alert("Sistema activo. Hora local de la consulta: " + horaActual);
+      }
+
+      // Evento para capturar tecla F4
       document.addEventListener("keydown", function (event) {
         if (event.key === "F4") {
           event.preventDefault();
