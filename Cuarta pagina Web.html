@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Cuarta Página Web - Mensajes e Interacción</title>
+    <title>Cuarta Página Web</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -69,7 +69,7 @@
       section {
         grid-area: section;
         background-color: #ffffff;
-        padding: 20px;
+        padding: 15px;
         border: 3px solid #8338ec;
         border-radius: 8px;
       }
@@ -79,29 +79,25 @@
         color: #8338ec;
       }
 
-      /* Estilos para los botones interactivos */
+      /* Estilos para los botones de mensajes */
       .button-container {
         display: flex;
         flex-direction: column;
         gap: 15px;
-        margin-top: 20px;
+        margin: 20px 0;
       }
 
       .action-btn {
-        background: linear-gradient(90deg, #ff006e, #8338ec);
+        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
+        background-size: 200% 100%;
         color: #ffffff;
         border: 2px solid #ffbe0b;
         padding: 12px 20px;
         font-size: 1rem;
         font-weight: bold;
-        border-radius: 8px;
+        border-radius: 6px;
         cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
-      }
-
-      .action-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 14px rgba(255, 0, 110, 0.4);
+        text-align: center;
       }
 
       aside {
@@ -141,27 +137,54 @@
         text-decoration: underline;
       }
 
-      /* ===== ANIMACIONES ===== */
+      /* Estilo para el enlace/botón "Regresar" */
+      .regresar {
+        display: block;
+        text-align: center;
+        margin: 20px auto 0;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff006e;
+        text-decoration: none;
+        border: 3px solid #ffbe0b;
+        padding: 10px 24px;
+        border-radius: 30px;
+        width: fit-content;
+      }
+
+      .regresar:hover {
+        background-color: #ffbe0b;
+        color: #10002b;
+      }
+
+      /* ===== ANIMACIONES IDÉNTICAS ===== */
       @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
       @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
+      @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
       @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
+      @keyframes latido { 0% { box-shadow: 0 0 0 0 rgba(255,0,110,.8); } 70% { box-shadow: 0 0 0 18px rgba(255,0,110,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,110,0); } }
 
       body { animation: fondo 12s ease infinite; }
       header { animation: fondo 8s ease infinite; }
       header h1 { animation: brillo 3s ease-in-out infinite; }
+      header img { animation: flotar 3s ease-in-out infinite; }
       .nav-btn { animation: fondo 4s ease infinite; }
+      .action-btn { animation: fondo 4s ease infinite; }
 
       nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
       section { animation-delay: .15s; }
       aside { animation-delay: .3s; }
       footer { animation-delay: .5s; }
 
-      nav a, footer a { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
-      nav a:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
+      nav a, footer a, .action-btn { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
+      nav a:hover, .action-btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
       footer a:hover { transform: scale(1.15); color: #fff; }
 
       aside { transition: transform .3s, box-shadow .3s; }
       aside:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(251,86,7,.5); }
+
+      .regresar { animation: latido 2s infinite; transition: transform .25s, background-color .25s; }
+      .regresar:hover { transform: scale(1.12); animation: none; }
 
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -186,8 +209,8 @@
     </nav>
 
     <section>
-      <h2>Demostración de Mensajes Interactivos</h2>
-      <p>Haz clic en los botones para ver los mensajes o presiona la tecla <strong>F4</strong> en tu teclado para personalizar el texto del primer botón.</p>
+      <h2>Mensajes Interactivos</h2>
+      <p>Haz clic en los botones para ver los mensajes o presiona la tecla <strong>F4</strong> para cambiar el texto del primer botón.</p>
 
       <div class="button-container">
         <button id="btnDinamico" class="action-btn" onclick="mostrarMensaje1()">
@@ -202,12 +225,14 @@
           Mostrar Alerta del Sistema
         </button>
       </div>
+
+      <a href="index.html" class="regresar">Regresar al Inicio</a>
     </section>
 
     <aside>
-      <h3>Instrucciones F4</h3>
+      <h3>Notas sobre F4</h3>
       <p>
-        Presiona la tecla <strong>F4</strong> en cualquier momento mientras estés en esta página. Aparecerá un cuadro para introducir el nuevo texto que desees asignar al primer botón.
+        Si presionas la tecla <strong>F4</strong> en tu teclado mientras navegas en esta página, un cuadro emergente te pedirá ingresar un nuevo texto que reemplazará el nombre del primer botón.
       </p>
     </aside>
 
@@ -221,31 +246,30 @@
       </ul>
     </footer>
 
-    <!-- LÓGICA JAVASCRIPT -->
+    <!-- LÓGICA DE EVENTOS Y TECLA F4 -->
     <script>
-      // Funciones de los mensajes al presionar los botones
       function mostrarMensaje1() {
-        var textoBoton = document.getElementById("btnDinamico").innerText;
-        alert("Has interactuado con el botón: " + textoBoton);
+        var textoActual = document.getElementById("btnDinamico").innerText;
+        alert("Has presionado el botón con texto: '" + textoActual + "'");
       }
 
       function mostrarMensaje2() {
-        alert("¡Hola! Este es un mensaje emergente de bienvenida desde la Cuarta Página.");
+        alert("¡Bienvenido a la Cuarta Página!");
       }
 
       function mostrarMensaje3() {
-        alert("¡Atención! Acción ejecutada correctamente.");
+        alert("¡Alerta! Notificación generada correctamente.");
       }
 
-      // Evento de escucha para capturar la tecla F4
+      // Evento para capturar la tecla F4
       document.addEventListener("keydown", function (event) {
         if (event.key === "F4") {
-          event.preventDefault(); // Evita la acción por defecto de la tecla F4 en el navegador
+          event.preventDefault(); // Evita el comportamiento nativo de F4
           
-          var nuevoTexto = prompt("Escribe el nuevo texto para el primer botón:");
+          var nuevoTexto = prompt("Ingresa el nuevo texto para el primer botón:");
           if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
             document.getElementById("btnDinamico").innerText = nuevoTexto;
-            alert("¡Texto del botón actualizado con éxito!");
+            alert("¡El texto del botón ha sido modificado!");
           }
         }
       });
