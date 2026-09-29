@@ -79,11 +79,19 @@
         color: #8338ec;
       }
 
+      /* Contenedor horizontal para alineación en fila tipo barra */
       .button-container {
         display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin: 20px 0;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin: 25px 0;
+        padding: 15px;
+        background-color: #f0f4f8;
+        border-radius: 8px;
+        border: 1px solid #d0d7de;
       }
 
       .action-btn {
@@ -91,12 +99,19 @@
         background-size: 200% 100%;
         color: #ffffff;
         border: 2px solid #ffbe0b;
-        padding: 12px 20px;
+        padding: 10px 20px;
         font-size: 1rem;
         font-weight: bold;
         border-radius: 6px;
         cursor: pointer;
         text-align: center;
+      }
+
+      /* Estilo especial para el botón con borde delgado y fondo claro */
+      .action-btn-outline {
+        background: #eef4f8;
+        color: #0077b6;
+        border: 2px solid #0077b6;
       }
 
       aside {
@@ -139,7 +154,7 @@
       .regresar {
         display: block;
         text-align: center;
-        margin: 20px auto 0;
+        margin: 25px auto 0;
         font-weight: bold;
         color: #ffffff;
         background-color: #ff006e;
@@ -167,7 +182,7 @@
       header h1 { animation: brillo 3s ease-in-out infinite; }
       header img { animation: flotar 3s ease-in-out infinite; }
       .nav-btn { animation: fondo 4s ease infinite; }
-      .action-btn { animation: fondo 4s ease infinite; }
+      .action-btn:not(.action-btn-outline) { animation: fondo 4s ease infinite; }
 
       nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
       section { animation-delay: .15s; }
@@ -175,7 +190,8 @@
       footer { animation-delay: .5s; }
 
       nav a, footer a, .action-btn { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
-      nav a:hover, .action-btn:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
+      nav a:hover, .action-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
+      .action-btn-outline:hover { background: #ffbe0b; color: #10002b; border-color: #ffbe0b; }
       footer a:hover { transform: scale(1.15); color: #fff; }
 
       aside { transition: transform .3s, box-shadow .3s; }
@@ -208,19 +224,28 @@
 
     <section>
       <h2>Botones Interactivos</h2>
-      <p>Haz clic en cualquier botón o presiona la tecla <strong>F4</strong> para cambiar el texto de <strong>Botón 1</strong>.</p>
+      <p>Haz clic en cualquier botón o presiona la tecla <strong>F4</strong> para cambiar el nombre del <strong>Botón 1</strong>.</p>
 
+      <!-- Botones en fila horizontal -->
       <div class="button-container">
-        <button id="btnDinamico" class="action-btn" onclick="mostrarMensaje(1)">
-          Botón 1
+        <button class="action-btn" onclick="mostrarMensaje('Haz Clic')">
+          Haz Clic
         </button>
 
-        <button class="action-btn" onclick="mostrarMensaje(2)">
-          Botón 2
+        <button class="action-btn" onclick="mostrarMensaje('multiplicar')">
+          multiplicar
+        </button>
+
+        <button id="btnDinamico" class="action-btn" onclick="mostrarMensaje(1)">
+          boton 1
+        </button>
+
+        <button class="action-btn action-btn-outline" onclick="mostrarMensaje(2)">
+          boton 2
         </button>
 
         <button class="action-btn" onclick="mostrarMensaje(3)">
-          Botón 3
+          boton 3
         </button>
       </div>
 
@@ -230,7 +255,7 @@
     <aside>
       <h3>Notas sobre F4</h3>
       <p>
-        Si presionas la tecla <strong>F4</strong> en tu teclado, podrás personalizar el texto del <strong>Botón 1</strong>.
+        Si presionas la tecla <strong>F4</strong> en tu teclado, se abrirá un cuadro para renombrar el <strong>boton 1</strong>.
       </p>
     </aside>
 
@@ -245,23 +270,25 @@
     </footer>
 
     <script>
-      function mostrarMensaje(numeroBoton) {
-        if (numeroBoton === 1) {
-          var textoBoton1 = document.getElementById("btnDinamico").innerText;
-          alert("Has presionado: " + textoBoton1);
+      function mostrarMensaje(valor) {
+        if (valor === 1) {
+          var textoBoton = document.getElementById("btnDinamico").innerText;
+          alert("Has presionado: " + textoBoton);
+        } else if (typeof valor === 'number') {
+          alert("Has presionado el boton " + valor);
         } else {
-          alert("Has presionado el Botón " + numeroBoton);
+          alert("Has presionado la opción: " + valor);
         }
       }
 
-      // Capturar tecla F4 para renombrar el Botón 1
+      // Evento para capturar tecla F4
       document.addEventListener("keydown", function (event) {
         if (event.key === "F4") {
           event.preventDefault();
-          var nuevoTexto = prompt("Ingresa el nuevo texto para el Botón 1:");
+          var nuevoTexto = prompt("Ingresa el nuevo texto para el boton 1:");
           if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
             document.getElementById("btnDinamico").innerText = nuevoTexto;
-            alert("¡El nombre del Botón 1 ha sido actualizado!");
+            alert("¡El nombre del boton 1 ha sido actualizado!");
           }
         }
       });
