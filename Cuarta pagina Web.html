@@ -79,7 +79,7 @@
         color: #8338ec;
       }
 
-      /* Contenedor horizontal para alineación en fila tipo barra */
+      /* Contenedor horizontal de botones */
       .button-container {
         display: flex;
         flex-direction: row;
@@ -105,13 +105,6 @@
         border-radius: 6px;
         cursor: pointer;
         text-align: center;
-      }
-
-      /* Estilo especial para el botón con borde delgado y fondo claro */
-      .action-btn-outline {
-        background: #eef4f8;
-        color: #0077b6;
-        border: 2px solid #0077b6;
       }
 
       aside {
@@ -182,7 +175,7 @@
       header h1 { animation: brillo 3s ease-in-out infinite; }
       header img { animation: flotar 3s ease-in-out infinite; }
       .nav-btn { animation: fondo 4s ease infinite; }
-      .action-btn:not(.action-btn-outline) { animation: fondo 4s ease infinite; }
+      .action-btn { animation: fondo 4s ease infinite; }
 
       nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
       section { animation-delay: .15s; }
@@ -191,7 +184,6 @@
 
       nav a, footer a, .action-btn { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
       nav a:hover, .action-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
-      .action-btn-outline:hover { background: #ffbe0b; color: #10002b; border-color: #ffbe0b; }
       footer a:hover { transform: scale(1.15); color: #fff; }
 
       aside { transition: transform .3s, box-shadow .3s; }
@@ -224,9 +216,8 @@
 
     <section>
       <h2>Botones Interactivos</h2>
-      <p>Haz clic en cualquier botón o presiona la tecla <strong>F4</strong> para cambiar el nombre del <strong>Botón 1</strong>.</p>
+      <p>Haz clic en cualquier botón o presiona la tecla <strong>F4</strong> para cambiar el nombre del <strong>boton 1</strong>.</p>
 
-      <!-- Botones en fila horizontal -->
       <div class="button-container">
         <button class="action-btn" onclick="mostrarMensaje('Haz Clic')">
           Haz Clic
@@ -240,7 +231,7 @@
           boton 1
         </button>
 
-        <button class="action-btn action-btn-outline" onclick="mostrarMensaje(2)">
+        <button class="action-btn" onclick="mostrarMensaje(2)">
           boton 2
         </button>
 
@@ -281,7 +272,7 @@
         }
       }
 
-      // Evento para capturar tecla F4
+      // Capturar tecla F4
       document.addEventListener("keydown", function (event) {
         if (event.key === "F4") {
           event.preventDefault();
