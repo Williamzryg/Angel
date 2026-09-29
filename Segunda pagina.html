@@ -2,95 +2,260 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Segunda Pagina</title>
+    <title>Segunda Página</title>
     <style>
-      .nav-btn {
-        background-color: #ffffff;
-        color: #000;
-        border: 2px solid #333;
-        padding: 8px 16px;
-        font-size: 1rem;
-        border-radius: 4px;
-        text-decoration: none;
-        display: inline-block;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #222;
+        background: linear-gradient(120deg, #ffbe0b, #ff006e, #8338ec, #3a86ff, #ffbe0b) fixed;
+        background-size: 300% 300%;
+        display: grid;
+        grid-template-areas:
+          "header header"
+          "nav nav"
+          "section aside"
+          "footer footer";
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 10px;
       }
-      .nav-btn:hover {
-        background-color: #f0f0f0;
+
+      header {
+        grid-area: header;
+        background: linear-gradient(90deg, #8338ec, #ff006e, #fb5607, #8338ec);
+        background-size: 250% 100%;
+        color: #ffffff;
+        border-bottom: 5px solid #ffbe0b;
+        text-align: center;
+        padding: 20px;
       }
+
+      nav {
+        grid-area: nav;
+        background-color: #10002b;
+        border: 3px solid #3a86ff;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
       nav ul {
         list-style: none;
         display: flex;
+        justify-content: center;
         gap: 20px;
-        align-items: center;
-        border: 2px solid #333;
-        padding: 15px;
         margin: 0;
-        border-radius: 8px;
+        padding: 0;
+      }
+
+      .nav-btn {
+        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
+        background-size: 200% 100%;
+        color: #ffffff;
+        border: 2px solid #ffbe0b;
+        padding: 8px 16px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+
+      .nav-btn:hover {
+        background: #ffbe0b;
+        color: #10002b;
+      }
+
+      section {
+        grid-area: section;
         background-color: #ffffff;
+        padding: 15px;
+        border: 3px solid #8338ec;
+        border-radius: 8px;
+      }
+
+      section h2 {
+        margin-top: 0;
+        color: #8338ec;
+      }
+
+      section ul {
+        background-color: #efe6ff;
+        border: 2px solid #8338ec;
+        border-radius: 6px;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+      }
+
+      section ul li {
+        margin: 5px 0;
+      }
+
+      section ul li::marker {
+        color: #ff006e;
+      }
+
+      aside {
+        grid-area: aside;
+        background: linear-gradient(160deg, #ffbe0b, #fb5607);
+        color: #3a1200;
+        border: 3px solid #ff006e;
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      footer {
+        grid-area: footer;
+        background: linear-gradient(90deg, #10002b, #8338ec);
+        color: #ffffff;
+        border-top: 5px solid #ffbe0b;
+        text-align: center;
+        padding: 15px;
+      }
+
+      footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      footer li {
+        margin: 5px 0;
+      }
+
+      footer a {
+        text-decoration: none;
+        color: #ffbe0b;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Scroll suave */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Estilo para el enlace "Regresar" */
+      .regresar {
+        grid-column: 1 / -1;
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #ff006e;
+        text-decoration: none;
+        border: 3px solid #ffbe0b;
+        padding: 10px 24px;
+        border-radius: 30px;
+        width: fit-content;
+      }
+
+      .regresar:hover {
+        background-color: #ffbe0b;
+        color: #10002b;
+      }
+
+      /* ===== ANIMACIONES ===== */
+      @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+      @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
+      @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+      @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
+      @keyframes latido { 0% { box-shadow: 0 0 0 0 rgba(255,0,110,.8); } 70% { box-shadow: 0 0 0 18px rgba(255,0,110,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,110,0); } }
+
+      body { animation: fondo 12s ease infinite; }
+      header { animation: fondo 8s ease infinite; }
+      header h1 { animation: brillo 3s ease-in-out infinite; }
+      header img { animation: flotar 3s ease-in-out infinite; }
+      .nav-btn { animation: fondo 4s ease infinite; }
+
+      nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
+      section { animation-delay: .15s; }
+      aside { animation-delay: .3s; }
+      footer { animation-delay: .5s; }
+
+      nav a, footer a { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
+      nav a:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
+      footer a:hover { transform: scale(1.15); color: #fff; }
+
+      section ul li { transition: transform .25s, color .25s; }
+      section ul li:hover { transform: translateX(12px); color: #ff006e; font-weight: bold; }
+
+      aside { transition: transform .3s, box-shadow .3s; }
+      aside:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(251,86,7,.5); }
+
+      .regresar { animation: latido 2s infinite; transition: transform .25s, background-color .25s; }
+      .regresar:hover { transform: scale(1.12); animation: none; }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; transition: none !important; }
       }
     </style>
   </head>
   <body>
-    <!--ESTO ES UN COMENTARIO-->
     <header>
       <a href="index.html">
         <img src="images/logo.png" alt="esto me manda al inicio" />
       </a>
-
-      <h1>William</h1>
+      <h1>Segunda Página</h1>
     </header>
-    <nav>
+
+    <!-- 👇 Identificador agregado al menú -->
+    <nav id="menu">
       <ul>
         <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="Mi Primera pagina.html" class="nav-btn">Mi Primera pagina</a></li>
-        <li><a href="Segunda Pagina.html" class="nav-btn">Segunda pagina</a></li>
-        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera pagina Web
-        </a></li>
-        <li><a href="Cuarta Pagina web.html" class="nav-btn">Cuarta pagina</a></li>
+        <li><a href="Segunda pagina.html" class="nav-btn">Segunda página</a></li>
+        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera página Web</a></li>
+        <li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta página</a></li>
       </ul>
     </nav>
-    <main>
-      <section>
-        <h2>Lista de Lenguajes de Programacion (lista no ordenada 1)</h2>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>Python</li>
-          <li>Java</li>
-          <li>C#</li>
-          <li>PHP</li>
-          <li>SQL</li>
-          <li>TypeScript</li>
-          <li>Kotlin</li>
-        </ul>
 
-        <h2>Lista de Canciones (lista no ordenada 2)</h2>
-        <ul>
-          <li>Cuestiones</li>
-          <li>Problematic</li>
-          <li>La vida era mas corta</li>
-          <li>Luciernagas</li>
-          <li>Recorde</li>
-          <li>Ojala</li>
-          <li>Tus vueltas</li>
-          <li>Long drives</li>
-          <li>Cuando el agua hierviendo</li>
-          <li>Al borde</li>
-        </ul>
-      </section>
-    </main>
-    <aside></aside>
-    <footer>
-      <h4>Enlaces de Interes</h4>
+    <section>
+      <h2>Lista de Lenguajes de Programación</h2>
       <ul>
-        <li>
-          <a href="https://senati.blackboard.com/" target="_blank"
-            >Blackboard</a
-          >
-        </li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C#</li>
+        <li>PHP</li>
+        <li>SQL</li>
+        <li>TypeScript</li>
+        <li>Kotlin</li>
+      </ul>
+
+      <h2>Lista de Canciones</h2>
+      <ul>
+        <li>Cuestiones</li>
+        <li>Problematic</li>
+        <li>La vida era más corta</li>
+        <li>Luciérnagas</li>
+        <li>Recordé</li>
+        <li>Ojalá</li>
+        <li>Tus vueltas</li>
+        <li>Long drives</li>
+        <li>Cuando el agua hierviendo</li>
+        <li>Al borde</li>
+      </ul>
+    </section>
+
+    <aside>
+      <h3>Notas</h3>
+      <p>
+        Aquí puedes añadir comentarios sobre tus listas, como cuáles lenguajes
+        son más usados actualmente o cuáles canciones son tus favoritas.
+      </p>
+    </aside>
+
+    <footer>
+      <h4>Enlaces de Interés</h4>
+      <ul>
+        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
         <li><a href="#" target="_blank">Mi Repositorio</a></li>
-        <li><a href="#">Pagina del Instructor</a></li>
+        <li><a href="#">Página del Instructor</a></li>
         <li><a href="#">Repositorio del Instructor</a></li>
       </ul>
     </footer>
