@@ -1,410 +1,411 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<title>Formulario e Interacción Web</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario e Interacción Web - Quinta Página</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
+    /* Estilos generales y Grid Layout */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333333;
+      line-height: 1.6;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "section aside"
+        "footer footer";
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-body{
-    font-family:Arial,sans-serif;
-    margin:0;
-    padding:0;
-    background-color:#f4f4f4;
-    color:#222;
+    /* Encabezado */
+    header {
+      grid-area: header;
+      background-color: #1e3a8a; /* Azul marino */
+      color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      border-bottom: 5px solid #3b82f6;
+    }
 
-    display:grid;
-    grid-template-areas:
-    "header header"
-    "nav nav"
-    "section aside"
-    "footer footer";
+    header img {
+      max-width: 120px;
+      height: auto;
+      margin-bottom: 10px;
+    }
 
-    grid-template-columns:3fr 1fr;
-    gap:10px;
-}
+    header h1 {
+      font-size: 2rem;
+    }
 
-header{
-    grid-area:header;
-    background-color:#8338ec;
-    color:white;
-    text-align:center;
-    padding:20px;
-    border-bottom:5px solid #ffbe0b;
-}
+    /* Navegación */
+    nav {
+      grid-area: nav;
+      background-color: #0f172a;
+      padding: 12px;
+      border-radius: 8px;
+    }
 
-header img{
-    max-width:120px;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-nav{
-    grid-area:nav;
-    background-color:#10002b;
-    padding:10px;
-}
+    .nav-btn {
+      background-color: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    margin:0;
-    padding:0;
-}
+    .nav-btn:hover {
+      background-color: #3b82f6;
+    }
 
-.nav-btn{
-    background-color:#3a86ff;
-    color:white;
-    text-decoration:none;
-    padding:10px 15px;
-    border-radius:5px;
-    font-weight:bold;
-}
+    /* Sección Principal */
+    section {
+      grid-area: section;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
 
-.nav-btn:hover{
-    background-color:#ffbe0b;
-    color:black;
-}
+    section h2 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 5px;
+    }
 
-section{
-    grid-area:section;
-    background:white;
-    padding:20px;
-    border:2px solid #8338ec;
-}
+    section hr {
+      border: 0;
+      border-top: 1px solid #e2e8f0;
+      margin: 30px 0;
+    }
 
-section h2{
-    color:#8338ec;
-}
+    /* Formulario */
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 15px;
+    }
 
-.form-container{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-    margin-top:15px;
-}
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
 
-.form-group{
-    display:flex;
-    flex-direction:column;
-}
+    .form-group label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #1e293b;
+    }
 
-.form-group label{
-    font-weight:bold;
-    margin-bottom:5px;
-}
+    .form-group input,
+    .form-group textarea {
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
 
-.form-group input,
-.form-group textarea{
-    padding:10px;
-    border:1px solid #999;
-    border-radius:5px;
-}
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
 
-.button-container{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:20px;
-}
+    /* Botones */
+    .button-container {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
-.action-btn{
-    background-color:#3a86ff;
-    color:white;
-    border:none;
-    padding:10px 18px;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:bold;
-}
+    .action-btn {
+      background-color: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
 
-.action-btn:hover{
-    background-color:#8338ec;
-}
+    .action-btn:hover {
+      background-color: #1e3a8a;
+    }
 
-.imagen-container{
-    text-align:center;
-    margin:25px 0;
-}
+    /* Contenedor de Imagen Dinámica */
+    .imagen-container {
+      text-align: center;
+      margin: 25px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
 
-.imagen-container img{
-    width:300px;
-    max-width:100%;
-    border:3px solid #8338ec;
-    border-radius:10px;
-}
+    .imagen-container img {
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+      max-width: 100%;
+      border: 3px solid #1e3a8a;
+      border-radius: 10px;
+    }
 
-aside{
-    grid-area:aside;
-    background:#ffe5a5;
-    padding:15px;
-    border:2px solid #ffbe0b;
-}
+    .regresar {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background-color: #0f172a;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-footer{
-    grid-area:footer;
-    background:#10002b;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
+    .regresar:hover {
+      background-color: #334155;
+    }
 
-footer ul{
-    list-style:none;
-    padding:0;
-}
+    /* Barra Lateral */
+    aside {
+      grid-area: aside;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      height: fit-content;
+    }
 
-footer a{
-    color:#ffbe0b;
-    text-decoration:none;
-}
+    aside h3 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
 
-.regresar{
-    display:block;
-    width:220px;
-    text-align:center;
-    margin:20px auto;
-    padding:10px;
-    text-decoration:none;
-    background:#8338ec;
-    color:white;
-    border-radius:5px;
-}
+    aside p {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
 
-</style>
+    /* Pie de página */
+    footer {
+      grid-area: footer;
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
 
+    footer h4 {
+      margin-bottom: 10px;
+      color: #93c5fd;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsivo para móviles */
+    @media (max-width: 768px) {
+      body {
+        grid-template-areas:
+          "header"
+          "nav"
+          "section"
+          "aside"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
+  <header>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo Instituto EducaTech">
+    </a>
+    <h1>Formulario e Interacción Web</h1>
+  </header>
 
-<a href="index.html">
-<img src="images</a>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
+      <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
+    </ul>
+  </nav>
 
-<h1>Formulario e Interacción Web</h1>
+  <section>
+    <h2>Formulario de Contacto</h2>
+    <p>
+      Completa los datos solicitados y prueba las funciones de JavaScript.
+    </p>
 
-</header>
+    <form id="contactForm">
+      <div class="form-container">
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" placeholder="Tu nombre..." required>
+        </div>
 
-<nav>
+        <div class="form-group">
+          <label for="correo">Correo Electrónico:</label>
+          <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
+        </div>
 
-<ul>
-<li><a href="index.html" class="nav-btn">Inicio</a></li>
-<li>Segunda pagina.htmlSegunda Página</a></li>
-<li><a href="Tercera pagina Web.html" class="nav->
-<li><uarta pagina Web.htmlCuarta Página</a></li>
-<li><ainta pagina Web.htmlQuinta Página</a></li>
-</ul>
+        <div class="form-group">
+          <label for="mensaje">Mensaje:</label>
+          <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
+      </div>
 
-</nav>
+      <div class="button-container">
+        <button type="button" class="action-btn" onclick="enviarFormulario()">
+          Enviar Datos
+        </button>
 
-<section>
+        <button type="button" class="action-btn" onclick="limpiarFormulario()">
+          Limpiar Formulario
+        </button>
 
-<h2>Formulario de Contacto</h2>
+        <button type="button" class="action-btn" onclick="saludoEspecial()">
+          Saludo Personalizado
+        </button>
+      </div>
+    </form>
 
-<p>
-Completa los datos solicitados y prueba las funciones de JavaScript.
-</p>
+    <hr>
 
-<form id="contactForm">
+    <h2>Ejercicio 03 - Cambio de Imagen</h2>
+    <p>
+      Presiona el botón para alternar la imagen mostrada dinámicamente.
+    </p>
 
-<div class="form-container">
+    <div class="imagen-container">
+      <img id="imagenDinamica" src="images/Golde R.png" alt="Golden Retriever / Imagen dinámica">
+      <button type="button" class="action-btn" onclick="cambiarImagen()">
+        Cambiar Imagen
+      </button>
+    </div>
 
-<div class="form-group">
-<label for="nombre">Nombre Completo:</label>
-<input type="text" id="nombre" required>
-</div>
+    <a href="index.html" class="regresar">← Regresar al Inicio</a>
+  </section>
 
-<div class="form-group">
-<label for="correo">Correo Electrónico:</label>
-<input type="email" id="correo" required>
-</div>
+  <aside>
+    <h3>Información</h3>
+    <p>
+      Esta página contiene un formulario interactivo y el ejercicio de JavaScript para cambiar dinámicamente la imagen de la plantilla.
+    </p>
+    <p>
+      Al presionar el botón "Cambiar Imagen", la foto alternará entre el Golden Retriever y el Fénix.
+    </p>
+  </aside>
 
-<div class="form-group">
-<label for="mensaje">Mensaje:</label>
-<textarea id="mensaje" rows="4" required></textarea>
-</div>
+  <footer>
+    <h4>Enlaces de Interés</h4>
+    <ul>
+      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
+      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
+    </ul>
+  </footer>
 
-</div>
+  <script>
+    // 1. Envío de formulario
+    function enviarFormulario() {
+      let nombre = document.getElementById("nombre").value.trim();
+      let correo = document.getElementById("correo").value.trim();
 
-<div class="button-container">
-
-<button type="button"
-class="action-btn"
-onclick="enviarFormulario()">
-Enviar Datos
-</button>
-
-<button type="button"
-class="action-btn"
-onclick="limpiarFormulario()">
-Limpiar Formulario
-</button>
-
-<button type="button"
-class="action-btn"
-onclick="saludoEspecial()">
-Saludo Personalizado
-</button>
-
-</div>
-
-</form>
-
-<hr>
-
-<h2>Ejercicio 03 - Cambio de Imagen</h2>
-
-<p>
-Presiona el botón para cambiar la imagen de la plantilla.
-</p>
-
-<div class="imagen-container">
-
-<img
-id="imagenDinamica"
-src="images/Golde R.png"
-alt="ss="action-btn"
-onclick="cambiarImagen()">
-
-Cambiar Imagen
-
-</button>
-
-</div>
-
-<a href="index.html" class="regresar">
-Regresar al Inicio
-</a>
-
-</section>
-
-<aside>
-
-<h3>Información</h3>
-
-<p>
-Esta página contiene un formulario interactivo y el ejercicio solicitado de JavaScript para cambiar una imagen de la plantilla.
-</p>
-
-<p>
-Al presionar el botón "Cambiar Imagen", la foto alternará entre el Golden Retriever y el Fénix.
-</p>
-
-</aside>
-
-<footer>
-
-<h4>Enlaces de Interés</h4>
-
-<ul>
-
-<li>
-<a href="https://senati.blackboard.com/" target="_blank">
-Blackboard
-</a>
-</li>
-
-<li>
-<a href="https://github.com/Williamzryg/Angel" target="_blank">
-Mi Repositorio
-</a>
-</li>
-
-</ul>
-
-</footer>
-
-<script>
-
-function enviarFormulario(){
-
-    let nombre =
-    document.getElementById("nombre").value;
-
-    let correo =
-    document.getElementById("correo").value;
-
-    if(nombre !== "" && correo !== ""){
-
-        alert(
-        "Gracias " +
-        nombre +
-        ". Se registró el correo: " +
-        correo
-        );
-
-    }else{
-
-        alert(
-        "Complete los campos obligatorios."
-        );
-
-    }
-}
-
-function limpiarFormulario(){
-
-    document.getElementById(
-    "contactForm"
-    ).reset();
-
-    alert(
-    "Formulario limpiado correctamente."
-    );
-}
-
-function saludoEspecial(){
-
-    let nombre =
-    document.getElementById("nombre").value;
-
-    if(nombre !== ""){
-
-        alert(
-        "Hola " +
-        nombre +
-        ", gracias por visitar la página."
-        );
-
-    }else{
-
-        alert(
-        "Ingrese su nombre para recibir el saludo."
-        );
-
+      if (nombre !== "" && correo !== "") {
+        alert("Gracias " + nombre + ". Se registró el correo: " + correo);
+      } else {
+        alert("Por favor, complete los campos obligatorios (Nombre y Correo).");
+      }
     }
 
-}
-
-function cambiarImagen(){
-
-    let imagen =
-    document.getElementById(
-    "imagenDinamica"
-    );
-
-    if(
-        imagen.src.includes("Golde")
-    ){
-
-        imagen.src =
-        "images/Feni.png";
-
+    // 2. Limpieza de formulario
+    function limpiarFormulario() {
+      document.getElementById("contactForm").reset();
+      alert("Formulario limpiado correctamente.");
     }
 
-    else{
+    // 3. Saludo personalizado
+    function saludoEspecial() {
+      let nombre = document.getElementById("nombre").value.trim();
 
-        imagen.src =
-        "images/Golde R.png";
-
+      if (nombre !== "") {
+        alert("¡Hola " + nombre + "! Gracias por visitar EducaTech.");
+      } else {
+        alert("Por favor, ingrese su nombre en el formulario para recibir un saludo personalizado.");
+      }
     }
 
-}
+    // 4. Ejercicio 03: Cambio dinámico de imagen
+    function cambiarImagen() {
+      let imagen = document.getElementById("imagenDinamica");
 
-</script>
+      if (imagen.src.includes("Golde")) {
+        imagen.src = "images/Feni.png";
+        imagen.alt = "Fénix";
+      } else {
+        imagen.src = "images/Golde R.png";
+        imagen.alt = "Golden Retriever";
+      }
+    }
+  </script>
 
 </body>
 </html>
