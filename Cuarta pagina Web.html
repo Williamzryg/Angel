@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interacción JavaScript - Cuarta Página</title>
+  <title>JavaScript - Cuarta Página</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
   <header>
     <a href="index.html">
-      <img src="images/logo.png" alt="Logo EducaTech">
+      <img src="images/logo.png" alt="Logo Instituto">
     </a>
     <h1>Interacciones con JavaScript</h1>
   </header>
@@ -26,25 +26,26 @@
   </nav>
 
   <section>
-    <h2>Manipulación del DOM</h2>
-    <p>Prueba las siguientes funciones interactivas programadas con JavaScript:</p>
+    <h2>Manipulación del DOM y Eventos</h2>
+    <p>Presiona los botones para interactuar con los scripts de JavaScript:</p>
 
-    <div id="textoEditable">
-      Texto de prueba original. ¡Haz clic en los botones de abajo para modificar este texto!
-    </div>
+    <article>
+      <h3 id="tituloDinamico">Texto Dinámico Original</h3>
+      <p id="parrafoDinamico">Haz clic en los botones de abajo para modificar este párrafo.</p>
+    </article>
 
     <div class="button-container">
-      <button class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
-      <button class="action-btn" onclick="restaurarTexto()">Restaurar Texto</button>
-      <button class="action-btn" onclick="mostrarAlerta()">Mostrar Alerta</button>
+      <button type="button" class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
+      <button type="button" class="action-btn" onclick="restaurarTexto()">Restaurar Texto</button>
+      <button type="button" class="action-btn" onclick="alertaComprobacion()">Lanzar Alerta</button>
     </div>
 
-    <a href="index.html" class="regresar">← Regresar al Inicio</a>
+    <a href="index.html" class="regresar">Regresar al Inicio</a>
   </section>
 
   <aside>
     <h3>Información</h3>
-    <p>Esta sección contiene scripts básicos para alterar el contenido visual mediante manipulación directa de nodos del DOM.</p>
+    <p>Esta página demuestra el dinamismo mediante la manipulación directa de nodos del DOM mediante eventos JavaScript.</p>
   </aside>
 
   <footer>
@@ -57,15 +58,17 @@
 
   <script>
     function cambiarTexto() {
-      document.getElementById("textoEditable").innerText = "¡El texto ha sido cambiado exitosamente con JavaScript!";
+      document.getElementById("tituloDinamico").innerText = "¡Texto Actualizado!";
+      document.getElementById("parrafoDinamico").innerText = "El contenido ha sido modificado mediante JavaScript de forma correcta.";
     }
 
     function restaurarTexto() {
-      document.getElementById("textoEditable").innerText = "Texto de prueba original. ¡Haz clic en los botones de abajo para modificar este texto!";
+      document.getElementById("tituloDinamico").innerText = "Texto Dinámico Original";
+      document.getElementById("parrafoDinamico").innerText = "Haz clic en los botones de abajo para modificar este párrafo.";
     }
 
-    function mostrarAlerta() {
-      alert("¡Hola! Esta es una función interactiva en JavaScript.");
+    function alertaComprobacion() {
+      alert("¡Funcionalidad comprobada con éxito en JavaScript!");
     }
   </script>
 
