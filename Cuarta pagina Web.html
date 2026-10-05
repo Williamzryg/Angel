@@ -3,222 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicios JavaScript - Cuarta Página Web</title>
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Estilos generales y Layout Grid */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
-      color: #333333;
-      line-height: 1.6;
-      display: grid;
-      grid-template-areas:
-        "header header"
-        "nav nav"
-        "section aside"
-        "footer footer";
-      grid-template-columns: 3fr 1fr;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Encabezado */
-    header {
-      grid-area: header;
-      background-color: #1e3a8a; /* Azul marino */
-      color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      text-align: center;
-      border-bottom: 5px solid #3b82f6;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 5px;
-    }
-
-    /* Navegación */
-    nav {
-      grid-area: nav;
-      background-color: #0f172a;
-      padding: 12px;
-      border-radius: 8px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .nav-btn {
-      background-color: #2563eb;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .nav-btn:hover {
-      background-color: #3b82f6;
-    }
-
-    /* Sección Principal y Botones */
-    section {
-      grid-area: section;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-    }
-
-    section h2 {
-      color: #1e3a8a;
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 5px;
-    }
-
-    #textoEditable {
-      background-color: #eff6ff;
-      color: #1e40af;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      border: 2px dashed #93c5fd;
-      margin: 20px 0;
-      font-size: 1.1rem;
-    }
-
-    .button-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin: 25px 0;
-    }
-
-    .action-btn {
-      background-color: #2563eb;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 0.95rem;
-      transition: background-color 0.2s;
-    }
-
-    .action-btn:hover {
-      background-color: #1e3a8a;
-    }
-
-    .regresar {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      background-color: #0f172a;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .regresar:hover {
-      background-color: #334155;
-    }
-
-    /* Barra Lateral */
-    aside {
-      grid-area: aside;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      height: fit-content;
-    }
-
-    aside h3 {
-      color: #1e3a8a;
-      margin-bottom: 12px;
-      font-size: 1.15rem;
-    }
-
-    aside p {
-      color: #64748b;
-      font-size: 0.9rem;
-      line-height: 1.5;
-    }
-
-    /* Pie de Página */
-    footer {
-      grid-area: footer;
-      background-color: #0f172a;
-      color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    footer h4 {
-      margin-bottom: 10px;
-      color: #93c5fd;
-    }
-
-    footer ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsivo para móviles */
-    @media (max-width: 768px) {
-      body {
-        grid-template-areas:
-          "header"
-          "nav"
-          "section"
-          "aside"
-          "footer";
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Interacción JavaScript - Cuarta Página</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
   <header>
-    <h1>Ejercicios JavaScript</h1>
-    <p>Desarrollo de Funciones Interactivas (Tarea 02)</p>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo EducaTech">
+    </a>
+    <h1>Interacciones con JavaScript</h1>
   </header>
 
   <nav>
@@ -227,36 +21,22 @@
       <li><a href="segunda.html" class="nav-btn">Listas</a></li>
       <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
       <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
-      <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
+      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
     </ul>
   </nav>
 
   <section>
-    <h2>Actividad de JavaScript</h2>
-    <p>
-      Presiona cualquiera de los siguientes botones para ejecutar los ejercicios interactivos programados:
-    </p>
+    <h2>Manipulación del DOM</h2>
+    <p>Prueba las siguientes funciones interactivas programadas con JavaScript:</p>
 
-    <h3 id="textoEditable">
-      Texto original de la página
-    </h3>
+    <div id="textoEditable">
+      Texto de prueba original. ¡Haz clic en los botones de abajo para modificar este texto!
+    </div>
 
     <div class="button-container">
-      <button class="action-btn" onclick="convertirDolares()">
-        Convertir Dólares
-      </button>
-
-      <button class="action-btn" onclick="calcularTerreno()">
-        Área y Perímetro
-      </button>
-
-      <button class="action-btn" onclick="cambiarTexto()">
-        Cambiar Texto
-      </button>
-
-      <button class="action-btn" onclick="mostrarMensaje()">
-        Mensaje
-      </button>
+      <button class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
+      <button class="action-btn" onclick="restaurarTexto()">Restaurar Texto</button>
+      <button class="action-btn" onclick="mostrarAlerta()">Mostrar Alerta</button>
     </div>
 
     <a href="index.html" class="regresar">← Regresar al Inicio</a>
@@ -264,10 +44,7 @@
 
   <aside>
     <h3>Información</h3>
-    <p>
-      En esta sección se ejecutan los scripts de JavaScript correspondientes a la Tarea 02:
-      conversión de moneda, cálculos geométricos de un terreno y manipulación dinámica del DOM.
-    </p>
+    <p>Esta sección contiene scripts básicos para alterar el contenido visual mediante manipulación directa de nodos del DOM.</p>
   </aside>
 
   <footer>
@@ -279,44 +56,16 @@
   </footer>
 
   <script>
-    // 1. Función para convertir dólares a moneda local
-    function convertirDolares() {
-      let dolares = parseFloat(prompt("Ingrese la cantidad de dólares ($):"));
-      let cambio = parseFloat(prompt("Ingrese el tipo de cambio actual:"));
-
-      if (!isNaN(dolares) && !isNaN(cambio) && dolares >= 0 && cambio > 0) {
-        let resultado = dolares * cambio;
-        alert(`$${dolares.toFixed(2)} USD equivalen a ${resultado.toFixed(2)} en moneda local.`);
-      } else {
-        alert("Por favor, ingrese valores numéricos válidos.");
-      }
-    }
-
-    // 2. Función para calcular Área y Perímetro de un terreno rectangular
-    function calcularTerreno() {
-      let ancho = parseFloat(prompt("Ingrese el ancho del terreno (metros):"));
-      let largo = parseFloat(prompt("Ingrese el largo del terreno (metros):"));
-
-      if (!isNaN(ancho) && !isNaN(largo) && ancho > 0 && largo > 0) {
-        let area = ancho * largo;
-        let perimetro = 2 * (ancho + largo);
-        alert(`Resultados del Terreno:\n- Área: ${area.toFixed(2)} m²\n- Perímetro: ${perimetro.toFixed(2)} m`);
-      } else {
-        alert("Por favor, ingrese dimensiones válidas y mayores a cero.");
-      }
-    }
-
-    // 3. Función para cambiar dinámicamente el texto en pantalla
     function cambiarTexto() {
-      let nuevoTexto = prompt("Ingrese el nuevo texto que desea mostrar en pantalla:");
-      if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
-        document.getElementById("textoEditable").innerText = nuevoTexto;
-      }
+      document.getElementById("textoEditable").innerText = "¡El texto ha sido cambiado exitosamente con JavaScript!";
     }
 
-    // 4. Función para mostrar un mensaje de interacción
-    function mostrarMensaje() {
-      alert("¡Hola! Has ejecutado correctamente la interacción de JavaScript en EducaTech.");
+    function restaurarTexto() {
+      document.getElementById("textoEditable").innerText = "Texto de prueba original. ¡Haz clic en los botones de abajo para modificar este texto!";
+    }
+
+    function mostrarAlerta() {
+      alert("¡Hola! Esta es una función interactiva en JavaScript.");
     }
   </script>
 
