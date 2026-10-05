@@ -1,226 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Proyecto Web HTML y CSS</title>
-
-<style>
-
-body{
-    font-family:Arial,sans-serif;
-    margin:0;
-    padding:0;
-    color:#222;
-    background-color:#f4f4f4;
-
-    display:grid;
-    grid-template-areas:
-    "header header"
-    "nav nav"
-    "section aside"
-    "footer footer";
-
-    grid-template-columns:3fr 1fr;
-    grid-template-rows:auto auto 1fr auto;
-
-    gap:10px;
-}
-
-header{
-    grid-area:header;
-    background-color:#8338ec;
-    color:white;
-    text-align:center;
-    padding:20px;
-    border-bottom:5px solid #ffbe0b;
-}
-
-header img{
-    max-width:120px;
-}
-
-nav{
-    grid-area:nav;
-    background-color:#10002b;
-    padding:10px;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    margin:0;
-    padding:0;
-}
-
-.nav-btn{
-    background-color:#3a86ff;
-    color:white;
-    text-decoration:none;
-    padding:10px 15px;
-    border-radius:5px;
-    font-weight:bold;
-}
-
-.nav-btn:hover{
-    background-color:#ffbe0b;
-    color:#000;
-}
-
-section{
-    grid-area:section;
-    background:white;
-    padding:20px;
-    border:2px solid #8338ec;
-}
-
-article{
-    background:#fafafa;
-    border:1px solid #ccc;
-    padding:15px;
-    margin-bottom:20px;
-}
-
-article img{
-    width:100%;
-    max-width:300px;
-    display:block;
-    margin:auto;
-}
-
-article h3{
-    text-align:center;
-    color:#8338ec;
-}
-
-aside{
-    grid-area:aside;
-    background:#ffe5a5;
-    padding:15px;
-    border:2px solid #ffbe0b;
-}
-
-footer{
-    grid-area:footer;
-    background:#10002b;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
-
-footer ul{
-    list-style:none;
-    padding:0;
-}
-
-footer a{
-    color:#ffbe0b;
-    text-decoration:none;
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Web - Inicio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #222; display: grid; grid-template-areas: "header header" "nav nav" "section aside" "footer footer"; grid-template-columns: 3fr 1fr; gap: 10px; }
+        header { grid-area: header; background-color: #8338ec; color: white; text-align: center; padding: 20px; border-bottom: 5px solid #ffbe0b; }
+        nav { grid-area: nav; background-color: #10002b; padding: 10px; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; margin: 0; padding: 0; flex-wrap: wrap; }
+        .nav-btn { background-color: #3a86ff; color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px; font-weight: bold; }
+        .nav-btn:hover { background-color: #ffbe0b; color: black; }
+        section { grid-area: section; background: white; padding: 20px; border: 2px solid #8338ec; }
+        aside { grid-area: aside; background: #ffe5a5; padding: 15px; border: 2px solid #ffbe0b; }
+        footer { grid-area: footer; background: #10002b; color: white; text-align: center; padding: 15px; }
+        footer a { color: #ffbe0b; text-decoration: none; }
+        .card { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #ccc; padding-bottom: 15px; }
+        .card img { width: 250px; max-width: 100%; border-radius: 8px; border: 2px solid #8338ec; }
+    </style>
 </head>
-
 <body>
 
 <header>
-
-<a href="index.html">
-<img src="o.png
-</a>
-
-<h1>Proyecto Web HTML y CSS</h1>
-
-<p>
-Sitio desarrollado para la práctica de HTML, CSS y JavaScript.
-</p>
-
+    <h1>Proyecto Web HTML y CSS</h1>
 </header>
 
 <nav>
-
-<ul>
-<li><a href="index.html" class="nav-btn">Inicio</a></li>
-<li>Segunda pagina.htmlSegunda página</a></li>
-<li><a href="Tercera pagina Web.html" ina</a></li>
-<li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta páginata pagina Web.html" class></li>
-</ul>
-
+    <ul>
+        <li><a href="index.html" class="nav-btn">Inicio</a></li>
+        <li><a href="segunda.html" class="nav-btn">Segunda Página</a></li>
+        <li><a href="tercera.html" class="nav-btn">Tercera Página</a></li>
+        <li><a href="cuarta.html" class="nav-btn">Cuarta Página</a></li>
+        <li><a href="quinta.html" class="nav-btn">Quinta Página</a></li>
+    </ul>
 </nav>
 
 <section>
+    <h2>Tarea 01 - Galería de Fotos</h2>
+    
+    <div class="card">
+        <h3>Golden Retriever</h3>
+        <img src="images/Golde R.png" alt="Golden Retriever">
+        <p>Un perro leal, amigable y excelente compañero para la familia.</p>
+    </div>
 
-<article>
+    <div class="card">
+        <h3>Ave Fénix</h3>
+        <img src="images/Feni.png" alt="Fénix">
+        <p>Una criatura mitológica que renace de sus propias cenizas con esplendor.</p>
+    </div>
 
-<h3>Golden Retriever</h3>
-
-<img srcolde R.png
-
-<p>
-El Golden Retriever es una de las razas de perros más populares del mundo. Se caracteriza por ser amigable, inteligente y fácil de entrenar.
-</p>
-
-</article>
-
-<article>
-
-<h3>Fénix</h3>
-
-<img srceni.png
-
-<p>
-El Fénix es una criatura mitológica asociada con la inmortalidad y el renacimiento. Según la leyenda, resurge de sus propias cenizas.
-</p>
-
-</article>
-
-<article>
-
-<h3>Camaleón</h3>
-
-<img srcamaleo.png
-
-<p>
-El camaleón es un reptil conocido por su capacidad para cambiar de color y adaptarse visualmente al entorno donde se encuentra.
-</p>
-
-</article>
-
+    <div class="card">
+        <h3>Camaleón</h3>
+        <img src="images/Camaleo.png" alt="Camaleón">
+        <p>Reptil fascinante capaz de cambiar de color para camuflarse en su entorno.</p>
+    </div>
 </section>
 
 <aside>
-
-<h3>Información del Proyecto</h3>
-
-<p>
-Este sitio web contiene ejemplos de imágenes, listas, tablas y ejercicios de JavaScript desarrollados para cumplir los requisitos de la actividad académica.
-</p>
-
+    <h3>Información</h3>
+    <p>Bienvenido al portal principal de tareas y ejercicios interactivos desarrollados en HTML, CSS y JavaScript.</p>
 </aside>
 
 <footer>
-
-<h4>Enlaces de Interés</h4>
-
-<ul>
-
-<li>
-<a href="https://senati.blackboard.com/" target="_blank">
-Blackboard
-</a>
-</li>
-
-<li>
-<a href="https://github.com/Williamzryg/Angel" target="_blank">
-Mi Repositorio
-</a>
-</li>
-
-</ul>
-
+    <h4>Enlaces de Interés</h4>
+    <ul>
+        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
+        <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
+    </ul>
 </footer>
 
 </body>
