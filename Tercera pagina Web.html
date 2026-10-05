@@ -3,219 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tablas - Tercera Página Web</title>
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Estilos generales y Grid Layout */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
-      color: #333333;
-      line-height: 1.6;
-      display: grid;
-      grid-template-areas:
-        "header header"
-        "nav nav"
-        "section aside"
-        "footer footer";
-      grid-template-columns: 3fr 1fr;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Encabezado */
-    header {
-      grid-area: header;
-      background-color: #1e3a8a; /* Azul marino */
-      color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      text-align: center;
-      border-bottom: 5px solid #3b82f6;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      color: #e2e8f0;
-      font-size: 0.95rem;
-    }
-
-    /* Navegación */
-    nav {
-      grid-area: nav;
-      background-color: #0f172a; /* Azul oscuro */
-      padding: 12px;
-      border-radius: 8px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .nav-btn {
-      background-color: #2563eb;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .nav-btn:hover {
-      background-color: #3b82f6;
-    }
-
-    /* Sección Principal y Tablas */
-    section {
-      grid-area: section;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      overflow-x: auto;
-    }
-
-    section h2 {
-      color: #1e3a8a;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 5px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 30px;
-      font-size: 0.9rem;
-    }
-
-    th, td {
-      border: 1px solid #cbd5e1;
-      padding: 10px 12px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #1e3a8a;
-      color: #ffffff;
-      font-weight: 600;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f8fafc;
-    }
-
-    tr:hover {
-      background-color: #f1f5f9;
-    }
-
-    /* Barra Lateral */
-    aside {
-      grid-area: aside;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      height: fit-content;
-    }
-
-    aside h3 {
-      color: #1e3a8a;
-      margin-bottom: 12px;
-      font-size: 1.15rem;
-    }
-
-    aside p {
-      color: #64748b;
-      font-size: 0.9rem;
-      margin-bottom: 15px;
-    }
-
-    .btn-regresar {
-      display: inline-block;
-      background-color: #1e293b;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 5px;
-      font-size: 0.85rem;
-    }
-
-    .btn-regresar:hover {
-      background-color: #334155;
-    }
-
-    /* Pie de página */
-    footer {
-      grid-area: footer;
-      background-color: #0f172a;
-      color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    footer h4 {
-      margin-bottom: 10px;
-      color: #93c5fd;
-    }
-
-    footer ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Adaptabilidad Móvil */
-    @media (max-width: 768px) {
-      body {
-        grid-template-areas:
-          "header"
-          "nav"
-          "section"
-          "aside"
-          "footer";
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Tablas de Datos - Tercera Página</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
   <header>
-    <h1>Tablas en HTML</h1>
-    <p>Ejemplos de tablas de 3 columnas y 20 filas cada una (Tarea 01)</p>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo EducaTech">
+    </a>
+    <h1>Tablas de Información</h1>
   </header>
 
   <nav>
@@ -223,93 +20,58 @@
       <li><a href="index.html" class="nav-btn">Inicio</a></li>
       <li><a href="segunda.html" class="nav-btn">Listas</a></li>
       <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
-      <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
+      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
     </ul>
   </nav>
 
   <section>
-    <!-- Tabla 1 -->
-    <h2>Tabla 1: Lenguajes y Tecnologías Web</h2>
+    <h2>Horario de Clases - Semestre I</h2>
+
     <table>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Tecnología</th>
-          <th>Categoría</th>
+          <th>Día</th>
+          <th>Curso</th>
+          <th>Instructor</th>
+          <th>Horario</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>01</td><td>HTML5</td><td>Maquetación</td></tr>
-        <tr><td>02</td><td>CSS3</td><td>Estilos</td></tr>
-        <tr><td>03</td><td>JavaScript</td><td>Programación</td></tr>
-        <tr><td>04</td><td>TypeScript</td><td>Lenguaje</td></tr>
-        <tr><td>05</td><td>PHP</td><td>Backend</td></tr>
-        <tr><td>06</td><td>Python</td><td>Backend / Data</td></tr>
-        <tr><td>07</td><td>Java</td><td>Backend</td></tr>
-        <tr><td>08</td><td>C#</td><td>Desarrollo / GameDev</td></tr>
-        <tr><td>09</td><td>C++</td><td>Sistemas / Software</td></tr>
-        <tr><td>10</td><td>Ruby</td><td>Backend</td></tr>
-        <tr><td>11</td><td>Go (Golang)</td><td>Backend / Cloud</td></tr>
-        <tr><td>12</td><td>Swift</td><td>Desarrollo Móvil (iOS)</td></tr>
-        <tr><td>13</td><td>Kotlin</td><td>Desarrollo Móvil (Android)</td></tr>
-        <tr><td>14</td><td>SQL</td><td>Bases de Datos</td></tr>
-        <tr><td>15</td><td>PostgreSQL</td><td>Bases de Datos</td></tr>
-        <tr><td>16</td><td>MongoDB</td><td>Base de Datos NoSQL</td></tr>
-        <tr><td>17</td><td>GraphQL</td><td>API Query Language</td></tr>
-        <tr><td>18</td><td>Rust</td><td>Sistemas / Performance</td></tr>
-        <tr><td>19</td><td>Dart</td><td>Desarrollo Multiplataforma</td></tr>
-        <tr><td>20</td><td>R</td><td>Análisis Estadístico</td></tr>
+        <tr>
+          <td>Lunes</td>
+          <td>Desarrollo Web</td>
+          <td>Prof. García</td>
+          <td>08:00 - 12:00</td>
+        </tr>
+        <tr>
+          <td>Miércoles</td>
+          <td>Base de Datos</td>
+          <td>Prof. López</td>
+          <td>14:00 - 18:00</td>
+        </tr>
+        <tr>
+          <td>Viernes</td>
+          <td>Algoritmos con JS</td>
+          <td>Prof. Mendoza</td>
+          <td>08:00 - 12:00</td>
+        </tr>
       </tbody>
     </table>
 
-    <!-- Tabla 2 -->
-    <h2>Tabla 2: Herramientas, Entornos y Frameworks</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Herramienta / Framework</th>
-          <th>Tipo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>01</td><td>Visual Studio Code</td><td>Editor de Código</td></tr>
-        <tr><td>02</td><td>Git</td><td>Control de Versiones</td></tr>
-        <tr><td>03</td><td>GitHub</td><td>Repositorio Cloud</td></tr>
-        <tr><td>04</td><td>React.js</td><td>Librería Frontend</td></tr>
-        <tr><td>05</td><td>Angular</td><td>Framework Frontend</td></tr>
-        <tr><td>06</td><td>Vue.js</td><td>Framework Frontend</td></tr>
-        <tr><td>07</td><td>Node.js</td><td>Entorno de Ejecución</td></tr>
-        <tr><td>08</td><td>Express.js</td><td>Framework Backend</td></tr>
-        <tr><td>09</td><td>Django</td><td>Framework Backend</td></tr>
-        <tr><td>10</td><td>Laravel</td><td>Framework Backend</td></tr>
-        <tr><td>11</td><td>Bootstrap</td><td>Framework CSS</td></tr>
-        <tr><td>12</td><td>Tailwind CSS</td><td>Framework CSS</td></tr>
-        <tr><td>13</td><td>Docker</td><td>Contenedores</td></tr>
-        <tr><td>14</td><td>Postman</td><td>Pruebas de API</td></tr>
-        <tr><td>15</td><td>Figma</td><td>Diseño UI/UX</td></tr>
-        <tr><td>16</td><td>XAMPP</td><td>Servidor Local</td></tr>
-        <tr><td>17</td><td>Webpack</td><td>Bundler / Empaquetador</td></tr>
-        <tr><td>18</td><td>Vite</td><td>Build Tool</td></tr>
-        <tr><td>19</td><td>Next.js</td><td>Framework React / SSR</td></tr>
-        <tr><td>20</td><td>Svelte</td><td>Framework Frontend</td></tr>
-      </tbody>
-    </table>
+    <a href="index.html" class="regresar">← Regresar al Inicio</a>
   </section>
 
   <aside>
-    <h3>Notas del Proyecto</h3>
-    <p>
-      Esta página completa la Tarea 01 integrando 2 tablas de 3 columnas por 20 filas (20 registros cada una).
-    </p>
-    <a href="index.html" class="btn-regresar">← Regresar al Inicio</a>
+    <h3>Información</h3>
+    <p>Ejemplo de maquetación de tablas responsivas utilizando las etiquetas <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> y <code>&lt;td&gt;</code>.</p>
   </aside>
 
   <footer>
     <h4>Enlaces de Interés</h4>
     <ul>
       <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
-      <li><a href="https://github.com/" target="_blank">Mi Repositorio GitHub</a></li>
+      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
     </ul>
   </footer>
 
