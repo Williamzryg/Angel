@@ -1,237 +1,227 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Bienvenidos</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #222;
-        background: linear-gradient(120deg, #ffbe0b, #ff006e, #8338ec, #3a86ff, #ffbe0b) fixed;
-        background-size: 300% 300%;
-        display: grid;
-        grid-template-areas:
-          "header header"
-          "nav nav"
-          "section aside"
-          "footer footer";
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 10px;
-      }
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Proyecto Web HTML y CSS</title>
 
-      header {
-        grid-area: header;
-        background: linear-gradient(90deg, #8338ec, #ff006e, #fb5607, #8338ec);
-        background-size: 250% 100%;
-        color: #ffffff;
-        border-bottom: 5px solid #ffbe0b;
-        text-align: center;
-        padding: 20px;
-      }
+<style>
 
-      nav {
-        grid-area: nav;
-        background-color: #10002b;
-        border: 3px solid #3a86ff;
-        border-radius: 8px;
-        padding: 10px;
-      }
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    color:#222;
+    background-color:#f4f4f4;
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-        margin: 0;
-        padding: 0;
-      }
+    display:grid;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "section aside"
+    "footer footer";
 
-      .nav-btn {
-        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
-        background-size: 200% 100%;
-        color: #ffffff;
-        border: 2px solid #ffbe0b;
-        padding: 8px 16px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 4px;
-        text-decoration: none;
-      }
+    grid-template-columns:3fr 1fr;
+    grid-template-rows:auto auto 1fr auto;
 
-      .nav-btn:hover {
-        background: #ffbe0b;
-        color: #10002b;
-      }
+    gap:10px;
+}
 
-      section {
-        grid-area: section;
-        background-color: #ffffff;
-        padding: 15px;
-        border: 3px solid #8338ec;
-        border-radius: 8px;
-      }
+header{
+    grid-area:header;
+    background-color:#8338ec;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-bottom:5px solid #ffbe0b;
+}
 
-      article {
-        background-color: #fff5fa;
-        border: 3px solid #3a86ff;
-        border-left: 10px solid #ff006e;
-        border-radius: 6px;
-        padding: 10px;
-        margin-bottom: 15px;
-      }
+header img{
+    max-width:120px;
+}
 
-      article img {
-        width: 100%;
-        max-width: 300px;
-        display: block;
-        margin: 0 auto 10px;
-        border-radius: 10px;
-        border: 3px solid #8338ec;
-      }
+nav{
+    grid-area:nav;
+    background-color:#10002b;
+    padding:10px;
+}
 
-      aside {
-        grid-area: aside;
-        background: linear-gradient(160deg, #ffbe0b, #fb5607);
-        color: #3a1200;
-        border: 3px solid #ff006e;
-        border-radius: 8px;
-        padding: 15px;
-      }
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:0;
+    padding:0;
+}
 
-      footer {
-        grid-area: footer;
-        background: linear-gradient(90deg, #10002b, #8338ec);
-        color: #ffffff;
-        border-top: 5px solid #ffbe0b;
-        text-align: center;
-        padding: 15px;
-      }
+.nav-btn{
+    background-color:#3a86ff;
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:5px;
+    font-weight:bold;
+}
 
-      footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
+.nav-btn:hover{
+    background-color:#ffbe0b;
+    color:#000;
+}
 
-      footer li {
-        margin: 5px 0;
-      }
+section{
+    grid-area:section;
+    background:white;
+    padding:20px;
+    border:2px solid #8338ec;
+}
 
-      footer a {
-        text-decoration: none;
-        color: #ffbe0b;
-      }
+article{
+    background:#fafafa;
+    border:1px solid #ccc;
+    padding:15px;
+    margin-bottom:20px;
+}
 
-      footer a:hover {
-        text-decoration: underline;
-      }
+article img{
+    width:100%;
+    max-width:300px;
+    display:block;
+    margin:auto;
+}
 
-      /* ===== ANIMACIONES ===== */
-      @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-      @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
-      @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-      @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
-      @keyframes borde { 0%,100% { border-left-color: #ff006e; } 25% { border-left-color: #fb5607; } 50% { border-left-color: #ffbe0b; } 75% { border-left-color: #8338ec; } }
+article h3{
+    text-align:center;
+    color:#8338ec;
+}
 
-      body { animation: fondo 12s ease infinite; }
-      header { animation: fondo 8s ease infinite; }
-      header h1 { animation: brillo 3s ease-in-out infinite; }
-      header img { animation: flotar 3s ease-in-out infinite; }
-      .nav-btn { animation: fondo 4s ease infinite; }
+aside{
+    grid-area:aside;
+    background:#ffe5a5;
+    padding:15px;
+    border:2px solid #ffbe0b;
+}
 
-      nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
-      section { animation-delay: .15s; }
-      aside { animation-delay: .3s; }
-      footer { animation-delay: .5s; }
+footer{
+    grid-area:footer;
+    background:#10002b;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
 
-      article { animation: entrar .8s ease-out backwards, borde 6s linear infinite; }
-      article:nth-child(2) { animation-delay: .25s, 0s; }
-      article:nth-child(3) { animation-delay: .4s, 0s; }
+footer ul{
+    list-style:none;
+    padding:0;
+}
 
-      nav a, footer a { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
-      nav a:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
-      footer a:hover { transform: scale(1.15); color: #fff; }
+footer a{
+    color:#ffbe0b;
+    text-decoration:none;
+}
 
-      article { transition: transform .3s, box-shadow .3s; }
-      article:hover { transform: translateY(-8px) rotate(-.6deg); box-shadow: 0 14px 28px rgba(131,56,236,.45); }
-      article img { transition: transform .5s, box-shadow .5s; }
-      article img:hover { transform: scale(1.12) rotate(3deg); box-shadow: 0 10px 25px rgba(255,0,110,.5); }
+</style>
 
-      aside { transition: transform .3s, box-shadow .3s; }
-      aside:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(251,86,7,.5); }
+</head>
 
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after { animation: none !important; transition: none !important; }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img src="images/logo.png" alt="esto me manda al inicio" />
-      </a>
-      <h1>Q onda bro</h1>
-    </header>
+<body>
 
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="Segunda pagina.html" class="nav-btn">Segunda página</a></li>
-        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera página Web</a></li>
-        <li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta página</a></li>
-        <li><a href="Quinta pagina Web.html" class="nav-btn">Quinta página</a></li>
-      </ul>
-    </nav>
+<header>
 
-    <section>
-      <article>
-        <img src="images/Golde R.png" alt="Golden Retriever" />
-        <p>
-          El Golden Retriever es una de las razas de perros más populares y
-          queridas en todo el mundo, conocida por su carácter amigable, su
-          inteligencia y su hermosa apariencia.
-        </p>
-      </article>
+<a href="index.html">
+<img src="o.png
+</a>
 
-      <article>
-        <img src="images/Feni.png" alt="Fénix" />
-        <p>
-          Es un ave mitológica legendaria que simboliza el renacimiento, la
-          inmortalidad, el ciclo de la vida y la resiliencia frente a la
-          adversidad.
-        </p>
-      </article>
+<h1>Proyecto Web HTML y CSS</h1>
 
-      <article>
-        <img src="images/Camaleo.png" alt="Camaleón" />
-        <p>
-          El camaleón es un reptil escamoso perteneciente a la familia de los
-          camaleónidos, famoso por su capacidad de cambiar de color y sus
-          adaptaciones anatómicas únicas.
-        </p>
-      </article>
-    </section>
+<p>
+Sitio desarrollado para la práctica de HTML, CSS y JavaScript.
+</p>
 
-    <aside>
-      <h3>Notas del curso</h3>
-      <p>
-        Aquí puedes colocar recordatorios, enlaces rápidos o información
-        adicional sobre tus tareas y proyectos.
-      </p>
-    </aside>
+</header>
 
-    <footer>
-      <h4>Enlaces de Interés</h4>
-      <ul>
-        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
-        <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio</a></li>
-        <li><a href="#">Página del Instructor</a></li>
-        <li><a href="#">Repositorio del Instructor</a></li>
-      </ul>
-    </footer>
-  </body>
+<nav>
+
+<ul>
+<li><a href="index.html" class="nav-btn">Inicio</a></li>
+<li>Segunda pagina.htmlSegunda página</a></li>
+<li><a href="Tercera pagina Web.html" ina</a></li>
+<li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta páginata pagina Web.html" class></li>
+</ul>
+
+</nav>
+
+<section>
+
+<article>
+
+<h3>Golden Retriever</h3>
+
+<img srcolde R.png
+
+<p>
+El Golden Retriever es una de las razas de perros más populares del mundo. Se caracteriza por ser amigable, inteligente y fácil de entrenar.
+</p>
+
+</article>
+
+<article>
+
+<h3>Fénix</h3>
+
+<img srceni.png
+
+<p>
+El Fénix es una criatura mitológica asociada con la inmortalidad y el renacimiento. Según la leyenda, resurge de sus propias cenizas.
+</p>
+
+</article>
+
+<article>
+
+<h3>Camaleón</h3>
+
+<img srcamaleo.png
+
+<p>
+El camaleón es un reptil conocido por su capacidad para cambiar de color y adaptarse visualmente al entorno donde se encuentra.
+</p>
+
+</article>
+
+</section>
+
+<aside>
+
+<h3>Información del Proyecto</h3>
+
+<p>
+Este sitio web contiene ejemplos de imágenes, listas, tablas y ejercicios de JavaScript desarrollados para cumplir los requisitos de la actividad académica.
+</p>
+
+</aside>
+
+<footer>
+
+<h4>Enlaces de Interés</h4>
+
+<ul>
+
+<li>
+<a href="https://senati.blackboard.com/" target="_blank">
+Blackboard
+</a>
+</li>
+
+<li>
+<a href="https://github.com/Williamzryg/Angel" target="_blank">
+Mi Repositorio
+</a>
+</li>
+
+</ul>
+
+</footer>
+
+</body>
 </html>
