@@ -1,317 +1,263 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Cuarta Página Web</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #222;
-        background: linear-gradient(120deg, #ffbe0b, #ff006e, #8338ec, #3a86ff, #ffbe0b) fixed;
-        background-size: 300% 300%;
-        display: grid;
-        grid-template-areas:
-          "header header"
-          "nav nav"
-          "section aside"
-          "footer footer";
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 10px;
-      }
+<html lang="es">
 
-      header {
-        grid-area: header;
-        background: linear-gradient(90deg, #8338ec, #ff006e, #fb5607, #8338ec);
-        background-size: 250% 100%;
-        color: #ffffff;
-        border-bottom: 5px solid #ffbe0b;
-        text-align: center;
-        padding: 20px;
-      }
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios JavaScript</title>
 
-      nav {
-        grid-area: nav;
-        background-color: #10002b;
-        border: 3px solid #3a86ff;
-        border-radius: 8px;
-        padding: 10px;
-      }
+<style>
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin: 0;
-        padding: 0;
-      }
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    background-color:#f4f4f4;
+    color:#222;
 
-      .nav-btn {
-        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
-        background-size: 200% 100%;
-        color: #ffffff;
-        border: 2px solid #ffbe0b;
-        padding: 8px 16px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 4px;
-        text-decoration: none;
-      }
+    display:grid;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "section aside"
+    "footer footer";
 
-      .nav-btn:hover {
-        background: #ffbe0b;
-        color: #10002b;
-      }
+    grid-template-columns:3fr 1fr;
+    gap:10px;
+}
 
-      section {
-        grid-area: section;
-        background-color: #ffffff;
-        padding: 15px;
-        border: 3px solid #8338ec;
-        border-radius: 8px;
-      }
+header{
+    grid-area:header;
+    background-color:#8338ec;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-bottom:5px solid #ffbe0b;
+}
 
-      section h2 {
-        margin-top: 0;
-        color: #8338ec;
-      }
+header img{
+    max-width:120px;
+}
 
-      /* Contenedor horizontal de botones */
-      .button-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        margin: 25px 0;
-        padding: 15px;
-        background-color: #f0f4f8;
-        border-radius: 8px;
-        border: 1px solid #d0d7de;
-      }
+nav{
+    grid-area:nav;
+    background-color:#10002b;
+    padding:10px;
+}
 
-      .action-btn {
-        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
-        background-size: 200% 100%;
-        color: #ffffff;
-        border: 2px solid #ffbe0b;
-        padding: 10px 20px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 6px;
-        cursor: pointer;
-        text-align: center;
-      }
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:0;
+    padding:0;
+}
 
-      aside {
-        grid-area: aside;
-        background: linear-gradient(160deg, #ffbe0b, #fb5607);
-        color: #3a1200;
-        border: 3px solid #ff006e;
-        border-radius: 8px;
-        padding: 15px;
-      }
+.nav-btn{
+    background-color:#3a86ff;
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:5px;
+    font-weight:bold;
+}
 
-      footer {
-        grid-area: footer;
-        background: linear-gradient(90deg, #10002b, #8338ec);
-        color: #ffffff;
-        border-top: 5px solid #ffbe0b;
-        text-align: center;
-        padding: 15px;
-      }
+.nav-btn:hover{
+    background-color:#ffbe0b;
+    color:black;
+}
 
-      footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
+section{
+    grid-area:section;
+    background:white;
+    padding:20px;
+    border:2px solid #8338ec;
+}
 
-      footer li {
-        margin: 5px 0;
-      }
+section h2{
+    color:#8338ec;
+}
 
-      footer a {
-        text-decoration: none;
-        color: #ffbe0b;
-      }
+.button-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    justify-content:center;
+    margin-top:20px;
+}
 
-      footer a:hover {
-        text-decoration: underline;
-      }
+.action-btn{
+    background-color:#3a86ff;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
 
-      .regresar {
-        display: block;
-        text-align: center;
-        margin: 25px auto 0;
-        font-weight: bold;
-        color: #ffffff;
-        background-color: #ff006e;
-        text-decoration: none;
-        border: 3px solid #ffbe0b;
-        padding: 10px 24px;
-        border-radius: 30px;
-        width: fit-content;
-      }
+.action-btn:hover{
+    background-color:#8338ec;
+}
 
-      .regresar:hover {
-        background-color: #ffbe0b;
-        color: #10002b;
-      }
+#textoEditable{
+    background:#e9d8fd;
+    padding:15px;
+    border-radius:5px;
+    text-align:center;
+}
 
-      /* ===== ANIMACIONES ===== */
-      @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-      @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
-      @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-      @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
-      @keyframes latido { 0% { box-shadow: 0 0 0 0 rgba(255,0,110,.8); } 70% { box-shadow: 0 0 0 18px rgba(255,0,110,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,110,0); } }
+aside{
+    grid-area:aside;
+    background:#ffe5a5;
+    padding:15px;
+    border:2px solid #ffbe0b;
+}
 
-      body { animation: fondo 12s ease infinite; }
-      header { animation: fondo 8s ease infinite; }
-      header h1 { animation: brillo 3s ease-in-out infinite; }
-      header img { animation: flotar 3s ease-in-out infinite; }
-      .nav-btn { animation: fondo 4s ease infinite; }
-      .action-btn { animation: fondo 4s ease infinite; }
+footer{
+    grid-area:footer;
+    background:#10002b;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
 
-      nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
-      section { animation-delay: .15s; }
-      aside { animation-delay: .3s; }
-      footer { animation-delay: .5s; }
+footer ul{
+    list-style:none;
+    padding:0;
+}
 
-      nav a, footer a, .action-btn { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
-      nav a:hover, .action-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
-      footer a:hover { transform: scale(1.15); color: #fff; }
+footer a{
+    color:#ffbe0b;
+    text-decoration:none;
+}
 
-      aside { transition: transform .3s, box-shadow .3s; }
-      aside:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(251,86,7,.5); }
+.regresar{
+    display:block;
+    width:200px;
+    text-align:center;
+    margin:25px auto;
+    padding:10px;
+    background:#8338ec;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+}
 
-      .regresar { animation: latido 2s infinite; transition: transform .25s, background-color .25s; }
-      .regresar:hover { transform: scale(1.12); animation: none; }
+</style>
 
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after { animation: none !important; transition: none !important; }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img src="images/logo.png" alt="esto me manda al inicio" />
-      </a>
-      <h1>Cuarta Página Web</h1>
-    </header>
+</head>
 
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="Segunda pagina.html" class="nav-btn">Segunda página</a></li>
-        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera página Web</a></li>
-        <li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta página</a></li>
-      </ul>
-    </nav>
+<body>
 
-    <section>
-      <h2>Botones Interactivos</h2>
-      <p>Haz clic en cualquier botón para ver su función o presiona la tecla <strong>F4</strong> para renombrar el <strong>boton 1</strong>.</p>
+<header>
 
-      <div class="button-container">
-        <button class="action-btn" onclick="mensajeHazClic()">
-          Haz Clic
-        </button>
+<a href="index.html">
+<img src="images/logo
+<h1>Ejercicios JavaScript</h1>
 
-        <button class="action-btn" onclick="calcularMultiplicacion()">
-          multiplicar
-        </button>
+</header>
 
-        <button id="btnDinamico" class="action-btn" onclick="mensajeBoton1()">
-          boton 1
-        </button>
+<nav>
 
-        <button class="action-btn" onclick="mensajeBoton2()">
-          boton 2
-        </button>
+<ul>
+<li><a href="index.html" class="nav-btn">Inicio</a></li>
+<li>Segunda pagina.htmlSegunda Página</a></li>
+<li><a href="Tercera pagina Web.html" class="nav->
+<li><uarta pagina Web.htmlCuarta Página</a></li>
+<li><a href="Quinta pagina Web.html" class></li>
+</ul>
 
-        <button class="action-btn" onclick="mensajeBoton3()">
-          boton 3
-        </button>
-      </div>
+</nav>
 
-      <a href="index.html" class="regresar">Regresar al Inicio</a>
-    </section>
+<section>
 
-    <aside>
-      <h3>Notas sobre F4</h3>
-      <p>
-        Si presionas la tecla <strong>F4</strong> en tu teclado, se abrirá un cuadro para cambiar el texto del <strong>boton 1</strong>.
-      </p>
-    </aside>
+<h2>Actividad de JavaScript</h2>
 
-    <footer>
-      <h4>Enlaces de Interés</h4>
-      <ul>
-        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
-        <li><a href="#" target="_blank">Mi Repositorio</a></li>
-        <li><a href="#">Página del Instructor</a></li>
-        <li><a href="#">Repositorio del Instructor</a></li>
-      </ul>
-    </footer>
+<p>
+Esta página contiene los ejercicios solicitados en la tarea.
+</p>
 
-    <script>
-      // Funciones individuales para cada botón
-      function mensajeHazClic() {
-        alert("¡Hola! Gracias por interactuar con este botón.");
-      }
+<h3 id="textoEditable">
+Texto original de la página
+</h3>
 
-      function calcularMultiplicacion() {
-        var num1 = prompt("Ingresa el primer número:");
-        var num2 = prompt("Ingresa el segundo número:");
-        
-        if (num1 !== null && num2 !== null && num1 !== "" && num2 !== "") {
-          var n1 = parseFloat(num1);
-          var n2 = parseFloat(num2);
-          if (!isNaN(n1) && !isNaN(n2)) {
-            var resultado = n1 * n2;
-            alert("El resultado de multiplicar " + n1 + " x " + n2 + " es: " + resultado);
-          } else {
-            alert("Por favor ingresa números válidos.");
-          }
-        }
-      }
+<div class="button-container">
 
-      function mensajeBoton1() {
-        var textoBoton = document.getElementById("btnDinamico").innerText;
-        alert("Has activado el primer botón dinámico con el nombre: '" + textoBoton + "'");
-      }
+<button class="action-btn" onclick="convertirDolares()">
+Convertir Dólares
+</button>
 
-      function mensajeBoton2() {
-        var confirmacion = confirm("¿Deseas confirmar la acción del Botón 2?");
-        if (confirmacion) {
-          alert("Has aceptado la confirmación.");
-        } else {
-          alert("Cancelaste la operación.");
-        }
-      }
+<button class="action-btn" onclick="calcularTerreno()">
+Área y Perímetro
+</button>
 
-      function mensajeBoton3() {
-        var horaActual = new Date().toLocaleTimeString();
-        alert("Sistema activo. Hora local de la consulta: " + horaActual);
-      }
+<button class="action-btn" onclick="cambiarTexto()">
+Cambiar Texto
+</button>
 
-      // Evento para capturar tecla F4
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "F4") {
-          event.preventDefault();
-          var nuevoTexto = prompt("Ingresa el nuevo texto para el boton 1:");
-          if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
-            document.getElementById("btnDinamico").innerText = nuevoTexto;
-            alert("¡El nombre del boton 1 ha sido actualizado!");
-          }
-        }
-      });
-    </script>
-  </body>
-</html>
+<button class="action-btn" onclick="mostrarMensaje()">
+Mensaje
+</button>
+
+</div>
+
+<a href="index.html" class="regresar">
+Regresar al Inicio
+</a>
+
+</section>
+
+<aside>
+
+<h3>Información</h3>
+
+<p>
+En esta página se desarrollan los ejercicios de JavaScript:
+conversión de dólares, cálculo del área y perímetro
+de un terreno y cambio dinámico de texto.
+</p>
+
+</aside>
+
+<footer>
+
+<h4>Enlaces de Interés</h4>
+
+<ul>
+
+<li>
+<a href="https://senati.blackboard.com/" target="_blank">
+Blackboard
+</a>
+</li>
+
+<li>
+<a href="https://github.com/Williamzryg/Angel" target="_blank">
+Mi Repositorio
+</a>
+</li>
+
+</ul>
+
+</footer>
+
+<script>
+
+function convertirDolares(){
+
+    let dolares =
+    parseFloat(
+    prompt("Ingrese la cantidad de dólares:")
+    );
+
+    let cambio =
+    parseFloat(
+    prompt("Ingrese el tipo de cambio:")
+    );
+
+    if(!isNaN(dolares) && !isNaN(cambio)){
+
+        let resultado =
+        dolares * cambio
