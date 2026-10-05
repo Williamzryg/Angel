@@ -1,74 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index.html</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #222; display: grid; grid-template-areas: "header header" "nav nav" "section aside" "footer footer"; grid-template-columns: 3fr 1fr; gap: 10px; }
-        header { grid-area: header; background-color: #8338ec; color: white; text-align: center; padding: 20px; border-bottom: 5px solid #ffbe0b; }
-        nav { grid-area: nav; background-color: #10002b; padding: 10px; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; margin: 0; padding: 0; flex-wrap: wrap; }
-        .nav-btn { background-color: #3a86ff; color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px; font-weight: bold; }
-        .nav-btn:hover { background-color: #ffbe0b; color: black; }
-        section { grid-area: section; background: white; padding: 20px; border: 2px solid #8338ec; }
-        aside { grid-area: aside; background: #ffe5a5; padding: 15px; border: 2px solid #ffbe0b; }
-        footer { grid-area: footer; background: #10002b; color: white; text-align: center; padding: 15px; }
-        footer a { color: #ffbe0b; text-decoration: none; }
-        .card { text-align: center; margin-bottom: 25px; border-bottom: 1px solid #ccc; padding-bottom: 15px; }
-        .card img { width: 250px; max-width: 100%; border-radius: 8px; border: 2px solid #8338ec; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio - Tarea 01</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Estilos generales y Grid Layout */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333333;
+      line-height: 1.6;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "section aside"
+        "footer footer";
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Encabezado */
+    header {
+      grid-area: header;
+      background-color: #1e3a8a; /* Azul marino */
+      color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      border-bottom: 5px solid #3b82f6;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    /* Navegación */
+    nav {
+      grid-area: nav;
+      background-color: #0f172a; /* Azul oscuro */
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      background-color: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-btn:hover {
+      background-color: #3b82f6;
+    }
+
+    /* Sección Principal / Galería */
+    section {
+      grid-area: section;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    section h2 {
+      color: #1e3a8a;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+    }
+
+    /* Tarjetas de Contenido (Cumple con Tarea 01: Foto + Título h3 + Párrafo abajo) */
+    .card {
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #1e293b;
+      margin-bottom: 12px;
+      font-size: 1.25rem;
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 6px;
+      border: 2px solid #94a3b8;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #475569;
+      font-size: 0.95rem;
+      text-align: justify;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Barra Lateral */
+    aside {
+      grid-area: aside;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      height: fit-content;
+    }
+
+    aside h3 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
+
+    aside p {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    /* Pie de página */
+    footer {
+      grid-area: footer;
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    footer h4 {
+      margin-bottom: 10px;
+      color: #93c5fd;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Adaptabilidad Móvil */
+    @media (max-width: 768px) {
+      body {
+        grid-template-areas:
+          "header"
+          "nav"
+          "section"
+          "aside"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <header>
     <h1>Proyecto Web HTML y CSS</h1>
-</header>
+  </header>
 
-<nav>
+  <nav>
     <ul>
-        <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="segunda.html" class="nav-btn">Segunda Página</a></li>
-        <li><a href="tercera.html" class="nav-btn">Tercera Página</a></li>
-        <li><a href="cuarta.html" class="nav-btn">Cuarta Página</a></li>
-        <li><a href="quinta.html" class="nav-btn">Quinta Página</a></li>
+      <li><a href="index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+      <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
     </ul>
-</nav>
+  </nav>
 
-<section>
+  <section>
     <h2>Tarea 01 - Galería de Fotos</h2>
-    
-    <div class="card">
-        <h3>Golden Retriever</h3>
-        <img src="images/Golde R.png" alt="Golden Retriever">
-        <p>Un perro leal, amigable y excelente compañero para la familia.</p>
-    </div>
 
-    <div class="card">
-        <h3>Ave Fénix</h3>
-        <img src="images/Feni.png" alt="Fénix">
-        <p>Una criatura mitológica que renace de sus propias cenizas con esplendor.</p>
-    </div>
+    <article class="card">
+      <h3>Golden Retriever</h3>
+      <img src="images/Golde R.png" alt="Golden Retriever">
+      <p>
+        El Golden Retriever es una de las razas de perros más populares y queridas en todo el mundo, conocida por su carácter amigable, su inteligencia y su excelente convivencia con las familias.
+      </p>
+    </article>
 
-    <div class="card">
-        <h3>Camaleón</h3>
-        <img src="images/Camaleo.png" alt="Camaleón">
-        <p>Reptil fascinante capaz de cambiar de color para camuflarse en su entorno.</p>
-    </div>
-</section>
+    <article class="card">
+      <h3>Ave Fénix</h3>
+      <img src="images/Feni.png" alt="Ave Fénix">
+      <p>
+        Es un ave mitológica legendaria que simboliza el renacimiento, la inmortalidad, el ciclo de la vida y la resiliencia frente a la adversidad.
+      </p>
+    </article>
 
-<aside>
-    <h3>Información</h3>
-    <p>Bienvenido al portal principal de tareas y ejercicios interactivos desarrollados en HTML, CSS y JavaScript.</p>
-</aside>
+    <article class="card">
+      <h3>Camaleón</h3>
+      <img src="images/Camaleo.png" alt="Camaleón">
+      <p>
+        El camaleón es un reptil escamoso perteneciente a la familia de los camaleónidos, famoso por su capacidad de cambiar de color y sus adaptaciones anatómicas únicas para cazar insectos.
+      </p>
+    </article>
+  </section>
 
-<footer>
+  <aside>
+    <h3>Notas del Curso</h3>
+    <p>
+      Bienvenido al portal principal de proyectos. En esta sección se muestran las fotos y descripciones solicitadas en la Tarea 01.
+    </p>
+  </aside>
+
+  <footer>
     <h4>Enlaces de Interés</h4>
     <ul>
-        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
-        <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
+      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
+      <li><a href="https://github.com/" target="_blank">Mi Repositorio GitHub</a></li>
     </ul>
-</footer>
+  </footer>
 
 </body>
 </html>
