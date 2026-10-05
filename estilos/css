@@ -1,5 +1,4 @@
-/* 1. RESET Y CONFIGURACIÓN BASE*/
-
+/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,9 +6,9 @@
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-  background-color: #f4f6f9;
-  color: #333333;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222222;
   line-height: 1.6;
   display: grid;
   grid-template-areas:
@@ -18,28 +17,21 @@ body {
     "section aside"
     "footer footer";
   grid-template-columns: 3fr 1fr;
-  gap: 20px;
-  padding: 20px;
+  gap: 10px;
+  padding: 10px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Scroll suave para navegación interna */
-html {
-  scroll-behavior: smooth;
-}
-
-/* 2. ENCABEZADO (HEADER)*/
-
+/* Encabezado con Morado y Amarillo */
 header {
   grid-area: header;
-  background-color: #1e3a8a; /* Azul Marino Profesional */
+  background-color: #8338ec; /* Morado Original */
   color: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
   text-align: center;
-  border-bottom: 5px solid #3b82f6;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-bottom: 5px solid #ffbe0b; /* Amarillo Original */
+  border-radius: 5px;
 }
 
 header img {
@@ -48,120 +40,67 @@ header img {
   margin-bottom: 10px;
 }
 
-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-header p, header h3 {
-  color: #e2e8f0;
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-/* 3. NAVEGACIÓN (NAV)*/
-
+/* Navegación Oscura con Botones Azules */
 nav {
   grid-area: nav;
-  background-color: #0f172a; /* Azul Oscuro */
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  background-color: #10002b; /* Azul/Morado Oscuro Original */
+  padding: 10px;
+  border-radius: 5px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
 .nav-btn {
-  background-color: #2563eb;
+  background-color: #3a86ff; /* Azul Original */
   color: #ffffff;
   text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .nav-btn:hover {
-  background-color: #3b82f6;
-  transform: translateY(-2px);
+  background-color: #ffbe0b; /* Amarillo al pasar el mouse */
+  color: #000000;
 }
 
-/* 4. SECCIÓN PRINCIPAL (SECTION, ARTICLES & TABLAS)*/
-
+/* Sección Principal con Borde Morado */
 section {
   grid-area: section;
   background-color: #ffffff;
-  padding: 25px;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border: 2px solid #8338ec; /* Borde Morado Original */
+  border-radius: 5px;
 }
 
 section h2 {
-  color: #1e3a8a;
+  color: #8338ec; /* Texto Morado Original */
   margin-bottom: 15px;
-  font-size: 1.4rem;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 6px;
 }
 
+/* Artículos dentro de Section */
 article {
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #e2e8f0;
-  border-left: 5px solid #2563eb;
-  border-radius: 8px;
+  background: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-article img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  display: block;
-  margin: 15px auto;
-  border: 2px solid #cbd5e1;
+article h3 {
+  color: #8338ec;
+  margin-bottom: 8px;
 }
 
-/* Estilos de Tablas */
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 25px;
-  font-size: 0.9rem;
-}
-
-th, td {
-  border: 1px solid #cbd5e1;
-  padding: 10px 12px;
-  text-align: center;
-}
-
-th {
-  background-color: #1e3a8a;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-tr:nth-child(even) {
-  background-color: #f8fafc;
-}
-
-tr:hover {
-  background-color: #f1f5f9;
-}
-
-/* 5. FORMULARIOS Y ELEMENTOS INTERACTIVOS*/
-
+/* Formulario */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -175,64 +114,42 @@ tr:hover {
 }
 
 .form-group label {
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #1e293b;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 10px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  padding: 10px;
+  border: 1px solid #999999;
+  border-radius: 5px;
   font-family: inherit;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
+/* Botones con Estilo Original */
 .button-container {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin: 20px 0;
-  justify-content: flex-start;
+  margin-top: 20px;
 }
 
 .action-btn {
-  background-color: #2563eb;
+  background-color: #3a86ff; /* Azul Original */
   color: #ffffff;
   border: none;
   padding: 10px 18px;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-weight: bold;
+  transition: background-color 0.2s;
 }
 
 .action-btn:hover {
-  background-color: #1e3a8a;
-  transform: translateY(-1px);
+  background-color: #8338ec; /* Morado al pasar el mouse */
 }
 
-#textoEditable {
-  background-color: #eff6ff;
-  color: #1e40af;
-  padding: 18px;
-  border-radius: 8px;
-  text-align: center;
-  border: 2px dashed #93c5fd;
-  margin: 20px 0;
-  font-size: 1.1rem;
-}
-
+/* Contenedores de Imágenes */
 .imagen-container {
   text-align: center;
   margin: 25px 0;
@@ -242,98 +159,97 @@ tr:hover {
   gap: 15px;
 }
 
-.imagen-container img {
+.imagen-container img,
+article img {
   width: 300px;
-  height: 250px;
-  object-fit: cover;
   max-width: 100%;
-  border: 3px solid #1e3a8a;
+  border: 3px solid #8338ec; /* Borde Morado Original */
   border-radius: 10px;
 }
 
+/* Botón Regresar al Inicio */
 .regresar {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 18px;
-  background-color: #0f172a;
-  color: #ffffff;
+  display: block;
+  width: 220px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s ease;
+  background-color: #8338ec; /* Morado Original */
+  color: #ffffff;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .regresar:hover {
-  background-color: #334155;
+  background-color: #3a86ff;
 }
 
-/* 6. BARRA LATERAL (ASIDE)*/
-
+/* Barra Lateral (Aside) con fondo Amarillo claro y Borde Amarillo */
 aside {
   grid-area: aside;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #e2e8f0;
+  background-color: #ffe5a5; /* Fondo Amarillo Claro Original */
+  padding: 15px;
+  border: 2px solid #ffbe0b; /* Borde Amarillo Original */
+  border-radius: 5px;
   height: fit-content;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 aside h3 {
-  color: #1e3a8a;
-  margin-bottom: 12px;
-  font-size: 1.15rem;
-  border-bottom: 2px solid #e2e8f0;
-  padding-bottom: 4px;
+  color: #10002b;
+  margin-bottom: 10px;
 }
 
-aside p {
-  color: #64748b;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-
-/* 7. PIE DE PÁGINA (FOOTER)*/
-
+/* Pie de Página (Footer) */
 footer {
   grid-area: footer;
-  background-color: #0f172a;
+  background-color: #10002b; /* Fondo Oscuro Original */
   color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
   text-align: center;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 footer h4 {
-  margin-bottom: 10px;
-  color: #93c5fd;
-  font-size: 1rem;
+  margin-bottom: 8px;
 }
 
 footer ul {
   list-style: none;
+  padding: 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 15px;
 }
 
 footer a {
-  color: #38bdf8;
+  color: #ffbe0b; /* Enlaces en Amarillo Original */
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
 }
 
 footer a:hover {
   text-decoration: underline;
-  color: #7dd3fc;
 }
 
-/* 8. ADAPTABILIDAD PARA MÓVILES (RESPONSIVE DESIGN)*/
+/* Estilo para Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
 
+th, td {
+  border: 1px solid #8338ec;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #8338ec;
+  color: #ffffff;
+}
+
+/* Responsivo para celulares */
 @media (max-width: 768px) {
   body {
     grid-template-areas:
@@ -343,24 +259,5 @@ footer a:hover {
       "aside"
       "footer";
     grid-template-columns: 1fr;
-    padding: 10px;
-    gap: 15px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .nav-btn {
-    text-align: center;
-  }
-
-  .button-container {
-    flex-direction: column;
-  }
-
-  .action-btn {
-    width: 100%;
   }
 }
