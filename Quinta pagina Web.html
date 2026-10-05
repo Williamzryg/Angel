@@ -1,343 +1,410 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Quinta Página Web</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        color: #222;
-        background: linear-gradient(120deg, #ffbe0b, #ff006e, #8338ec, #3a86ff, #ffbe0b) fixed;
-        background-size: 300% 300%;
-        display: grid;
-        grid-template-areas:
-          "header header"
-          "nav nav"
-          "section aside"
-          "footer footer";
-        grid-template-columns: 3fr 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        gap: 10px;
-      }
+<html lang="es">
 
-      header {
-        grid-area: header;
-        background: linear-gradient(90deg, #8338ec, #ff006e, #fb5607, #8338ec);
-        background-size: 250% 100%;
-        color: #ffffff;
-        border-bottom: 5px solid #ffbe0b;
-        text-align: center;
-        padding: 20px;
-      }
+<head>
+<meta charset="UTF-8">
+<title>Formulario e Interacción Web</title>
 
-      nav {
-        grid-area: nav;
-        background-color: #10002b;
-        border: 3px solid #3a86ff;
-        border-radius: 8px;
-        padding: 10px;
-      }
+<style>
 
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
-        margin: 0;
-        padding: 0;
-      }
+body{
+    font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    background-color:#f4f4f4;
+    color:#222;
 
-      .nav-btn {
-        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
-        background-size: 200% 100%;
-        color: #ffffff;
-        border: 2px solid #ffbe0b;
-        padding: 8px 16px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 4px;
-        text-decoration: none;
-      }
+    display:grid;
+    grid-template-areas:
+    "header header"
+    "nav nav"
+    "section aside"
+    "footer footer";
 
-      .nav-btn:hover {
-        background: #ffbe0b;
-        color: #10002b;
-      }
+    grid-template-columns:3fr 1fr;
+    gap:10px;
+}
 
-      section {
-        grid-area: section;
-        background-color: #ffffff;
-        padding: 20px;
-        border: 3px solid #8338ec;
-        border-radius: 8px;
-      }
+header{
+    grid-area:header;
+    background-color:#8338ec;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-bottom:5px solid #ffbe0b;
+}
 
-      section h2 {
-        margin-top: 0;
-        color: #8338ec;
-      }
+header img{
+    max-width:120px;
+}
 
-      /* Estilos para el formulario interactivo */
-      .form-container {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 15px;
-      }
+nav{
+    grid-area:nav;
+    background-color:#10002b;
+    padding:10px;
+}
 
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-      }
+nav ul{
+    list-style:none;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:0;
+    padding:0;
+}
 
-      .form-group label {
-        font-weight: bold;
-        color: #10002b;
-      }
+.nav-btn{
+    background-color:#3a86ff;
+    color:white;
+    text-decoration:none;
+    padding:10px 15px;
+    border-radius:5px;
+    font-weight:bold;
+}
 
-      .form-group input,
-      .form-group textarea {
-        padding: 10px;
-        border: 2px solid #8338ec;
-        border-radius: 6px;
-        font-size: 1rem;
-        outline: none;
-        transition: border-color 0.3s;
-      }
+.nav-btn:hover{
+    background-color:#ffbe0b;
+    color:black;
+}
 
-      .form-group input:focus,
-      .form-group textarea:focus {
-        border-color: #ff006e;
-      }
+section{
+    grid-area:section;
+    background:white;
+    padding:20px;
+    border:2px solid #8338ec;
+}
 
-      .button-container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        margin: 20px 0 10px 0;
-        padding: 15px;
-        background-color: #f0f4f8;
-        border-radius: 8px;
-        border: 1px solid #d0d7de;
-      }
+section h2{
+    color:#8338ec;
+}
 
-      .action-btn {
-        background: linear-gradient(90deg, #3a86ff, #8338ec, #3a86ff);
-        background-size: 200% 100%;
-        color: #ffffff;
-        border: 2px solid #ffbe0b;
-        padding: 10px 20px;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 6px;
-        cursor: pointer;
-        text-align: center;
-      }
+.form-container{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:15px;
+}
 
-      aside {
-        grid-area: aside;
-        background: linear-gradient(160deg, #ffbe0b, #fb5607);
-        color: #3a1200;
-        border: 3px solid #ff006e;
-        border-radius: 8px;
-        padding: 15px;
-      }
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
 
-      footer {
-        grid-area: footer;
-        background: linear-gradient(90deg, #10002b, #8338ec);
-        color: #ffffff;
-        border-top: 5px solid #ffbe0b;
-        text-align: center;
-        padding: 15px;
-      }
+.form-group label{
+    font-weight:bold;
+    margin-bottom:5px;
+}
 
-      footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
+.form-group input,
+.form-group textarea{
+    padding:10px;
+    border:1px solid #999;
+    border-radius:5px;
+}
 
-      footer li {
-        margin: 5px 0;
-      }
+.button-container{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
 
-      footer a {
-        text-decoration: none;
-        color: #ffbe0b;
-      }
+.action-btn{
+    background-color:#3a86ff;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
 
-      footer a:hover {
-        text-decoration: underline;
-      }
+.action-btn:hover{
+    background-color:#8338ec;
+}
 
-      .regresar {
-        display: block;
-        text-align: center;
-        margin: 25px auto 0;
-        font-weight: bold;
-        color: #ffffff;
-        background-color: #ff006e;
-        text-decoration: none;
-        border: 3px solid #ffbe0b;
-        padding: 10px 24px;
-        border-radius: 30px;
-        width: fit-content;
-      }
+.imagen-container{
+    text-align:center;
+    margin:25px 0;
+}
 
-      .regresar:hover {
-        background-color: #ffbe0b;
-        color: #10002b;
-      }
+.imagen-container img{
+    width:300px;
+    max-width:100%;
+    border:3px solid #8338ec;
+    border-radius:10px;
+}
 
-      /* ===== ANIMACIONES ===== */
-      @keyframes fondo { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-      @keyframes entrar { from { opacity: 0; transform: translateY(40px) scale(.96); } to { opacity: 1; transform: none; } }
-      @keyframes flotar { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-      @keyframes brillo { 0%,100% { text-shadow: 0 0 6px rgba(255,255,255,.4); } 50% { text-shadow: 0 0 22px #fff, 0 0 34px #ffbe0b; } }
-      @keyframes latido { 0% { box-shadow: 0 0 0 0 rgba(255,0,110,.8); } 70% { box-shadow: 0 0 0 18px rgba(255,0,110,0); } 100% { box-shadow: 0 0 0 0 rgba(255,0,110,0); } }
+aside{
+    grid-area:aside;
+    background:#ffe5a5;
+    padding:15px;
+    border:2px solid #ffbe0b;
+}
 
-      body { animation: fondo 12s ease infinite; }
-      header { animation: fondo 8s ease infinite; }
-      header h1 { animation: brillo 3s ease-in-out infinite; }
-      header img { animation: flotar 3s ease-in-out infinite; }
-      .nav-btn { animation: fondo 4s ease infinite; }
-      .action-btn { animation: fondo 4s ease infinite; }
+footer{
+    grid-area:footer;
+    background:#10002b;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
 
-      nav, section, aside, footer { animation: entrar .8s ease-out backwards; }
-      section { animation-delay: .15s; }
-      aside { animation-delay: .3s; }
-      footer { animation-delay: .5s; }
+footer ul{
+    list-style:none;
+    padding:0;
+}
 
-      nav a, footer a, .action-btn { display: inline-block; transition: transform .25s, box-shadow .25s, background .25s, color .25s; }
-      nav a:hover, .action-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 8px 18px rgba(255,0,110,.6); }
-      footer a:hover { transform: scale(1.15); color: #fff; }
+footer a{
+    color:#ffbe0b;
+    text-decoration:none;
+}
 
-      aside { transition: transform .3s, box-shadow .3s; }
-      aside:hover { transform: scale(1.03); box-shadow: 0 10px 24px rgba(251,86,7,.5); }
+.regresar{
+    display:block;
+    width:220px;
+    text-align:center;
+    margin:20px auto;
+    padding:10px;
+    text-decoration:none;
+    background:#8338ec;
+    color:white;
+    border-radius:5px;
+}
 
-      .regresar { animation: latido 2s infinite; transition: transform .25s, background-color .25s; }
-      .regresar:hover { transform: scale(1.12); animation: none; }
+</style>
 
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after { animation: none !important; transition: none !important; }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <a href="index.html">
-        <img src="images/logo.png" alt="esto me manda al inicio" />
-      </a>
-      <h1>Quinta Página Web</h1>
-    </header>
+</head>
 
-    <nav>
-      <ul>
-        <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="Segunda pagina.html" class="nav-btn">Segunda página</a></li>
-        <li><a href="Tercera pagina Web.html" class="nav-btn">Tercera página Web</a></li>
-        <li><a href="Cuarta pagina Web.html" class="nav-btn">Cuarta página</a></li>
-        <li><a href="Quinta pagina Web.html" class="nav-btn">Quinta página</a></li>
-      </ul>
-    </nav>
+<body>
 
-    <section>
-      <h2 id="tituloDinamico">Formulario de Contacto</h2>
-      <p>Completa el formulario para enviar tus comentarios o presiona la tecla <strong>F4</strong> para cambiar el título principal.</p>
+<header>
 
-      <form id="contactForm" onsubmit="event.preventDefault(); enviarFormulario();">
-        <div class="form-container">
-          <div class="form-group">
-            <label for="nombre">Nombre Completo:</label>
-            <input type="text" id="nombre" placeholder="Ingresa tu nombre..." required />
-          </div>
+<a href="index.html">
+<img src="images</a>
 
-          <div class="form-group">
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" placeholder="ejemplo@correo.com" required />
-          </div>
+<h1>Formulario e Interacción Web</h1>
 
-          <div class="form-group">
-            <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-          </div>
-        </div>
+</header>
 
-        <div class="button-container">
-          <button type="submit" class="action-btn">
-            Enviar Datos
-          </button>
+<nav>
 
-          <button type="button" class="action-btn" onclick="limpiarFormulario()">
-            Limpiar Formulario
-          </button>
+<ul>
+<li><a href="index.html" class="nav-btn">Inicio</a></li>
+<li>Segunda pagina.htmlSegunda Página</a></li>
+<li><a href="Tercera pagina Web.html" class="nav->
+<li><uarta pagina Web.htmlCuarta Página</a></li>
+<li><ainta pagina Web.htmlQuinta Página</a></li>
+</ul>
 
-          <button type="button" class="action-btn" onclick="saludoEspecial()">
-            Saludo Personalizado
-          </button>
-        </div>
-      </form>
+</nav>
 
-      <a href="index.html" class="regresar">Regresar al Inicio</a>
-    </section>
+<section>
 
-    <aside>
-      <h3>Notas sobre F4</h3>
-      <p>
-        En esta quinta página, presionar la tecla <strong>F4</strong> te permitirá modificar en tiempo real el título principal de la sección.
-      </p>
-    </aside>
+<h2>Formulario de Contacto</h2>
 
-    <footer>
-      <h4>Enlaces de Interés</h4>
-      <ul>
-        <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
-        <li><a href="#" target="_blank">Mi Repositorio</a></li>
-        <li><a href="#">Página del Instructor</a></li>
-        <li><a href="#">Repositorio del Instructor</a></li>
-      </ul>
-    </footer>
+<p>
+Completa los datos solicitados y prueba las funciones de JavaScript.
+</p>
 
-    <script>
-      function enviarFormulario() {
-        var nom = document.getElementById("nombre").value;
-        var mail = document.getElementById("correo").value;
-        alert("¡Gracias " + nom + "! Hemos recibido tu mensaje desde " + mail + ".");
-      }
+<form id="contactForm">
 
-      function limpiarFormulario() {
-        document.getElementById("contactForm").reset();
-        alert("El formulario ha sido limpiado.");
-      }
+<div class="form-container">
 
-      function saludoEspecial() {
-        var nom = document.getElementById("nombre").value;
-        if (nom.trim() !== "") {
-          alert("¡Un saludo especial para ti, " + nom + "!");
-        } else {
-          alert("Por favor escribe tu nombre en el primer campo para saludarte.");
-        }
-      }
+<div class="form-group">
+<label for="nombre">Nombre Completo:</label>
+<input type="text" id="nombre" required>
+</div>
 
-      // Capturar tecla F4 para renombrar el título dinámico
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "F4") {
-          event.preventDefault();
-          var nuevoTitulo = prompt("Ingresa el nuevo título para esta sección:");
-          if (nuevoTitulo !== null && nuevoTitulo.trim() !== "") {
-            document.getElementById("tituloDinamico").innerText = nuevoTitulo;
-            alert("¡El título principal ha sido actualizado!");
-          }
-        }
-      });
-    </script>
-  </body>
+<div class="form-group">
+<label for="correo">Correo Electrónico:</label>
+<input type="email" id="correo" required>
+</div>
+
+<div class="form-group">
+<label for="mensaje">Mensaje:</label>
+<textarea id="mensaje" rows="4" required></textarea>
+</div>
+
+</div>
+
+<div class="button-container">
+
+<button type="button"
+class="action-btn"
+onclick="enviarFormulario()">
+Enviar Datos
+</button>
+
+<button type="button"
+class="action-btn"
+onclick="limpiarFormulario()">
+Limpiar Formulario
+</button>
+
+<button type="button"
+class="action-btn"
+onclick="saludoEspecial()">
+Saludo Personalizado
+</button>
+
+</div>
+
+</form>
+
+<hr>
+
+<h2>Ejercicio 03 - Cambio de Imagen</h2>
+
+<p>
+Presiona el botón para cambiar la imagen de la plantilla.
+</p>
+
+<div class="imagen-container">
+
+<img
+id="imagenDinamica"
+src="images/Golde R.png"
+alt="ss="action-btn"
+onclick="cambiarImagen()">
+
+Cambiar Imagen
+
+</button>
+
+</div>
+
+<a href="index.html" class="regresar">
+Regresar al Inicio
+</a>
+
+</section>
+
+<aside>
+
+<h3>Información</h3>
+
+<p>
+Esta página contiene un formulario interactivo y el ejercicio solicitado de JavaScript para cambiar una imagen de la plantilla.
+</p>
+
+<p>
+Al presionar el botón "Cambiar Imagen", la foto alternará entre el Golden Retriever y el Fénix.
+</p>
+
+</aside>
+
+<footer>
+
+<h4>Enlaces de Interés</h4>
+
+<ul>
+
+<li>
+<a href="https://senati.blackboard.com/" target="_blank">
+Blackboard
+</a>
+</li>
+
+<li>
+<a href="https://github.com/Williamzryg/Angel" target="_blank">
+Mi Repositorio
+</a>
+</li>
+
+</ul>
+
+</footer>
+
+<script>
+
+function enviarFormulario(){
+
+    let nombre =
+    document.getElementById("nombre").value;
+
+    let correo =
+    document.getElementById("correo").value;
+
+    if(nombre !== "" && correo !== ""){
+
+        alert(
+        "Gracias " +
+        nombre +
+        ". Se registró el correo: " +
+        correo
+        );
+
+    }else{
+
+        alert(
+        "Complete los campos obligatorios."
+        );
+
+    }
+}
+
+function limpiarFormulario(){
+
+    document.getElementById(
+    "contactForm"
+    ).reset();
+
+    alert(
+    "Formulario limpiado correctamente."
+    );
+}
+
+function saludoEspecial(){
+
+    let nombre =
+    document.getElementById("nombre").value;
+
+    if(nombre !== ""){
+
+        alert(
+        "Hola " +
+        nombre +
+        ", gracias por visitar la página."
+        );
+
+    }else{
+
+        alert(
+        "Ingrese su nombre para recibir el saludo."
+        );
+
+    }
+
+}
+
+function cambiarImagen(){
+
+    let imagen =
+    document.getElementById(
+    "imagenDinamica"
+    );
+
+    if(
+        imagen.src.includes("Golde")
+    ){
+
+        imagen.src =
+        "images/Feni.png";
+
+    }
+
+    else{
+
+        imagen.src =
+        "images/Golde R.png";
+
+    }
+
+}
+
+</script>
+
+</body>
 </html>
