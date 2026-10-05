@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario e Interacción Web - Quinta Página</title>
+  <title>Ejercicios JavaScript - Cuarta Página Web</title>
   <style>
     /* Reset básico */
     * {
@@ -12,7 +12,7 @@
       padding: 0;
     }
 
-    /* Estilos generales y Grid Layout */
+    /* Estilos generales y Layout Grid */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f4f6f9;
@@ -42,14 +42,9 @@
       border-bottom: 5px solid #3b82f6;
     }
 
-    header img {
-      max-width: 120px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-
     header h1 {
       font-size: 2rem;
+      margin-bottom: 5px;
     }
 
     /* Navegación */
@@ -82,7 +77,7 @@
       background-color: #3b82f6;
     }
 
-    /* Sección Principal */
+    /* Sección Principal y Botones */
     section {
       grid-area: section;
       background-color: #ffffff;
@@ -93,70 +88,40 @@
 
     section h2 {
       color: #1e3a8a;
-      margin-bottom: 12px;
-      font-size: 1.35rem;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
       border-bottom: 2px solid #e2e8f0;
       padding-bottom: 5px;
     }
 
-    section hr {
-      border: 0;
-      border-top: 1px solid #e2e8f0;
-      margin: 30px 0;
+    #textoEditable {
+      background-color: #eff6ff;
+      color: #1e40af;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      border: 2px dashed #93c5fd;
+      margin: 20px 0;
+      font-size: 1.1rem;
     }
 
-    /* Formulario */
-    .form-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group label {
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: #1e293b;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 10px 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-family: inherit;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-    }
-
-    /* Botones */
     .button-container {
       display: flex;
-      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 20px;
+      gap: 15px;
+      justify-content: center;
+      margin: 25px 0;
     }
 
     .action-btn {
       background-color: #2563eb;
-      color: #ffffff;
+      color: white;
       border: none;
-      padding: 10px 18px;
+      padding: 12px 20px;
       border-radius: 6px;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
+      font-weight: bold;
+      font-size: 0.95rem;
       transition: background-color 0.2s;
     }
 
@@ -164,31 +129,12 @@
       background-color: #1e3a8a;
     }
 
-    /* Contenedor de Imagen Dinámica */
-    .imagen-container {
-      text-align: center;
-      margin: 25px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .imagen-container img {
-      width: 300px;
-      height: 250px;
-      object-fit: cover;
-      max-width: 100%;
-      border: 3px solid #1e3a8a;
-      border-radius: 10px;
-    }
-
     .regresar {
       display: inline-block;
       margin-top: 15px;
       padding: 10px 18px;
       background-color: #0f172a;
-      color: #ffffff;
+      color: white;
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
@@ -218,11 +164,10 @@
     aside p {
       color: #64748b;
       font-size: 0.9rem;
-      margin-bottom: 12px;
       line-height: 1.5;
     }
 
-    /* Pie de página */
+    /* Pie de Página */
     footer {
       grid-area: footer;
       background-color: #0f172a;
@@ -272,10 +217,8 @@
 <body>
 
   <header>
-    <a href="index.html">
-      <img src="images/logo.png" alt="Logo Instituto EducaTech">
-    </a>
-    <h1>Formulario e Interacción Web</h1>
+    <h1>Ejercicios JavaScript</h1>
+    <p>Desarrollo de Funciones Interactivas (Tarea 02)</p>
   </header>
 
   <nav>
@@ -284,61 +227,35 @@
       <li><a href="segunda.html" class="nav-btn">Listas</a></li>
       <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
       <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
-      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
       <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
     </ul>
   </nav>
 
   <section>
-    <h2>Formulario de Contacto</h2>
+    <h2>Actividad de JavaScript</h2>
     <p>
-      Completa los datos solicitados y prueba las funciones de JavaScript.
+      Presiona cualquiera de los siguientes botones para ejecutar los ejercicios interactivos programados:
     </p>
 
-    <form id="contactForm">
-      <div class="form-container">
-        <div class="form-group">
-          <label for="nombre">Nombre Completo:</label>
-          <input type="text" id="nombre" placeholder="Tu nombre..." required>
-        </div>
+    <h3 id="textoEditable">
+      Texto original de la página
+    </h3>
 
-        <div class="form-group">
-          <label for="correo">Correo Electrónico:</label>
-          <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
-        </div>
+    <div class="button-container">
+      <button class="action-btn" onclick="convertirDolares()">
+        Convertir Dólares
+      </button>
 
-        <div class="form-group">
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
-        </div>
-      </div>
+      <button class="action-btn" onclick="calcularTerreno()">
+        Área y Perímetro
+      </button>
 
-      <div class="button-container">
-        <button type="button" class="action-btn" onclick="enviarFormulario()">
-          Enviar Datos
-        </button>
+      <button class="action-btn" onclick="cambiarTexto()">
+        Cambiar Texto
+      </button>
 
-        <button type="button" class="action-btn" onclick="limpiarFormulario()">
-          Limpiar Formulario
-        </button>
-
-        <button type="button" class="action-btn" onclick="saludoEspecial()">
-          Saludo Personalizado
-        </button>
-      </div>
-    </form>
-
-    <hr>
-
-    <h2>Ejercicio 03 - Cambio de Imagen</h2>
-    <p>
-      Presiona el botón para alternar la imagen mostrada dinámicamente.
-    </p>
-
-    <div class="imagen-container">
-      <img id="imagenDinamica" src="images/Golde R.png" alt="Golden Retriever / Imagen dinámica">
-      <button type="button" class="action-btn" onclick="cambiarImagen()">
-        Cambiar Imagen
+      <button class="action-btn" onclick="mostrarMensaje()">
+        Mensaje
       </button>
     </div>
 
@@ -348,10 +265,8 @@
   <aside>
     <h3>Información</h3>
     <p>
-      Esta página contiene un formulario interactivo y el ejercicio de JavaScript para cambiar dinámicamente la imagen de la plantilla.
-    </p>
-    <p>
-      Al presionar el botón "Cambiar Imagen", la foto alternará entre el Golden Retriever y el Fénix.
+      En esta sección se ejecutan los scripts de JavaScript correspondientes a la Tarea 02:
+      conversión de moneda, cálculos geométricos de un terreno y manipulación dinámica del DOM.
     </p>
   </aside>
 
@@ -364,46 +279,44 @@
   </footer>
 
   <script>
-    // 1. Envío de formulario
-    function enviarFormulario() {
-      let nombre = document.getElementById("nombre").value.trim();
-      let correo = document.getElementById("correo").value.trim();
+    // 1. Función para convertir dólares a moneda local
+    function convertirDolares() {
+      let dolares = parseFloat(prompt("Ingrese la cantidad de dólares ($):"));
+      let cambio = parseFloat(prompt("Ingrese el tipo de cambio actual:"));
 
-      if (nombre !== "" && correo !== "") {
-        alert("Gracias " + nombre + ". Se registró el correo: " + correo);
+      if (!isNaN(dolares) && !isNaN(cambio) && dolares >= 0 && cambio > 0) {
+        let resultado = dolares * cambio;
+        alert(`$${dolares.toFixed(2)} USD equivalen a ${resultado.toFixed(2)} en moneda local.`);
       } else {
-        alert("Por favor, complete los campos obligatorios (Nombre y Correo).");
+        alert("Por favor, ingrese valores numéricos válidos.");
       }
     }
 
-    // 2. Limpieza de formulario
-    function limpiarFormulario() {
-      document.getElementById("contactForm").reset();
-      alert("Formulario limpiado correctamente.");
-    }
+    // 2. Función para calcular Área y Perímetro de un terreno rectangular
+    function calcularTerreno() {
+      let ancho = parseFloat(prompt("Ingrese el ancho del terreno (metros):"));
+      let largo = parseFloat(prompt("Ingrese el largo del terreno (metros):"));
 
-    // 3. Saludo personalizado
-    function saludoEspecial() {
-      let nombre = document.getElementById("nombre").value.trim();
-
-      if (nombre !== "") {
-        alert("¡Hola " + nombre + "! Gracias por visitar EducaTech.");
+      if (!isNaN(ancho) && !isNaN(largo) && ancho > 0 && largo > 0) {
+        let area = ancho * largo;
+        let perimetro = 2 * (ancho + largo);
+        alert(`Resultados del Terreno:\n- Área: ${area.toFixed(2)} m²\n- Perímetro: ${perimetro.toFixed(2)} m`);
       } else {
-        alert("Por favor, ingrese su nombre en el formulario para recibir un saludo personalizado.");
+        alert("Por favor, ingrese dimensiones válidas y mayores a cero.");
       }
     }
 
-    // 4. Ejercicio 03: Cambio dinámico de imagen
-    function cambiarImagen() {
-      let imagen = document.getElementById("imagenDinamica");
-
-      if (imagen.src.includes("Golde")) {
-        imagen.src = "images/Feni.png";
-        imagen.alt = "Fénix";
-      } else {
-        imagen.src = "images/Golde R.png";
-        imagen.alt = "Golden Retriever";
+    // 3. Función para cambiar dinámicamente el texto en pantalla
+    function cambiarTexto() {
+      let nuevoTexto = prompt("Ingrese el nuevo texto que desea mostrar en pantalla:");
+      if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
+        document.getElementById("textoEditable").innerText = nuevoTexto;
       }
+    }
+
+    // 4. Función para mostrar un mensaje de interacción
+    function mostrarMensaje() {
+      alert("¡Hola! Has ejecutado correctamente la interacción de JavaScript en EducaTech.");
     }
   </script>
 
