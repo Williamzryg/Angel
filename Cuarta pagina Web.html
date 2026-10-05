@@ -1,263 +1,324 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-<meta charset="UTF-8">
-<title>Ejercicios JavaScript</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios JavaScript - Cuarta Página Web</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
+    /* Estilos generales y Layout Grid */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333333;
+      line-height: 1.6;
+      display: grid;
+      grid-template-areas:
+        "header header"
+        "nav nav"
+        "section aside"
+        "footer footer";
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-body{
-    font-family:Arial,sans-serif;
-    margin:0;
-    padding:0;
-    background-color:#f4f4f4;
-    color:#222;
+    /* Encabezado */
+    header {
+      grid-area: header;
+      background-color: #1e3a8a; /* Azul marino */
+      color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      border-bottom: 5px solid #3b82f6;
+    }
 
-    display:grid;
-    grid-template-areas:
-    "header header"
-    "nav nav"
-    "section aside"
-    "footer footer";
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
 
-    grid-template-columns:3fr 1fr;
-    gap:10px;
-}
+    /* Navegación */
+    nav {
+      grid-area: nav;
+      background-color: #0f172a;
+      padding: 12px;
+      border-radius: 8px;
+    }
 
-header{
-    grid-area:header;
-    background-color:#8338ec;
-    color:white;
-    text-align:center;
-    padding:20px;
-    border-bottom:5px solid #ffbe0b;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-header img{
-    max-width:120px;
-}
+    .nav-btn {
+      background-color: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
 
-nav{
-    grid-area:nav;
-    background-color:#10002b;
-    padding:10px;
-}
+    .nav-btn:hover {
+      background-color: #3b82f6;
+    }
 
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-    margin:0;
-    padding:0;
-}
+    /* Sección Principal y Botones */
+    section {
+      grid-area: section;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
 
-.nav-btn{
-    background-color:#3a86ff;
-    color:white;
-    text-decoration:none;
-    padding:10px 15px;
-    border-radius:5px;
-    font-weight:bold;
-}
+    section h2 {
+      color: #1e3a8a;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 5px;
+    }
 
-.nav-btn:hover{
-    background-color:#ffbe0b;
-    color:black;
-}
+    #textoEditable {
+      background-color: #eff6ff;
+      color: #1e40af;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      border: 2px dashed #93c5fd;
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
 
-section{
-    grid-area:section;
-    background:white;
-    padding:20px;
-    border:2px solid #8338ec;
-}
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin: 25px 0;
+    }
 
-section h2{
-    color:#8338ec;
-}
+    .action-btn {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s;
+    }
 
-.button-container{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-    justify-content:center;
-    margin-top:20px;
-}
+    .action-btn:hover {
+      background-color: #1e3a8a;
+    }
 
-.action-btn{
-    background-color:#3a86ff;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:bold;
-}
+    .regresar {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 18px;
+      background-color: #0f172a;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
 
-.action-btn:hover{
-    background-color:#8338ec;
-}
+    .regresar:hover {
+      background-color: #334155;
+    }
 
-#textoEditable{
-    background:#e9d8fd;
-    padding:15px;
-    border-radius:5px;
-    text-align:center;
-}
+    /* Barra Lateral */
+    aside {
+      grid-area: aside;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      height: fit-content;
+    }
 
-aside{
-    grid-area:aside;
-    background:#ffe5a5;
-    padding:15px;
-    border:2px solid #ffbe0b;
-}
+    aside h3 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+    }
 
-footer{
-    grid-area:footer;
-    background:#10002b;
-    color:white;
-    text-align:center;
-    padding:15px;
-}
+    aside p {
+      color: #64748b;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
 
-footer ul{
-    list-style:none;
-    padding:0;
-}
+    /* Pie de Página */
+    footer {
+      grid-area: footer;
+      background-color: #0f172a;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
 
-footer a{
-    color:#ffbe0b;
-    text-decoration:none;
-}
+    footer h4 {
+      margin-bottom: 10px;
+      color: #93c5fd;
+    }
 
-.regresar{
-    display:block;
-    width:200px;
-    text-align:center;
-    margin:25px auto;
-    padding:10px;
-    background:#8338ec;
-    color:white;
-    text-decoration:none;
-    border-radius:5px;
-}
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-</style>
+    footer a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
 
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsivo para móviles */
+    @media (max-width: 768px) {
+      body {
+        grid-template-areas:
+          "header"
+          "nav"
+          "section"
+          "aside"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
+  <header>
+    <h1>Ejercicios JavaScript</h1>
+    <p>Desarrollo de Funciones Interactivas (Tarea 02)</p>
+  </header>
 
-<a href="index.html">
-<img src="images/logo
-<h1>Ejercicios JavaScript</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
+    </ul>
+  </nav>
 
-</header>
+  <section>
+    <h2>Actividad de JavaScript</h2>
+    <p>
+      Presiona cualquiera de los siguientes botones para ejecutar los ejercicios interactivos programados:
+    </p>
 
-<nav>
+    <h3 id="textoEditable">
+      Texto original de la página
+    </h3>
 
-<ul>
-<li><a href="index.html" class="nav-btn">Inicio</a></li>
-<li>Segunda pagina.htmlSegunda Página</a></li>
-<li><a href="Tercera pagina Web.html" class="nav->
-<li><uarta pagina Web.htmlCuarta Página</a></li>
-<li><a href="Quinta pagina Web.html" class></li>
-</ul>
+    <div class="button-container">
+      <button class="action-btn" onclick="convertirDolares()">
+        Convertir Dólares
+      </button>
 
-</nav>
+      <button class="action-btn" onclick="calcularTerreno()">
+        Área y Perímetro
+      </button>
 
-<section>
+      <button class="action-btn" onclick="cambiarTexto()">
+        Cambiar Texto
+      </button>
 
-<h2>Actividad de JavaScript</h2>
+      <button class="action-btn" onclick="mostrarMensaje()">
+        Mensaje
+      </button>
+    </div>
 
-<p>
-Esta página contiene los ejercicios solicitados en la tarea.
-</p>
+    <a href="index.html" class="regresar">← Regresar al Inicio</a>
+  </section>
 
-<h3 id="textoEditable">
-Texto original de la página
-</h3>
+  <aside>
+    <h3>Información</h3>
+    <p>
+      En esta sección se ejecutan los scripts de JavaScript correspondientes a la Tarea 02:
+      conversión de moneda, cálculos geométricos de un terreno y manipulación dinámica del DOM.
+    </p>
+  </aside>
 
-<div class="button-container">
+  <footer>
+    <h4>Enlaces de Interés</h4>
+    <ul>
+      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
+      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
+    </ul>
+  </footer>
 
-<button class="action-btn" onclick="convertirDolares()">
-Convertir Dólares
-</button>
+  <script>
+    // 1. Función para convertir dólares a moneda local
+    function convertirDolares() {
+      let dolares = parseFloat(prompt("Ingrese la cantidad de dólares ($):"));
+      let cambio = parseFloat(prompt("Ingrese el tipo de cambio actual:"));
 
-<button class="action-btn" onclick="calcularTerreno()">
-Área y Perímetro
-</button>
+      if (!isNaN(dolares) && !isNaN(cambio) && dolares >= 0 && cambio > 0) {
+        let resultado = dolares * cambio;
+        alert(`$${dolares.toFixed(2)} USD equivalen a ${resultado.toFixed(2)} en moneda local.`);
+      } else {
+        alert("Por favor, ingrese valores numéricos válidos.");
+      }
+    }
 
-<button class="action-btn" onclick="cambiarTexto()">
-Cambiar Texto
-</button>
+    // 2. Función para calcular Área y Perímetro de un terreno rectangular
+    function calcularTerreno() {
+      let ancho = parseFloat(prompt("Ingrese el ancho del terreno (metros):"));
+      let largo = parseFloat(prompt("Ingrese el largo del terreno (metros):"));
 
-<button class="action-btn" onclick="mostrarMensaje()">
-Mensaje
-</button>
+      if (!isNaN(ancho) && !isNaN(largo) && ancho > 0 && largo > 0) {
+        let area = ancho * largo;
+        let perimetro = 2 * (ancho + largo);
+        alert(`Resultados del Terreno:\n- Área: ${area.toFixed(2)} m²\n- Perímetro: ${perimetro.toFixed(2)} m`);
+      } else {
+        alert("Por favor, ingrese dimensiones válidas y mayores a cero.");
+      }
+    }
 
-</div>
+    // 3. Función para cambiar dinámicamente el texto en pantalla
+    function cambiarTexto() {
+      let nuevoTexto = prompt("Ingrese el nuevo texto que desea mostrar en pantalla:");
+      if (nuevoTexto !== null && nuevoTexto.trim() !== "") {
+        document.getElementById("textoEditable").innerText = nuevoTexto;
+      }
+    }
 
-<a href="index.html" class="regresar">
-Regresar al Inicio
-</a>
+    // 4. Función para mostrar un mensaje de interacción
+    function mostrarMensaje() {
+      alert("¡Hola! Has ejecutado correctamente la interacción de JavaScript en EducaTech.");
+    }
+  </script>
 
-</section>
-
-<aside>
-
-<h3>Información</h3>
-
-<p>
-En esta página se desarrollan los ejercicios de JavaScript:
-conversión de dólares, cálculo del área y perímetro
-de un terreno y cambio dinámico de texto.
-</p>
-
-</aside>
-
-<footer>
-
-<h4>Enlaces de Interés</h4>
-
-<ul>
-
-<li>
-<a href="https://senati.blackboard.com/" target="_blank">
-Blackboard
-</a>
-</li>
-
-<li>
-<a href="https://github.com/Williamzryg/Angel" target="_blank">
-Mi Repositorio
-</a>
-</li>
-
-</ul>
-
-</footer>
-
-<script>
-
-function convertirDolares(){
-
-    let dolares =
-    parseFloat(
-    prompt("Ingrese la cantidad de dólares:")
-    );
-
-    let cambio =
-    parseFloat(
-    prompt("Ingrese el tipo de cambio:")
-    );
-
-    if(!isNaN(dolares) && !isNaN(cambio)){
-
-        let resultado =
-        dolares * cambio
+</body>
+</html>
