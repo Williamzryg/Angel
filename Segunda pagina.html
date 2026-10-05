@@ -3,201 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estructura de Listas - Segunda Página</title>
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Estilos generales y Grid Layout */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
-      color: #333333;
-      line-height: 1.6;
-      display: grid;
-      grid-template-areas:
-        "header header"
-        "nav nav"
-        "section aside"
-        "footer footer";
-      grid-template-columns: 3fr 1fr;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Encabezado */
-    header {
-      grid-area: header;
-      background-color: #1e3a8a; /* Azul marino */
-      color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      text-align: center;
-      border-bottom: 5px solid #3b82f6;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 5px;
-    }
-
-    /* Navegación */
-    nav {
-      grid-area: nav;
-      background-color: #0f172a; /* Azul oscuro */
-      padding: 12px;
-      border-radius: 8px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .nav-btn {
-      background-color: #2563eb;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .nav-btn:hover {
-      background-color: #3b82f6;
-    }
-
-    /* Sección Principal de Listas */
-    section {
-      grid-area: section;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-    }
-
-    section h2 {
-      color: #1e3a8a;
-      margin-top: 15px;
-      margin-bottom: 12px;
-      font-size: 1.3rem;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 5px;
-    }
-
-    /* Estilos de las Listas */
-    section ul, section ol {
-      background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-left: 5px solid #2563eb;
-      border-radius: 6px;
-      padding: 15px 20px 15px 40px;
-      margin-bottom: 25px;
-    }
-
-    section li {
-      margin-bottom: 6px;
-      color: #334155;
-    }
-
-    /* Barra Lateral */
-    aside {
-      grid-area: aside;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      height: fit-content;
-    }
-
-    aside h3 {
-      color: #1e3a8a;
-      margin-bottom: 12px;
-      font-size: 1.15rem;
-    }
-
-    aside p {
-      color: #64748b;
-      font-size: 0.9rem;
-    }
-
-    /* Botón Regresar al Inicio */
-    .btn-regresar {
-      display: inline-block;
-      margin-top: 15px;
-      background-color: #1e293b;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 5px;
-      font-size: 0.85rem;
-    }
-
-    .btn-regresar:hover {
-      background-color: #334155;
-    }
-
-    /* Pie de página */
-    footer {
-      grid-area: footer;
-      background-color: #0f172a;
-      color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    footer h4 {
-      margin-bottom: 10px;
-      color: #93c5fd;
-    }
-
-    footer ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Adaptabilidad Móvil */
-    @media (max-width: 768px) {
-      body {
-        grid-template-areas:
-          "header"
-          "nav"
-          "section"
-          "aside"
-          "footer";
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Listas y Estructura - Segunda Página</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
   <header>
-    <h1>Estructura de Listas en HTML</h1>
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo EducaTech">
+    </a>
+    <h1>Listas y Estructura Web</h1>
   </header>
 
   <nav>
@@ -205,85 +20,48 @@
       <li><a href="index.html" class="nav-btn">Inicio</a></li>
       <li><a href="segunda.html" class="nav-btn">Listas</a></li>
       <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
-      <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
+      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
     </ul>
   </nav>
 
   <section>
-    <!-- Ejemplo 1: Lista Desordenada -->
-    <h2>Lista Desordenada 1: Lenguajes de Programación</h2>
-    <ul>
-      <li>JavaScript</li>
-      <li>Python</li>
-      <li>Java</li>
-      <li>C++</li>
-      <li>PHP</li>
-      <li>TypeScript</li>
-      <li>Ruby</li>
-      <li>Go</li>
-      <li>Swift</li>
-      <li>Kotlin</li>
-    </ul>
+    <h2>Tarea 02 - Listas Ordenadas y No Ordenadas</h2>
 
-    <!-- Ejemplo 2: Lista Desordenada -->
-    <h2>Lista Desordenada 2: Herramientas y Tecnologías Web</h2>
-    <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>Git</li>
-      <li>GitHub</li>
-      <li>Visual Studio Code</li>
-      <li>Bootstrap</li>
-      <li>Node.js</li>
-      <li>MySQL</li>
-      <li>Docker</li>
-      <li>XAMPP</li>
-    </ul>
+    <article>
+      <h3>Lista de Tecnologías Web (No Ordenada)</h3>
+      <ul>
+        <li>HTML5 (Estructura)</li>
+        <li>CSS3 (Estilos y Diseño)</li>
+        <li>JavaScript (Lógica e Interacción)</li>
+        <li>Git y GitHub (Control de Versiones)</li>
+      </ul>
+    </article>
 
-    <!-- Ejemplo 1: Lista Ordenada -->
-    <h2>Lista Ordenada 1: Pasos para Desarrollo y Despliegue Web</h2>
-    <ol>
-      <li>Definir los requerimientos y diseño del sitio web.</li>
-      <li>Crear la estructura semántica en HTML.</li>
-      <li>Aplicar estilos CSS respetando la paleta de colores.</li>
-      <li>Añadir interactividad mediante JavaScript.</li>
-      <li>Realizar pruebas de responsividad en móviles y escritorio.</li>
-      <li>Optimizar el rendimiento y las imágenes.</li>
-      <li>Inicializar un repositorio Git local.</li>
-      <li>Subir el código al repositorio remoto en GitHub.</li>
-      <li>Publicar el sitio utilizando GitHub Pages.</li>
-      <li>Realizar revisiones finales y mantenimiento.</li>
-    </ol>
+    <article>
+      <h3>Pasos para Desarrollar un Sitio Web (Ordenada)</h3>
+      <ol>
+        <li>Diseñar el boceto de la interfaz (Wireframe).</li>
+        <li>Crear la estructura HTML de los archivos.</li>
+        <li>Aplicar diseño con hojas de estilo CSS.</li>
+        <li>Agregar interactividad con scripts de JavaScript.</li>
+        <li>Publicar el proyecto en GitHub Pages.</li>
+      </ol>
+    </article>
 
-    <!-- Ejemplo 2: Lista Ordenada -->
-    <h2>Lista Ordenada 2: Top 10 Frameworks y Librerías Populares</h2>
-    <ol>
-      <li>React</li>
-      <li>Angular</li>
-      <li>Vue.js</li>
-      <li>Svelte</li>
-      <li>Express.js</li>
-      <li>Django</li>
-      <li>Laravel</li>
-      <li>Spring Boot</li>
-      <li>Next.js</li>
-      <li>Tailwind CSS</li>
-    </ol>
+    <a href="index.html" class="regresar">← Regresar al Inicio</a>
   </section>
 
   <aside>
-    <h3>Resumen de la Tarea</h3>
-    <p>
-      Esta página da solución a la Tarea 01 implementando 2 ejemplos de listas ordenadas y 2 ejemplos de listas desordenadas, con exactamente 10 elementos en cada una.
-    </p>
-    <a href="index.html" class="btn-regresar">← Regresar al Inicio</a>
+    <h3>Información</h3>
+    <p>Esta página presenta la estructura básica de elementos de lista en HTML para la organización ordenada de contenidos.</p>
   </aside>
 
   <footer>
     <h4>Enlaces de Interés</h4>
     <ul>
       <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
-      <li><a href="https://github.com/" target="_blank">Mi Repositorio GitHub</a></li>
+      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
     </ul>
   </footer>
 
