@@ -1,3 +1,6 @@
+/* ==========================================================
+   1. REGLAS GLOBALES Y RESET
+   ========================================================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -22,6 +25,9 @@ body {
   margin: 0 auto;
 }
 
+/* ==========================================================
+   2. ENCABEZADO (HEADER) Y NAVEGACIÓN (NAV)
+   ========================================================== */
 header {
   grid-area: header;
   background-color: #8338ec;
@@ -69,6 +75,9 @@ nav ul {
   color: #000000;
 }
 
+/* ==========================================================
+   3. SECCIÓN PRINCIPAL, ARTÍCULOS Y CONTENIDO INTEGRADO
+   ========================================================== */
 section {
   grid-area: section;
   background-color: #ffffff;
@@ -77,11 +86,20 @@ section {
   border-radius: 8px;
 }
 
+/* Estilos integrados del H2 (anteriormente CSS interno) */
 section h2 {
   color: #8338ec;
   margin-bottom: 20px;
   border-bottom: 2px solid #ffbe0b;
   padding-bottom: 5px;
+}
+
+/* Estilo integrado para textos destacados (anteriormente en línea) */
+.texto-destacado {
+  color: #3a86ff;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 
 article,
@@ -115,6 +133,17 @@ article img {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
+/* Estilos integrados para listas dentro de los artículos */
+article ul,
+article ol {
+  text-align: left;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+/* ==========================================================
+   4. FORMULARIO Y BOTONES
+   ========================================================== */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -182,6 +211,33 @@ article img {
   background-color: #3a86ff;
 }
 
+/* ==========================================================
+   5. TABLAS
+   ========================================================== */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+th, td {
+  border: 1px solid #8338ec;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #8338ec;
+  color: #ffffff;
+}
+
+/* ==========================================================
+   6. BARRA LATERAL (ASIDE) Y PIE DE PÁGINA (FOOTER)
+   ========================================================== */
 aside {
   grid-area: aside;
   background-color: #ffe5a5;
@@ -227,23 +283,9 @@ footer a:hover {
   text-decoration: underline;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 15px 0;
-}
-
-th, td {
-  border: 1px solid #8338ec;
-  padding: 10px;
-  text-align: center;
-}
-
-th {
-  background-color: #8338ec;
-  color: #ffffff;
-}
-
+/* ==========================================================
+   7. DISEÑO RESPONSIVO (MOBILE)
+   ========================================================== */
 @media (max-width: 768px) {
   body {
     grid-template-areas:
