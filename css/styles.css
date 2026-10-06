@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,14 +22,13 @@ body {
   margin: 0 auto;
 }
 
-/* Encabezado con Morado y Amarillo */
 header {
   grid-area: header;
-  background-color: #8338ec; /* Morado Original */
+  background-color: #8338ec; 
   color: #ffffff;
   text-align: center;
   padding: 20px;
-  border-bottom: 5px solid #ffbe0b; /* Amarillo Original */
+  border-bottom: 5px solid #ffbe0b; 
   border-radius: 8px;
 }
 
@@ -40,10 +38,9 @@ header img {
   margin-bottom: 10px;
 }
 
-/* Navegación Oscura con Botones Azules */
 nav {
   grid-area: nav;
-  background-color: #10002b; /* Azul/Morado Oscuro Original */
+  background-color: #10002b;
   padding: 12px;
   border-radius: 8px;
 }
@@ -57,7 +54,7 @@ nav ul {
 }
 
 .nav-btn {
-  background-color: #3a86ff; /* Azul Original */
+  background-color: #3a86ff;
   color: #ffffff;
   text-decoration: none;
   padding: 10px 18px;
@@ -68,27 +65,25 @@ nav ul {
 }
 
 .nav-btn:hover {
-  background-color: #ffbe0b; /* Amarillo al pasar el mouse */
+  background-color: #ffbe0b;
   color: #000000;
 }
 
-/* Sección Principal con Borde Morado */
 section {
   grid-area: section;
   background-color: #ffffff;
   padding: 20px;
-  border: 2px solid #8338ec; /* Borde Morado Original */
+  border: 2px solid #8338ec;
   border-radius: 8px;
 }
 
 section h2 {
-  color: #8338ec; /* Texto Morado Original */
+  color: #8338ec;
   margin-bottom: 20px;
   border-bottom: 2px solid #ffbe0b;
   padding-bottom: 5px;
 }
 
-/* Artículos y Contenedores de Tarjetas dentro de Section */
 article,
 .imagen-container {
   background: #ffffff;
@@ -109,19 +104,17 @@ article h3,
   color: #8338ec;
 }
 
-/* Estilo para las imágenes dentro de los artículos */
 .imagen-container img,
 article img {
   width: 100%;
   max-width: 320px;
   height: auto;
-  border: 3px solid #8338ec; /* Borde Morado Original */
+  border: 3px solid #8338ec;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
-/* Formulario */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -148,7 +141,6 @@ article img {
   font-family: inherit;
 }
 
-/* Botones de Acción */
 .button-container {
   display: flex;
   gap: 10px;
@@ -157,7 +149,7 @@ article img {
 }
 
 .action-btn {
-  background-color: #3a86ff; /* Azul Original */
+  background-color: #3a86ff;
   color: #ffffff;
   border: none;
   padding: 10px 18px;
@@ -168,10 +160,9 @@ article img {
 }
 
 .action-btn:hover {
-  background-color: #8338ec; /* Morado al pasar el mouse */
+  background-color: #8338ec;
 }
 
-/* Botón Regresar al Inicio */
 .regresar {
   display: block;
   width: 220px;
@@ -179,7 +170,7 @@ article img {
   margin: 20px auto 0 auto;
   padding: 10px;
   text-decoration: none;
-  background-color: #8338ec; /* Morado Original */
+  background-color: #8338ec;
   color: #ffffff;
   border-radius: 5px;
   font-weight: bold;
@@ -190,12 +181,11 @@ article img {
   background-color: #3a86ff;
 }
 
-/* Barra Lateral (Aside) con fondo Amarillo claro y Borde Amarillo */
 aside {
   grid-area: aside;
-  background-color: #ffe5a5; /* Fondo Amarillo Claro Original */
+  background-color: #ffe5a5;
   padding: 20px;
-  border: 2px solid #ffbe0b; /* Borde Amarillo Original */
+  border: 2px solid #ffbe0b;
   border-radius: 8px;
   height: fit-content;
 }
@@ -205,10 +195,9 @@ aside h3 {
   margin-bottom: 10px;
 }
 
-/* Pie de Página (Footer) */
 footer {
   grid-area: footer;
-  background-color: #10002b; /* Fondo Oscuro Original */
+  background-color: #10002b;
   color: #ffffff;
   text-align: center;
   padding: 20px;
@@ -229,7 +218,7 @@ footer ul {
 }
 
 footer a {
-  color: #ffbe0b; /* Enlaces en Amarillo Original */
+  color: #ffbe0b;
   text-decoration: none;
 }
 
@@ -237,7 +226,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Estilo para Tablas */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -255,7 +243,6 @@ th {
   color: #ffffff;
 }
 
-/* Responsivo para celulares */
 @media (max-width: 768px) {
   body {
     grid-template-areas:
