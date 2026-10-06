@@ -24,11 +24,11 @@ body {
 
 header {
   grid-area: header;
-  background-color: #8338ec; 
+  background-color: #8338ec;
   color: #ffffff;
   text-align: center;
   padding: 20px;
-  border-bottom: 5px solid #ffbe0b; 
+  border-bottom: 5px solid #ffbe0b;
   border-radius: 8px;
 }
 
@@ -145,6 +145,7 @@ article img {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 20px;
 }
 
