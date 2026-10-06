@@ -23,6 +23,7 @@
     <nav class="main-nav">
       <ul>
         <li><a href="index.html" class="nav-btn">Inicio</a></li>
+        <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
         <li><a href="segunda.html" class="nav-btn">Listas</a></li>
         <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
         <li><a href="cuarta.html" class="nav-btn active">JavaScript</a></li>
@@ -35,20 +36,41 @@
   <div class="layout-container">
     <main class="main-content">
       <section class="js-section">
-        <h2>Manipulación del DOM y Eventos</h2>
-        <p class="section-description">Presiona los botones para interactuar con los scripts de JavaScript:</p>
+        <h2>Tarea 03 - Ejercicios Interactivos con JavaScript</h2>
+        <p class="section-description">Presiona los botones para ejecutar las funciones y algoritmos interactivos:</p>
 
+        <!-- Tarjeta: Cambio de Texto en el DOM -->
         <article class="card">
           <div class="card-body">
-            <h3 id="tituloDinamico">Texto Dinámico Original</h3>
-            <p id="parrafoDinamico">Haz clic en los botones de abajo para modificar este párrafo.</p>
+            <h3 id="tituloDinamico">Manipulación del DOM</h3>
+            <p id="parrafoDinamico">Haz clic en los botones para modificar este texto en tiempo real.</p>
+            <div class="button-container">
+              <button type="button" class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
+              <button type="button" class="action-btn secondary-btn" onclick="restaurarTexto()">Restaurar</button>
+            </div>
           </div>
         </article>
 
-        <div class="button-container">
-          <button type="button" class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
-          <button type="button" class="action-btn" onclick="restaurarTexto()">Restaurar Texto</button>
-          <button type="button" class="action-btn" onclick="alertaComprobacion()">Lanzar Alerta</button>
+        <div class="card-grid">
+          <!-- Tarjeta: Ejercicio 01 (Conversor de Moneda) -->
+          <article class="card">
+            <div class="card-body">
+              <h3>Ejercicio 01: Conversor de Moneda</h3>
+              <p>Calcula el equivalente en moneda local a partir de un monto en dólares y el tipo de cambio[cite: 1].</p>
+              <br>
+              <button type="button" class="action-btn" onclick="convertirMoneda()">Convertir Moneda</button>
+            </div>
+          </article>
+
+          <!-- Tarjeta: Ejercicio 02 (Calculadora de Terreno) -->
+          <article class="card">
+            <div class="card-body">
+              <h3>Ejercicio 02: Cálculo de Terreno</h3>
+              <p>Calcula el área y el perímetro de un terreno ingresando su largo y ancho[cite: 1].</p>
+              <br>
+              <button type="button" class="action-btn" onclick="calcularTerreno()">Calcular Terreno</button>
+            </div>
+          </article>
         </div>
 
         <!-- Botones de Navegación entre Páginas -->
@@ -63,7 +85,7 @@
     <aside class="sidebar">
       <div class="widget">
         <h3>Información</h3>
-        <p>Esta página demuestra el dinamismo mediante la manipulación directa de nodos del DOM mediante eventos JavaScript.</p>
+        <p>Demostración de algoritmos interactivos manipulando el DOM y utilizando cuadros emergentes (alert y prompt)[cite: 1].</p>
       </div>
     </aside>
   </div>
@@ -83,20 +105,44 @@
     </div>
   </footer>
 
-  <!-- Script de Interacciones -->
+  <!-- Scripts de Funciones JavaScript -->
   <script>
+    // Manipulación del DOM
     function cambiarTexto() {
       document.getElementById("tituloDinamico").innerText = "¡Texto Actualizado!";
-      document.getElementById("parrafoDinamico").innerText = "El contenido ha sido modificado mediante JavaScript de forma correcta.";
+      document.getElementById("parrafoDinamico").innerText = "El contenido ha sido modificado mediante JavaScript correctamente.";
     }
 
     function restaurarTexto() {
-      document.getElementById("tituloDinamico").innerText = "Texto Dinámico Original";
-      document.getElementById("parrafoDinamico").innerText = "Haz clic en los botones de abajo para modificar este párrafo.";
+      document.getElementById("tituloDinamico").innerText = "Manipulación del DOM";
+      document.getElementById("parrafoDinamico").innerText = "Haz clic en los botones para modificar este texto en tiempo real.";
     }
 
-    function alertaComprobacion() {
-      alert("¡Funcionalidad comprobada con éxito en JavaScript!");
+    // Ejercicio 01: Conversor de Dólares a Moneda Local
+    function convertirMoneda() {
+      let dolares = parseFloat(prompt("Ingrese la cantidad en dólares ($):"));
+      let tasaCambio = parseFloat(prompt("Ingrese la tasa de cambio a moneda local:"));
+
+      if (!isNaN(dolares) && !isNaN(tasaCambio) && dolares > 0 && tasaCambio > 0) {
+        let resultado = dolares * tasaCambio;
+        alert("Conversión Realizada:\n$" + dolares + " USD equivalen a S/ " + resultado.toFixed(2) + " en moneda local.");
+      } else {
+        alert("Por favor, ingrese montos numéricos válidos.");
+      }
+    }
+
+    // Ejercicio 02: Área y Perímetro del Terreno
+    function calcularTerreno() {
+      let largo = parseFloat(prompt("Ingrese el largo del terreno (metros):"));
+      let ancho = parseFloat(prompt("Ingrese el ancho del terreno (metros):"));
+
+      if (!isNaN(largo) && !isNaN(ancho) && largo > 0 && ancho > 0) {
+        let area = largo * ancho;
+        let perimetro = 2 * (largo + ancho);
+        alert("Resultados del Terreno:\n- Área: " + area.toFixed(2) + " m²\n- Perímetro: " + perimetro.toFixed(2) + " m");
+      } else {
+        alert("Por favor, ingrese dimensiones numéricas válidas.");
+      }
     }
   </script>
 
