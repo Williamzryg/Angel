@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript - Cuarta Página Web</title>
-  
+
+  <!-- Enlace a la hoja de estilos -->
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
+  <!-- Encabezado Principal -->
   <header class="main-header">
     <div class="brand">
       <a href="index.html" class="logo-link">
@@ -17,6 +19,7 @@
       <h1 class="site-title">Interacciones con JavaScript</h1>
     </div>
 
+    <!-- Menú de Navegación Principal -->
     <nav class="main-nav">
       <ul>
         <li><a href="index.html" class="nav-btn">Inicio</a></li>
@@ -28,6 +31,7 @@
     </nav>
   </header>
 
+  <!-- Contenido Principal -->
   <div class="layout-container">
     <main class="main-content">
       <section class="js-section">
@@ -47,12 +51,15 @@
           <button type="button" class="action-btn" onclick="alertaComprobacion()">Lanzar Alerta</button>
         </div>
 
-        <div class="actions">
-          <a href="index.html" class="regresar">Regresar al Inicio</a>
+        <!-- Botones de Navegación entre Páginas -->
+        <div class="page-navigation">
+          <a href="tercera.html" class="nav-arrow-btn">&larr; Anterior (Tablas)</a>
+          <a href="quinta.html" class="nav-arrow-btn">Siguiente (Formulario) &rarr;</a>
         </div>
       </section>
     </main>
 
+    <!-- Barra Lateral -->
     <aside class="sidebar">
       <div class="widget">
         <h3>Información</h3>
@@ -61,6 +68,7 @@
     </aside>
   </div>
 
+  <!-- Pie de Página -->
   <footer class="main-footer">
     <div class="footer-content">
       <h4>Enlaces de Interés</h4>
@@ -75,6 +83,7 @@
     </div>
   </footer>
 
+  <!-- Script de Interacciones -->
   <script>
     function cambiarTexto() {
       document.getElementById("tituloDinamico").innerText = "¡Texto Actualizado!";
