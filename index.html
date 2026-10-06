@@ -4,63 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Web - Inicio</title>
-
+  
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <header>
-    <a href="index.html">
-      <img src="images/logo.png" alt="Logo Instituto">
-    </a>
-    <h1>Proyecto Web HTML y CSS</h1>
+  <header class="main-header">
+    <div class="brand">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Logo Instituto" class="logo-img">
+      </a>
+      <h1 class="site-title">Proyecto Web HTML y CSS</h1>
+    </div>
+
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="nav-btn active">Inicio</a></li>
+        <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+        <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+        <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+        <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html" class="nav-btn">Inicio</a></li>
-      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
-      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
-      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
-      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
-    </ul>
-  </nav>
+  <div class="layout-container">
+    <main class="main-content">
+      <section class="gallery-section">
+        <h2>Tarea 01 - Galería de Fotos</h2>
 
-  <section>
-    <h2>Tarea 01 - Galería de Fotos</h2>
+        <div class="card-grid">
+          <article class="card">
+            <div class="card-media">
+              <img src="images/Golde R.png" alt="Visual Studio Code">
+            </div>
+            <div class="card-body">
+              <h3>Visual Studio Code</h3>
+              <p>Es un editor de código fuente gratuito, ligero y multiplataforma desarrollado por Microsoft.</p>
+            </div>
+          </article>
 
-    <article>
-      <h3>Visual studio Code</h3>
-      <img src="images/Golde R.png" alt="Visual studio Code">
-      <p>Es un editor de código fuente gratuito, ligero y multiplataforma desarrollado por Microsoft.</p>
-    </article>
+          <article class="card">
+            <div class="card-media">
+              <img src="images/Feni.png" alt="JavaScript">
+            </div>
+            <div class="card-body">
+              <h3>JavaScript</h3>
+              <p>Lenguaje de programación interpretado, orientado a objetos y dinámico que constituye uno de los pilares fundamentales de la web.</p>
+            </div>
+          </article>
 
-    <article>
-      <h3>JavaScript</h3>
-      <img src="images/Feni.png" alt="JavaScript">
-      <p>Lenguaje de programación interpretado, orientado a objetos y dinámico que constituye uno de los pilares fundamentales.</p>
-    </article>
+          <article class="card">
+            <div class="card-media">
+              <img src="images/Camaleon.png" alt="Python">
+            </div>
+            <div class="card-body">
+              <h3>Python</h3>
+              <p>Lenguaje de programación de alto nivel, interpretado y de propósito general, reconocido por su sintaxis clara y legibilidad.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
 
-    <article>
-      <h3>Python</h3>
-      <img src="images/Camaleon.png" alt="Python">
-      <p>Lenguaje de programación de alto nivel, interpretado y de propósito general</p>
-    </article>
-  </section>
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Notas del Curso</h3>
+        <p>Bienvenido al portal principal de proyectos. En esta sección se muestran las fotos y descripciones solicitadas en la Tarea 01.</p>
+      </div>
+    </aside>
+  </div>
 
-  <aside>
-    <h3>Notas del Curso</h3>
-    <p>Bienvenido al portal principal de proyectos. En esta sección se muestran las fotos y descripciones solicitadas en la Tarea 01.</p>
-  </aside>
-
-  <footer>
-    <h4>Enlaces de Interés</h4>
-    <ul>
-      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi repositorio</a></li>
-      <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank">Página del Instructor</a></li>
-      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
-      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
-    </ul>
+  <footer class="main-footer">
+    <div class="footer-content">
+      <h4>Enlaces de Interés</h4>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Williamzryg/Angel" target="_blank" rel="noopener noreferrer">Mi Repositorio GitHub</a></li>
+        <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Página del Instructor</a></li>
+        <li><a href="https://senati.blackboard.com/" target="_blank" rel="noopener noreferrer">Blackboard SENATI</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
+    </div>
   </footer>
 
 </body>
