@@ -4,58 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript - Cuarta Página Web</title>
+  
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <header>
-    <a href="index.html">
-      <img src="images/logo.png" alt="Logo Instituto">
-    </a>
-    <h1>Interacciones con JavaScript</h1>
-  </header>
-
-  <nav>
-    <ul>
-      <li><a href="index.html" class="nav-btn">Inicio</a></li>
-      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
-      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
-      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
-      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
-    </ul>
-  </nav>
-
-  <section>
-    <h2>Manipulación del DOM y Eventos</h2>
-    <p style="margin-bottom: 15px;">Presiona los botones para interactuar con los scripts de JavaScript:</p>
-
-    <article>
-      <h3 id="tituloDinamico">Texto Dinámico Original</h3>
-      <p id="parrafoDinamico">Haz clic en los botones de abajo para modificar este párrafo.</p>
-    </article>
-
-    <div class="button-container" style="justify-content: center;">
-      <button type="button" class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
-      <button type="button" class="action-btn" onclick="restaurarTexto()">Restaurar Texto</button>
-      <button type="button" class="action-btn" onclick="alertaComprobacion()">Lanzar Alerta</button>
+  <header class="main-header">
+    <div class="brand">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.png" alt="Logo Instituto" class="logo-img">
+      </a>
+      <h1 class="site-title">Interacciones con JavaScript</h1>
     </div>
 
-    <a href="index.html" class="regresar">Regresar al Inicio</a>
-  </section>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html" class="nav-btn">Inicio</a></li>
+        <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+        <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+        <li><a href="cuarta.html" class="nav-btn active">JavaScript</a></li>
+        <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <aside>
-    <h3>Información</h3>
-    <p>Esta página demuestra el dinamismo mediante la manipulación directa de nodos del DOM mediante eventos JavaScript.</p>
-  </aside>
+  <div class="layout-container">
+    <main class="main-content">
+      <section class="js-section">
+        <h2>Manipulación del DOM y Eventos</h2>
+        <p class="section-description">Presiona los botones para interactuar con los scripts de JavaScript:</p>
 
-  <footer>
-    <h4>Enlaces de Interés</h4>
-    <ul>
-      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi repositorio</a></li>
-      <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank">Página del Instructor</a></li>
-      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
-      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
-    </ul>
+        <article class="card">
+          <div class="card-body">
+            <h3 id="tituloDinamico">Texto Dinámico Original</h3>
+            <p id="parrafoDinamico">Haz clic en los botones de abajo para modificar este párrafo.</p>
+          </div>
+        </article>
+
+        <div class="button-container">
+          <button type="button" class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
+          <button type="button" class="action-btn" onclick="restaurarTexto()">Restaurar Texto</button>
+          <button type="button" class="action-btn" onclick="alertaComprobacion()">Lanzar Alerta</button>
+        </div>
+
+        <div class="actions">
+          <a href="index.html" class="regresar">Regresar al Inicio</a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Información</h3>
+        <p>Esta página demuestra el dinamismo mediante la manipulación directa de nodos del DOM mediante eventos JavaScript.</p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <h4>Enlaces de Interés</h4>
+      <ul class="footer-links">
+        <li><a href="https://github.com/Williamzryg/Angel" target="_blank" rel="noopener noreferrer">Mi Repositorio GitHub</a></li>
+        <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Página del Instructor</a></li>
+        <li><a href="https://senati.blackboard.com/" target="_blank" rel="noopener noreferrer">Blackboard SENATI</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
+    </div>
   </footer>
 
   <script>
