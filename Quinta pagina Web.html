@@ -3,407 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario e Interacción Web - Quinta Página</title>
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Estilos generales y Grid Layout */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f9;
-      color: #333333;
-      line-height: 1.6;
-      display: grid;
-      grid-template-areas:
-        "header header"
-        "nav nav"
-        "section aside"
-        "footer footer";
-      grid-template-columns: 3fr 1fr;
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    /* Encabezado */
-    header {
-      grid-area: header;
-      background-color: #1e3a8a; /* Azul marino */
-      color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      text-align: center;
-      border-bottom: 5px solid #3b82f6;
-    }
-
-    header img {
-      max-width: 120px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      font-size: 2rem;
-    }
-
-    /* Navegación */
-    nav {
-      grid-area: nav;
-      background-color: #0f172a;
-      padding: 12px;
-      border-radius: 8px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .nav-btn {
-      background-color: #2563eb;
-      color: #ffffff;
-      text-decoration: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .nav-btn:hover {
-      background-color: #3b82f6;
-    }
-
-    /* Sección Principal */
-    section {
-      grid-area: section;
-      background-color: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-    }
-
-    section h2 {
-      color: #1e3a8a;
-      margin-bottom: 12px;
-      font-size: 1.35rem;
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 5px;
-    }
-
-    section hr {
-      border: 0;
-      border-top: 1px solid #e2e8f0;
-      margin: 30px 0;
-    }
-
-    /* Formulario */
-    .form-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group label {
-      font-weight: 600;
-      margin-bottom: 5px;
-      color: #1e293b;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 10px 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      font-size: 0.95rem;
-      font-family: inherit;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: #2563eb;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-    }
-
-    /* Botones */
-    .button-container {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
-
-    .action-btn {
-      background-color: #2563eb;
-      color: #ffffff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: background-color 0.2s;
-    }
-
-    .action-btn:hover {
-      background-color: #1e3a8a;
-    }
-
-    /* Contenedor de Imagen Dinámica */
-    .imagen-container {
-      text-align: center;
-      margin: 25px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .imagen-container img {
-      width: 300px;
-      height: 250px;
-      object-fit: cover;
-      max-width: 100%;
-      border: 3px solid #1e3a8a;
-      border-radius: 10px;
-    }
-
-    .regresar {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      background-color: #0f172a;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .regresar:hover {
-      background-color: #334155;
-    }
-
-    /* Barra Lateral */
-    aside {
-      grid-area: aside;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      height: fit-content;
-    }
-
-    aside h3 {
-      color: #1e3a8a;
-      margin-bottom: 12px;
-      font-size: 1.15rem;
-    }
-
-    aside p {
-      color: #64748b;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-
-    /* Pie de página */
-    footer {
-      grid-area: footer;
-      background-color: #0f172a;
-      color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    footer h4 {
-      margin-bottom: 10px;
-      color: #93c5fd;
-    }
-
-    footer ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    footer a {
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsivo para móviles */
-    @media (max-width: 768px) {
-      body {
-        grid-template-areas:
-          "header"
-          "nav"
-          "section"
-          "aside"
-          "footer";
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <title>Proyecto Web - Formulario</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <header>
-    <a href="index.html">
-      <img src="images/logo.png" alt="Logo Instituto EducaTech">
-    </a>
-    <h1>Formulario e Interacción Web</h1>
+  <header class="main-header">
+    <div class="brand">
+      <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Logo" class="logo-img"></a>
+      <h1 class="site-title">Proyecto Web HTML y CSS</h1>
+    </div>
   </header>
 
-  <nav>
+  <nav class="main-nav">
     <ul>
-      <li><a href="index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
       <li><a href="segunda.html" class="nav-btn">Listas</a></li>
       <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
       <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
-      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
-      <li><a href="instituto.html" class="nav-btn">Instituto</a></li>
+      <li><a href="quinta.html" class="nav-btn active">Formulario</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
     </ul>
   </nav>
 
-  <section>
-    <h2>Formulario de Contacto</h2>
-    <p>
-      Completa los datos solicitados y prueba las funciones de JavaScript.
-    </p>
+  <div class="layout-container">
+    <main class="main-content">
+      <section>
+        <h2>Tarea 04 - Formulario de Registro con Validación</h2>
+        <p>Complete los datos solicitados a continuación:</p>
 
-    <form id="contactForm">
-      <div class="form-container">
-        <div class="form-group">
-          <label for="nombre">Nombre Completo:</label>
-          <input type="text" id="nombre" placeholder="Tu nombre..." required>
-        </div>
+        <form id="registroForm" onsubmit="return validarFormulario(event)" class="interactive-box">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" placeholder="Ej. Juan Pérez">
+          </div>
 
-        <div class="form-group">
-          <label for="correo">Correo Electrónico:</label>
-          <input type="email" id="correo" placeholder="ejemplo@correo.com" required>
-        </div>
+          <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" placeholder="ejemplo@correo.com">
+          </div>
 
-        <div class="form-group">
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+          <div class="form-group">
+            <label for="carrera">Carrera / Especialidad:</label>
+            <select id="carrera">
+              <option value="">-- Seleccione una opción --</option>
+              <option value="ing_software">Ingeniería de Software con IA</option>
+              <option value="diseno">Diseño Gráfico Digital</option>
+              <option value="redes">Redes e Infraestructura</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comentario">Comentario o Consulta:</label>
+            <textarea id="comentario" rows="4" placeholder="Escriba su mensaje..."></textarea>
+          </div>
+
+          <button type="submit" class="nav-arrow-btn">Enviar Registro</button>
+        </form>
+
+        <div class="page-navigation">
+          <a href="cuarta.html" class="nav-arrow-btn">&larr; Anterior: JavaScript</a>
+          <a href="nosotros.html" class="nav-arrow-btn">Siguiente: Nosotros &rarr;</a>
         </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Validaciones del Sistema</h3>
+        <p>El formulario verifica la existencia de datos en los campos antes de simular el envío.</p>
       </div>
+    </aside>
+  </div>
 
-      <div class="button-container">
-        <button type="button" class="action-btn" onclick="enviarFormulario()">
-          Enviar Datos
-        </button>
-
-        <button type="button" class="action-btn" onclick="limpiarFormulario()">
-          Limpiar Formulario
-        </button>
-
-        <button type="button" class="action-btn" onclick="saludoEspecial()">
-          Saludo Personalizado
-        </button>
-      </div>
-    </form>
-
-    <hr>
-
-    <h2>Ejercicio 03 - Cambio de Imagen</h2>
-    <p>
-      Presiona el botón para alternar la imagen mostrada dinámicamente.
-    </p>
-
-    <div class="imagen-container">
-      <img id="imagenDinamica" src="images/Golde R.png" alt="Golden Retriever / Imagen dinámica">
-      <button type="button" class="action-btn" onclick="cambiarImagen()">
-        Cambiar Imagen
-      </button>
-    </div>
-
-    <a href="index.html" class="regresar">← Regresar al Inicio</a>
-  </section>
-
-  <aside>
-    <h3>Información</h3>
-    <p>
-      Esta página contiene un formulario interactivo y el ejercicio de JavaScript para cambiar dinámicamente la imagen de la plantilla.
-    </p>
-    <p>
-      Al presionar el botón "Cambiar Imagen", la foto alternará entre el Golden Retriever y el Fénix.
-    </p>
-  </aside>
-
-  <footer>
-    <h4>Enlaces de Interés</h4>
-    <ul>
-      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard SENATI</a></li>
-      <li><a href="https://github.com/Williamzryg/Angel" target="_blank">Mi Repositorio GitHub</a></li>
-    </ul>
+  <footer class="main-footer">
+    <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
   </footer>
 
   <script>
-    // 1. Envío de formulario
-    function enviarFormulario() {
+    function validarFormulario(e) {
+      e.preventDefault();
       let nombre = document.getElementById("nombre").value.trim();
       let correo = document.getElementById("correo").value.trim();
+      let carrera = document.getElementById("carrera").value;
 
-      if (nombre !== "" && correo !== "") {
-        alert("Gracias " + nombre + ". Se registró el correo: " + correo);
-      } else {
-        alert("Por favor, complete los campos obligatorios (Nombre y Correo).");
+      if (nombre === "" || correo === "" || carrera === "") {
+        alert("Por favor complete todos los campos obligatorios del formulario.");
+        return false;
       }
-    }
 
-    // 2. Limpieza de formulario
-    function limpiarFormulario() {
-      document.getElementById("contactForm").reset();
-      alert("Formulario limpiado correctamente.");
-    }
-
-    // 3. Saludo personalizado
-    function saludoEspecial() {
-      let nombre = document.getElementById("nombre").value.trim();
-
-      if (nombre !== "") {
-        alert("¡Hola " + nombre + "! Gracias por visitar EducaTech.");
-      } else {
-        alert("Por favor, ingrese su nombre en el formulario para recibir un saludo personalizado.");
-      }
-    }
-
-    // 4. Ejercicio 03: Cambio dinámico de imagen
-    function cambiarImagen() {
-      let imagen = document.getElementById("imagenDinamica");
-
-      if (imagen.src.includes("Golde")) {
-        imagen.src = "images/Feni.png";
-        imagen.alt = "Fénix";
-      } else {
-        imagen.src = "images/Golde R.png";
-        imagen.alt = "Golden Retriever";
-      }
+      alert("¡Registro completado exitosamente! Muchas gracias por enviar su información.");
+      document.getElementById("registroForm").reset();
+      return true;
     }
   </script>
 
