@@ -3,146 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript - Cuarta Página Web</title>
-
-  <!-- Enlace a la hoja de estilos -->
+  <title>Proyecto Web - JavaScript</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <!-- Encabezado Principal -->
   <header class="main-header">
     <div class="brand">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.png" alt="Logo Instituto" class="logo-img">
-      </a>
-      <h1 class="site-title">Interacciones con JavaScript</h1>
+      <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Logo" class="logo-img"></a>
+      <h1 class="site-title">Proyecto Web HTML y CSS</h1>
     </div>
-
-    <!-- Menú de Navegación Principal -->
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
-        <li><a href="segunda.html" class="nav-btn">Listas</a></li>
-        <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
-        <li><a href="cuarta.html" class="nav-btn active">JavaScript</a></li>
-        <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Contenido Principal -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
+      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+      <li><a href="cuarta.html" class="nav-btn active">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
+    </ul>
+  </nav>
+
   <div class="layout-container">
     <main class="main-content">
-      <section class="js-section">
-        <h2>Tarea 03 - Ejercicios Interactivos con JavaScript</h2>
-        <p class="section-description">Presiona los botones para ejecutar las funciones y algoritmos interactivos:</p>
+      <section>
+        <h2>Tarea 03 - Ejercicios Prácticos de JavaScript</h2>
 
-        <!-- Tarjeta: Cambio de Texto en el DOM -->
-        <article class="card">
-          <div class="card-body">
-            <h3 id="tituloDinamico">Manipulación del DOM</h3>
-            <p id="parrafoDinamico">Haz clic en los botones para modificar este texto en tiempo real.</p>
-            <div class="button-container">
-              <button type="button" class="action-btn" onclick="cambiarTexto()">Cambiar Texto</button>
-              <button type="button" class="action-btn secondary-btn" onclick="restaurarTexto()">Restaurar</button>
-            </div>
-          </div>
+        <!-- Ejercicio 1 -->
+        <article class="interactive-box">
+          <h3>Ejercicio 01: Conversor de Moneda</h3>
+          <p>Solicitar dólares y tasa de cambio para mostrar el resultado mediante alert:</p>
+          <button onclick="ejecutarEjercicio1()" class="nav-arrow-btn">Ejecutar Conversión</button>
         </article>
 
-        <div class="card-grid">
-          <!-- Tarjeta: Ejercicio 01 (Conversor de Moneda) -->
-          <article class="card">
-            <div class="card-body">
-              <h3>Ejercicio 01: Conversor de Moneda</h3>
-              <p>Calcula el equivalente en moneda local a partir de un monto en dólares y el tipo de cambio[cite: 1].</p>
-              <br>
-              <button type="button" class="action-btn" onclick="convertirMoneda()">Convertir Moneda</button>
-            </div>
-          </article>
+        <!-- Ejercicio 2 -->
+        <article class="interactive-box">
+          <h3>Ejercicio 02: Cálculo de Área y Perímetro de Terreno</h3>
+          <p>Ingresar dimensiones de un terreno rectangular para obtener su área y perímetro:</p>
+          <button onclick="ejecutarEjercicio2()" class="nav-arrow-btn">Calcular Terreno</button>
+        </article>
 
-          <!-- Tarjeta: Ejercicio 02 (Calculadora de Terreno) -->
-          <article class="card">
-            <div class="card-body">
-              <h3>Ejercicio 02: Cálculo de Terreno</h3>
-              <p>Calcula el área y el perímetro de un terreno ingresando su largo y ancho[cite: 1].</p>
-              <br>
-              <button type="button" class="action-btn" onclick="calcularTerreno()">Calcular Terreno</button>
-            </div>
-          </article>
-        </div>
+        <!-- Ejercicio 3 -->
+        <article class="interactive-box">
+          <h3>Ejercicio 03: Manipulación de Imagen (DOM)</h3>
+          <p>Cambia dinámicamente la imagen presentada en la plantilla:</p>
+          <img id="imagenDinamica" src="images/Golde R.png" alt="Imagen dinamica" style="width:200px; display:block; margin: 10px 0; border-radius:5px;">
+          <button onclick="cambiarImagen()" class="nav-arrow-btn">Cambiar Imagen</button>
+        </article>
 
-        <!-- Botones de Navegación entre Páginas -->
+        <!-- Ejercicio 4 -->
+        <article class="interactive-box">
+          <h3>Ejercicio 04: Manipulación de Texto (DOM)</h3>
+          <p id="textoDinamico">Este texto cambiará cuando presiones el botón de abajo.</p>
+          <button onclick="cambiarTexto()" class="nav-arrow-btn">Cambiar Texto</button>
+        </article>
+
         <div class="page-navigation">
-          <a href="tercera.html" class="nav-arrow-btn">&larr; Anterior (Tablas)</a>
-          <a href="quinta.html" class="nav-arrow-btn">Siguiente (Formulario) &rarr;</a>
+          <a href="tercera.html" class="nav-arrow-btn">&larr; Anterior: Tablas</a>
+          <a href="quinta.html" class="nav-arrow-btn">Siguiente: Formulario &rarr;</a>
         </div>
       </section>
     </main>
 
-    <!-- Barra Lateral -->
     <aside class="sidebar">
       <div class="widget">
-        <h3>Información</h3>
-        <p>Demostración de algoritmos interactivos manipulando el DOM y utilizando cuadros emergentes (alert y prompt)[cite: 1].</p>
+        <h3>Lógica JavaScript</h3>
+        <p>Pruebas interactivas utilizando diálogos informativos y manipulaciones directas sobre los elementos del DOM.</p>
       </div>
     </aside>
   </div>
 
-  <!-- Pie de Página -->
   <footer class="main-footer">
-    <div class="footer-content">
-      <h4>Enlaces de Interés</h4>
-      <ul class="footer-links">
-        <li><a href="https://github.com/Williamzryg/Angel" target="_blank" rel="noopener noreferrer">Mi Repositorio GitHub</a></li>
-        <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Página del Instructor</a></li>
-        <li><a href="https://senati.blackboard.com/" target="_blank" rel="noopener noreferrer">Blackboard SENATI</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
-    </div>
+    <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Scripts de Funciones JavaScript -->
   <script>
-    // Manipulación del DOM
-    function cambiarTexto() {
-      document.getElementById("tituloDinamico").innerText = "¡Texto Actualizado!";
-      document.getElementById("parrafoDinamico").innerText = "El contenido ha sido modificado mediante JavaScript correctamente.";
-    }
-
-    function restaurarTexto() {
-      document.getElementById("tituloDinamico").innerText = "Manipulación del DOM";
-      document.getElementById("parrafoDinamico").innerText = "Haz clic en los botones para modificar este texto en tiempo real.";
-    }
-
-    // Ejercicio 01: Conversor de Dólares a Moneda Local
-    function convertirMoneda() {
-      let dolares = parseFloat(prompt("Ingrese la cantidad en dólares ($):"));
+    function ejecutarEjercicio1() {
+      let dolares = parseFloat(prompt("Ingrese la cantidad en Dólares ($):"));
       let tasaCambio = parseFloat(prompt("Ingrese la tasa de cambio a moneda local:"));
-
-      if (!isNaN(dolares) && !isNaN(tasaCambio) && dolares > 0 && tasaCambio > 0) {
-        let resultado = dolares * tasaCambio;
-        alert("Conversión Realizada:\n$" + dolares + " USD equivalen a S/ " + resultado.toFixed(2) + " en moneda local.");
+      
+      if (!isNaN(dolares) && !isNaN(tasaCambio)) {
+        let total = dolares * tasaCambio;
+        alert(dolares + " USD equivalen a " + total.toFixed(2) + " en moneda local.");
       } else {
-        alert("Por favor, ingrese montos numéricos válidos.");
+        alert("Por favor ingrese valores numéricos válidos.");
       }
     }
 
-    // Ejercicio 02: Área y Perímetro del Terreno
-    function calcularTerreno() {
-      let largo = parseFloat(prompt("Ingrese el largo del terreno (metros):"));
-      let ancho = parseFloat(prompt("Ingrese el ancho del terreno (metros):"));
+    function ejecutarEjercicio2() {
+      let largo = parseFloat(prompt("Ingrese el largo del terreno (m):"));
+      let ancho = parseFloat(prompt("Ingrese el ancho del terreno (m):"));
 
-      if (!isNaN(largo) && !isNaN(ancho) && largo > 0 && ancho > 0) {
+      if (!isNaN(largo) && !isNaN(ancho)) {
         let area = largo * ancho;
         let perimetro = 2 * (largo + ancho);
-        alert("Resultados del Terreno:\n- Área: " + area.toFixed(2) + " m²\n- Perímetro: " + perimetro.toFixed(2) + " m");
+        alert("Resultados del Terreno:\n- Área: " + area + " m²\n- Perímetro: " + perimetro + " m");
       } else {
-        alert("Por favor, ingrese dimensiones numéricas válidas.");
+        alert("Por favor ingrese valores válidos para las dimensiones.");
       }
+    }
+
+    function cambiarImagen() {
+      let img = document.getElementById("imagenDinamica");
+      if (img.src.includes("Golde%20R.png") || img.src.includes("Golde R.png")) {
+        img.src = "images/Feni.png";
+      } else {
+        img.src = "images/Golde R.png";
+      }
+    }
+
+    function cambiarTexto() {
+      let txt = document.getElementById("textoDinamico");
+      txt.innerText = "¡El contenido de este texto ha sido modificado exitosamente mediante JavaScript!";
+      txt.style.color = "#2b6cb0";
+      txt.style.fontWeight = "bold";
     }
   </script>
 
