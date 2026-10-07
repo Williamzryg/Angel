@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Web - JavaScript</title>
-  <link rel="stylesheet" href="estilos.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    .main-header { background-color: #0d233a; color: #ffffff; padding: 1.5rem; text-align: center; }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 15px; }
+    .logo-img { max-height: 50px; }
+    .main-nav { background-color: #1a365d; padding: 0.8rem; }
+    .main-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+    .nav-btn { color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: 500; }
+    .nav-btn:hover, .nav-btn.active { background-color: #2b6cb0; }
+    .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
+    .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
+    .interactive-box { background: #edf2f7; padding: 15px; border-radius: 6px; margin-bottom: 20px; }
+    .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; border: none; cursor: pointer; display: inline-block; }
+    .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    @media (max-width: 768px) { .layout-container { flex-direction: column; } }
+  </style>
 </head>
 <body>
 
@@ -30,33 +48,30 @@
     <main class="main-content">
       <section>
         <h2>Tarea 03 - Ejercicios Prácticos de JavaScript</h2>
+        <br>
 
-        <!-- Ejercicio 1 -->
         <article class="interactive-box">
           <h3>Ejercicio 01: Conversor de Moneda</h3>
-          <p>Solicitar dólares y tasa de cambio para mostrar el resultado mediante alert:</p>
+          <p>Solicita la cantidad en dólares y la tasa de cambio local para calcular la equivalencia:</p><br>
           <button onclick="ejecutarEjercicio1()" class="nav-arrow-btn">Ejecutar Conversión</button>
         </article>
 
-        <!-- Ejercicio 2 -->
         <article class="interactive-box">
-          <h3>Ejercicio 02: Cálculo de Área y Perímetro de Terreno</h3>
-          <p>Ingresar dimensiones de un terreno rectangular para obtener su área y perímetro:</p>
+          <h3>Ejercicio 02: Área y Perímetro de Terreno</h3>
+          <p>Calcula el área y el perímetro a partir de las dimensiones ingresadas:</p><br>
           <button onclick="ejecutarEjercicio2()" class="nav-arrow-btn">Calcular Terreno</button>
         </article>
 
-        <!-- Ejercicio 3 -->
         <article class="interactive-box">
-          <h3>Ejercicio 03: Manipulación de Imagen (DOM)</h3>
-          <p>Cambia dinámicamente la imagen presentada en la plantilla:</p>
-          <img id="imagenDinamica" src="images/Golde R.png" alt="Imagen dinamica" style="width:200px; display:block; margin: 10px 0; border-radius:5px;">
+          <h3>Ejercicio 03: Cambiar Imagen (DOM)</h3>
+          <p>Alterna la imagen adjunta en la plantilla:</p>
+          <img id="imagenDinamica" src="images/Golde R.png" alt="Imagen dinamica" style="width:200px; display:block; margin: 15px 0; border-radius:5px;">
           <button onclick="cambiarImagen()" class="nav-arrow-btn">Cambiar Imagen</button>
         </article>
 
-        <!-- Ejercicio 4 -->
         <article class="interactive-box">
-          <h3>Ejercicio 04: Manipulación de Texto (DOM)</h3>
-          <p id="textoDinamico">Este texto cambiará cuando presiones el botón de abajo.</p>
+          <h3>Ejercicio 04: Cambiar Contenido de Texto (DOM)</h3>
+          <p id="textoDinamico" style="margin: 10px 0;">Este texto cambiará cuando presiones el botón de abajo.</p>
           <button onclick="cambiarTexto()" class="nav-arrow-btn">Cambiar Texto</button>
         </article>
 
@@ -70,7 +85,7 @@
     <aside class="sidebar">
       <div class="widget">
         <h3>Lógica JavaScript</h3>
-        <p>Pruebas interactivas utilizando diálogos informativos y manipulaciones directas sobre los elementos del DOM.</p>
+        <p>Los botones ejecutan funciones escritas en JavaScript para realizar cálculos y modificar elementos HTML en tiempo real.</p>
       </div>
     </aside>
   </div>
@@ -101,7 +116,7 @@
         let perimetro = 2 * (largo + ancho);
         alert("Resultados del Terreno:\n- Área: " + area + " m²\n- Perímetro: " + perimetro + " m");
       } else {
-        alert("Por favor ingrese valores válidos para las dimensiones.");
+        alert("Por favor ingrese valores válidos.");
       }
     }
 
