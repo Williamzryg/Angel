@@ -4,7 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Web - Listas</title>
-  <link rel="stylesheet" href="estilos.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    .main-header { background-color: #0d233a; color: #ffffff; padding: 1.5rem; text-align: center; }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 15px; }
+    .logo-img { max-height: 50px; }
+    .main-nav { background-color: #1a365d; padding: 0.8rem; }
+    .main-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+    .nav-btn { color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: 500; }
+    .nav-btn:hover, .nav-btn.active { background-color: #2b6cb0; }
+    .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
+    .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
+    .interactive-box { background: #edf2f7; padding: 15px; border-radius: 6px; margin-bottom: 20px; }
+    .interactive-box ol, .interactive-box ul { margin-left: 20px; margin-top: 10px; }
+    .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    @media (max-width: 768px) { .layout-container { flex-direction: column; } }
+  </style>
 </head>
 <body>
 
@@ -30,10 +49,12 @@
     <main class="main-content">
       <section>
         <h2>Tarea 01 - Estructuras de Listas</h2>
-        <p>2 Ejemplos por tipo de lista con al menos 10 elementos cada una:</p>
+        <p>Uso de listas ordenadas y no ordenadas (2 ejemplos por tipo con mínimo 10 elementos):</p>
+        <br>
 
         <article class="interactive-box">
           <h3>1. Listas Ordenadas (&lt;ol&gt;)</h3>
+          <br>
           <h4>Ejemplo A: Pasos para desplegar un Proyecto Web</h4>
           <ol>
             <li>Análisis de requerimientos</li><li>Diseño de maquetación (Wireframes)</li><li>Creación de estructura HTML5</li>
@@ -51,6 +72,7 @@
 
         <article class="interactive-box">
           <h3>2. Listas No Ordenadas (&lt;ul&gt;)</h3>
+          <br>
           <h4>Ejemplo A: Herramientas del Desarrollador Frontend</h4>
           <ul>
             <li>Visual Studio Code</li><li>Git & GitHub</li><li>Figma</li><li>Chrome DevTools</li><li>NPM (Node Package Manager)</li>
@@ -73,8 +95,8 @@
 
     <aside class="sidebar">
       <div class="widget">
-        <h3>Nota Informativa</h3>
-        <p>Las listas se maquetaron cumpliendo con la cantidad mínima de 10 elementos exigida por cada categoría.</p>
+        <h3>Estructuras HTML</h3>
+        <p>Las listas ordenadas (&lt;ol&gt;) emplean números correlativos, mientras que las listas no ordenadas (&lt;ul&gt;) utilizan viñetas estándar.</p>
       </div>
     </aside>
   </div>
