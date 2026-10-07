@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Web - Nosotros</title>
-  <link rel="stylesheet" href="estilos.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    .main-header { background-color: #0d233a; color: #ffffff; padding: 1.5rem; text-align: center; }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 15px; }
+    .logo-img { max-height: 50px; }
+    .main-nav { background-color: #1a365d; padding: 0.8rem; }
+    .main-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+    .nav-btn { color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: 500; }
+    .nav-btn:hover, .nav-btn.active { background-color: #2b6cb0; }
+    .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
+    .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
+    .interactive-box { background: #edf2f7; padding: 15px; border-radius: 6px; margin-bottom: 20px; }
+    .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    @media (max-width: 768px) { .layout-container { flex-direction: column; } }
+  </style>
 </head>
 <body>
 
@@ -30,21 +48,21 @@
     <main class="main-content">
       <section>
         <h2>Presentación Institucional - SENATI</h2>
-        <p class="section-description">Información del instituto de educación tecnológica superior:</p>
+        <p>Información institucional y trayectoria tecnológica:</p><br>
 
         <article class="interactive-box">
           <h3>Misión</h3>
-          <p>Formar y capacitar a profesionales técnicos altamente calificados para incrementar la productividad y el desarrollo del sector industrial y tecnológico.</p>
+          <p>Formar y capacitar a profesionales técnicos altamente calificados para incrementar la productividad y el desarrollo del sector industrial.</p>
         </article>
 
         <article class="interactive-box">
           <h3>Visión</h3>
-          <p>Ser la institución líder en formación tecnológica en la región, reconocida por su excelencia académica, innovación y rápida inserción laboral.</p>
+          <p>Ser la institución de educación técnica superior de mayor liderazgo en el país, destacando por la calidad de sus egresados y la innovación metodológica.</p>
         </article>
 
         <article class="interactive-box">
-          <h3>Historia y Trayectoria</h3>
-          <p>Fundado para responder a la creciente demanda del sector profesional e industrial, el instituto brinda educación técnica moderna alineada con las exigencias del mercado global.</p>
+          <h3>Historia</h3>
+          <p>Ofrecemos formación profesional adaptada a las continuas demandas del mercado tecnológico e industrial nacional e internacional.</p>
         </article>
 
         <div class="page-navigation">
@@ -56,8 +74,8 @@
 
     <aside class="sidebar">
       <div class="widget">
-        <h3>Portal del Estudiante</h3>
-        <p>Enlace directo al aula virtual Blackboard y herramientas institucionales.</p>
+        <h3>Portal Institucional</h3>
+        <p>Acceso directo a las herramientas educativas, asignaturas y canal de comunicación técnica.</p>
       </div>
     </aside>
   </div>
