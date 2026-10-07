@@ -4,7 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Web - Formulario</title>
-  <link rel="stylesheet" href="estilos.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    .main-header { background-color: #0d233a; color: #ffffff; padding: 1.5rem; text-align: center; }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 15px; }
+    .logo-img { max-height: 50px; }
+    .main-nav { background-color: #1a365d; padding: 0.8rem; }
+    .main-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+    .nav-btn { color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: 500; }
+    .nav-btn:hover, .nav-btn.active { background-color: #2b6cb0; }
+    .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
+    .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
+    .interactive-box { background: #edf2f7; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e0; border-radius: 4px; }
+    .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; border: none; cursor: pointer; display: inline-block; }
+    .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    @media (max-width: 768px) { .layout-container { flex-direction: column; } }
+  </style>
 </head>
 <body>
 
@@ -30,7 +51,7 @@
     <main class="main-content">
       <section>
         <h2>Tarea 04 - Formulario de Registro con Validación</h2>
-        <p>Complete los datos solicitados a continuación:</p>
+        <p>Complete los datos solicitados a continuación:</p><br>
 
         <form id="registroForm" onsubmit="return validarFormulario(event)" class="interactive-box">
           <div class="form-group">
@@ -70,8 +91,8 @@
 
     <aside class="sidebar">
       <div class="widget">
-        <h3>Validaciones del Sistema</h3>
-        <p>El formulario verifica la existencia de datos en los campos antes de simular el envío.</p>
+        <h3>Validación de Datos</h3>
+        <p>El formulario incluye un script encargado de verificar que ningún campo obligatorio se encuentre vacío antes de procesar la solicitud.</p>
       </div>
     </aside>
   </div>
@@ -88,11 +109,11 @@
       let carrera = document.getElementById("carrera").value;
 
       if (nombre === "" || correo === "" || carrera === "") {
-        alert("Por favor complete todos los campos obligatorios del formulario.");
+        alert("Por favor complete todos los campos obligatorios antes de enviar.");
         return false;
       }
 
-      alert("¡Registro completado exitosamente! Muchas gracias por enviar su información.");
+      alert("¡Registro enviado exitosamente! Los datos han sido validados.");
       document.getElementById("registroForm").reset();
       return true;
     }
