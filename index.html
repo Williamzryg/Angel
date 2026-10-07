@@ -4,7 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Web - Inicio</title>
-  <link rel="stylesheet" href="estilos.css">
+  <style>
+    /* Estilos globales y plantilla integrados */
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    
+    /* Header y Navegación */
+    .main-header { background-color: #0d233a; color: #ffffff; padding: 1.5rem; text-align: center; }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 15px; }
+    .logo-img { max-height: 50px; }
+    .main-nav { background-color: #1a365d; padding: 0.8rem; }
+    .main-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; }
+    .nav-btn { color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: 500; transition: background 0.3s; }
+    .nav-btn:hover, .nav-btn.active { background-color: #2b6cb0; }
+    
+    /* Maquetación Main + Aside */
+    .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
+    .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
+    
+    /* Tarjetas de Galería */
+    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 20px 0; }
+    .card { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; }
+    .card-media img { width: 100%; height: 160px; object-fit: cover; }
+    .card-body { padding: 15px; }
+    
+    /* Botones de Dirección de Páginas */
+    .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .nav-arrow-btn.disabled { background-color: #cbd5e0; cursor: not-allowed; }
+    
+    /* Footer */
+    .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .footer-links { list-style: none; display: flex; justify-content: center; gap: 20px; margin: 10px 0; }
+    .footer-links a { color: #63b3ed; text-decoration: none; }
+    
+    @media (max-width: 768px) { .layout-container { flex-direction: column; } }
+  </style>
 </head>
 <body>
 
@@ -19,7 +55,7 @@
 
   <nav class="main-nav">
     <ul>
-      <li><a href="index.html" class="nav-btn active">Inicio</a></li>
+      <li><a href="index.html" class="nav-btn active">Inicio (Galería)</a></li>
       <li><a href="segunda.html" class="nav-btn">Listas</a></li>
       <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
       <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
@@ -51,7 +87,7 @@
             </div>
             <div class="card-body">
               <h3>JavaScript</h3>
-              <p>Lenguaje de programación interpretado, orientado a objetos y dinámico que constituye uno de los pilares fundamentales de la web.</p>
+              <p>Lenguaje de programación interpretado, orientado a objetos y dinámico que constituye uno de los pilares de la web.</p>
             </div>
           </article>
 
@@ -61,14 +97,14 @@
             </div>
             <div class="card-body">
               <h3>Python</h3>
-              <p>Lenguaje de programación de alto nivel, interpretado y de propósito general, reconocido por su sintaxis clara y legibilidad.</p>
+              <p>Lenguaje de programación de alto nivel, interpretado y reconocido por su sintaxis clara y legibilidad.</p>
             </div>
           </article>
         </div>
 
         <div class="page-navigation">
           <span class="nav-arrow-btn disabled">&larr; Inicio</span>
-          <a href="segunda.html" class="nav-arrow-btn">Siguiente (Listas) &rarr;</a>
+          <a href="segunda.html" class="nav-arrow-btn">Siguiente: Listas &rarr;</a>
         </div>
       </section>
     </main>
@@ -76,7 +112,7 @@
     <aside class="sidebar">
       <div class="widget">
         <h3>Notas del Curso</h3>
-        <p>Bienvenido al portal principal de proyectos. En esta sección se muestran las fotos y descripciones solicitadas en la Tarea 01.</p>
+        <p>Bienvenido al portal principal. Esta plantilla incluye la estructura &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;aside&gt; y &lt;footer&gt; en una sola hoja.</p>
       </div>
     </aside>
   </div>
