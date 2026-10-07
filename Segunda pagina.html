@@ -3,98 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Listas - Segunda Página Web</title>
-
-  <!-- Enlace a la hoja de estilos -->
+  <title>Proyecto Web - Listas</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <!-- Encabezado Principal -->
   <header class="main-header">
     <div class="brand">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.png" alt="Logo Instituto" class="logo-img">
-      </a>
-      <h1 class="site-title">Listas y Estructura Web</h1>
+      <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Logo" class="logo-img"></a>
+      <h1 class="site-title">Proyecto Web HTML y CSS</h1>
     </div>
-
-    <!-- Menú de Navegación Principal -->
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="segunda.html" class="nav-btn active">Listas</a></li>
-        <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
-        <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
-        <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Contenido Principal -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
+      <li><a href="segunda.html" class="nav-btn active">Listas</a></li>
+      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
+    </ul>
+  </nav>
+
   <div class="layout-container">
     <main class="main-content">
-      <section class="lists-section">
-        <h2>Tarea 02 - Listas Ordenadas y No Ordenadas</h2>
-        <p class="section-description">Estructura de contenidos mediante listas en HTML5:</p>
+      <section>
+        <h2>Tarea 01 - Estructuras de Listas</h2>
+        <p>2 Ejemplos por tipo de lista con al menos 10 elementos cada una:</p>
 
-        <div class="card-grid">
-          <article class="card">
-            <div class="card-body">
-              <h3>Tecnologías Web (Lista No Ordenada)</h3>
-              <ul class="custom-list unordered-list">
-                <li>HTML5 - Lenguaje de Marcado</li>
-                <li>CSS3 - Hojas de Estilo en Cascada</li>
-                <li>JavaScript - Lenguaje de Programación Web</li>
-                <li>Git y GitHub - Control de Versiones</li>
-              </ul>
-            </div>
-          </article>
+        <article class="interactive-box">
+          <h3>1. Listas Ordenadas (&lt;ol&gt;)</h3>
+          <h4>Ejemplo A: Pasos para desplegar un Proyecto Web</h4>
+          <ol>
+            <li>Análisis de requerimientos</li><li>Diseño de maquetación (Wireframes)</li><li>Creación de estructura HTML5</li>
+            <li>Aplicación de hojas de estilo CSS3</li><li>Programación de lógica con JavaScript</li><li>Pruebas de diseño responsivo</li>
+            <li>Optimización de imágenes y recursos</li><li>Configuración de repositorio Git</li><li>Carga de archivos al servidor web</li>
+            <li>Verificación final y auditoría SEO</li>
+          </ol>
+          <br>
+          <h4>Ejemplo B: Ranking de Lenguajes de Programación</h4>
+          <ol>
+            <li>Python</li><li>JavaScript</li><li>Java</li><li>C++</li><li>C#</li>
+            <li>TypeScript</li><li>PHP</li><li>SQL</li><li>Go</li><li>Rust</li>
+          </ol>
+        </article>
 
-          <article class="card">
-            <div class="card-body">
-              <h3>Proceso de Desarrollo (Lista Ordenada)</h3>
-              <ol class="custom-list ordered-list">
-                <li>Planificación del sitio web y maquetación inicial.</li>
-                <li>Creación de los archivos HTML estructurados.</li>
-                <li>Aplicación de diseño con la hoja de estilos CSS.</li>
-                <li>Inclusión de scripts de JavaScript interactivos.</li>
-                <li>Publicación en GitHub Pages.</li>
-              </ol>
-            </div>
-          </article>
-        </div>
+        <article class="interactive-box">
+          <h3>2. Listas No Ordenadas (&lt;ul&gt;)</h3>
+          <h4>Ejemplo A: Herramientas del Desarrollador Frontend</h4>
+          <ul>
+            <li>Visual Studio Code</li><li>Git & GitHub</li><li>Figma</li><li>Chrome DevTools</li><li>NPM (Node Package Manager)</li>
+            <li>Bootstrap Framework</li><li>Tailwind CSS</li><li>Sass / SCSS</li><li>Webpack / Vite</li><li>Postman</li>
+          </ul>
+          <br>
+          <h4>Ejemplo B: Conceptos Clave de CSS</h4>
+          <ul>
+            <li>Flexbox</li><li>CSS Grid</li><li>Media Queries</li><li>Especificidad</li><li>Modelo de Caja (Box Model)</li>
+            <li>Variables CSS</li><li>Animaciones y Transiciones</li><li>Pseudo-clases</li><li>Posicionamiento (Absolute/Relative)</li><li>Clean Architecture CSS</li>
+          </ul>
+        </article>
 
-        <!-- Botones de Navegación entre Páginas -->
         <div class="page-navigation">
-          <a href="index.html" class="nav-arrow-btn">&larr; Anterior (Inicio)</a>
-          <a href="tercera.html" class="nav-arrow-btn">Siguiente (Tablas) &rarr;</a>
+          <a href="index.html" class="nav-arrow-btn">&larr; Anterior: Galería</a>
+          <a href="tercera.html" class="nav-arrow-btn">Siguiente: Tablas &rarr;</a>
         </div>
       </section>
     </main>
 
-    <!-- Barra Lateral -->
     <aside class="sidebar">
       <div class="widget">
-        <h3>Información</h3>
-        <p>Página estructurada para demostrar el uso correcto de elementos de lista ordenados y no ordenados en HTML.</p>
+        <h3>Nota Informativa</h3>
+        <p>Las listas se maquetaron cumpliendo con la cantidad mínima de 10 elementos exigida por cada categoría.</p>
       </div>
     </aside>
   </div>
 
-  <!-- Pie de Página -->
   <footer class="main-footer">
-    <div class="footer-content">
-      <h4>Enlaces de Interés</h4>
-      <ul class="footer-links">
-        <li><a href="https://github.com/Williamzryg/Angel" target="_blank" rel="noopener noreferrer">Mi Repositorio GitHub</a></li>
-        <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Página del Instructor</a></li>
-        <li><a href="https://senati.blackboard.com/" target="_blank" rel="noopener noreferrer">Blackboard SENATI</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
-    </div>
+    <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
   </footer>
 
 </body>
