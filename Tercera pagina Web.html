@@ -3,108 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tablas - Tercera Página Web</title>
-
-  <!-- Enlace a la hoja de estilos -->
+  <title>Proyecto Web - Tablas</title>
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <!-- Encabezado Principal -->
   <header class="main-header">
     <div class="brand">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.png" alt="Logo Instituto" class="logo-img">
-      </a>
-      <h1 class="site-title">Tablas de Información</h1>
+      <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Logo" class="logo-img"></a>
+      <h1 class="site-title">Proyecto Web HTML y CSS</h1>
     </div>
-
-    <!-- Menú de Navegación Principal -->
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html" class="nav-btn">Inicio</a></li>
-        <li><a href="segunda.html" class="nav-btn">Listas</a></li>
-        <li><a href="tercera.html" class="nav-btn active">Tablas</a></li>
-        <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
-        <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- Contenido Principal -->
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
+      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+      <li><a href="tercera.html" class="nav-btn active">Tablas</a></li>
+      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn">Formulario</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
+    </ul>
+  </nav>
+
   <div class="layout-container">
     <main class="main-content">
-      <section class="table-section">
-        <h2>Horario de Clases</h2>
-        <p class="section-description">Organización de datos en formato tabular:</p>
+      <section>
+        <h2>Tarea 01 - Tablas Informativas</h2>
+        <p>2 Tablas estructuradas de 3 columnas por 20 filas cada una:</p>
 
-        <article class="card">
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="custom-table">
-                <thead>
-                  <tr>
-                    <th>Día</th>
-                    <th>Módulo / Curso</th>
-                    <th>Instructor</th>
-                    <th>Horario</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Lunes</td>
-                    <td>Desarrollo Web (HTML/CSS)</td>
-                    <td>Prof. García</td>
-                    <td>08:00 - 12:00</td>
-                  </tr>
-                  <tr>
-                    <td>Miércoles</td>
-                    <td>Base de Datos</td>
-                    <td>Prof. López</td>
-                    <td>14:00 - 18:00</td>
-                  </tr>
-                  <tr>
-                    <td>Viernes</td>
-                    <td>JavaScript e Interacción Web</td>
-                    <td>Prof. Mendoza</td>
-                    <td>08:00 - 12:00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <article>
+          <h3>Tabla 1: Registro de Cursos de Desarrollo</h3>
+          <div class="table-container">
+            <table class="custom-table">
+              <thead>
+                <tr><th>ID</th><th>Módulo / Curso</th><th>Horas Académicas</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>01</td><td>HTML5 Fundamental</td><td>40</td></tr>
+                <tr><td>02</td><td>CSS3 Estilos Avanzados</td><td>45</td></tr>
+                <tr><td>03</td><td>JavaScript Básico</td><td>50</td></tr>
+                <tr><td>04</td><td>JavaScript DOM y Eventos</td><td>50</td></tr>
+                <tr><td>05</td><td>Responsive Web Design</td><td>30</td></tr>
+                <tr><td>06</td><td>Bootstrap 5 Framework</td><td>35</td></tr>
+                <tr><td>07</td><td>Git y Control de Versiones</td><td>25</td></tr>
+                <tr><td>08</td><td>Introducción a React</td><td>60</td></tr>
+                <tr><td>09</td><td>Bases de Datos SQL</td><td>50</td></tr>
+                <tr><td>10</td><td>Node.js Fundamentals</td><td>55</td></tr>
+                <tr><td>11</td><td>Desarrollo API RESTful</td><td>40</td></tr>
+                <tr><td>12</td><td>Maquetación con Flexbox</td><td>20</td></tr>
+                <tr><td>13</td><td>CSS Grid Layout</td><td>25</td></tr>
+                <tr><td>14</td><td>Optimización Web Performance</td><td>30</td></tr>
+                <tr><td>15</td><td>Accesibilidad Web (A11y)</td><td>20</td></tr>
+                <tr><td>16</td><td>UX / UI Fundamentals</td><td>35</td></tr>
+                <tr><td>17</td><td>TypeScript Básico</td><td>40</td></tr>
+                <tr><td>18</td><td>Testing Frontend</td><td>30</td></tr>
+                <tr><td>19</td><td>Despliegue y Hosting Web</td><td>15</td></tr>
+                <tr><td>20</td><td>Proyecto Integrador Final</td><td>80</td></tr>
+              </tbody>
+            </table>
           </div>
         </article>
 
-        <!-- Botones de Navegación entre Páginas -->
+        <article>
+          <h3>Tabla 2: Catálogo de Software e Herramientas</h3>
+          <div class="table-container">
+            <table class="custom-table">
+              <thead>
+                <tr><th>Nº</th><th>Herramienta</th><th>Categoría</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>01</td><td>Visual Studio Code</td><td>Editor de Código</td></tr>
+                <tr><td>02</td><td>Sublime Text</td><td>Editor de Texto</td></tr>
+                <tr><td>03</td><td>Google Chrome</td><td>Navegador Web</td></tr>
+                <tr><td>04</td><td>Mozilla Firefox</td><td>Navegador Web</td></tr>
+                <tr><td>05</td><td>GitLab</td><td>Repositorio de Código</td></tr>
+                <tr><td>06</td><td>GitHub</td><td>Repositorio de Código</td></tr>
+                <tr><td>07</td><td>Figma</td><td>Diseño de Interfaces</td></tr>
+                <tr><td>08</td><td>Adobe XD</td><td>Prototipado</td></tr>
+                <tr><td>09</td><td>Postman</td><td>Pruebas de API</td></tr>
+                <tr><td>10</td><td>Docker</td><td>Contenedores</td></tr>
+                <tr><td>11</td><td>MySQL Workbench</td><td>Administración de BD</td></tr>
+                <tr><td>12</td><td>XAMPP Server</td><td>Servidor Local</td></tr>
+                <tr><td>13</td><td>NPM</td><td>Gestor de Paquetes</td></tr>
+                <tr><td>14</td><td>Sass Compiler</td><td>Preprocesador CSS</td></tr>
+                <tr><td>15</td><td>Vite</td><td>Empaquetador de Módulos</td></tr>
+                <tr><td>16</td><td>FileZilla</td><td>Cliente FTP</td></tr>
+                <tr><td>17</td><td>Trello</td><td>Gestión de Proyectos</td></tr>
+                <tr><td>18</td><td>Notion</td><td>Documentación</td></tr>
+                <tr><td>19</td><td>Slack</td><td>Comunicación</td></tr>
+                <tr><td>20</td><td>Canva</td><td>Diseño Gráfico</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
         <div class="page-navigation">
-          <a href="segunda.html" class="nav-arrow-btn">&larr; Anterior (Listas)</a>
-          <a href="cuarta.html" class="nav-arrow-btn">Siguiente (JavaScript) &rarr;</a>
+          <a href="segunda.html" class="nav-arrow-btn">&larr; Anterior: Listas</a>
+          <a href="cuarta.html" class="nav-arrow-btn">Siguiente: JavaScript &rarr;</a>
         </div>
       </section>
     </main>
 
-    <!-- Barra Lateral -->
     <aside class="sidebar">
       <div class="widget">
-        <h3>Información</h3>
-        <p>Demostración de estructura de datos mediante tablas con borde estilizado en color morado y cabeceras contrastadas.</p>
+        <h3>Estructura de Datos</h3>
+        <p>Las tablas respetan la distribución exacta de 3x20 solicitada en los requisitos.</p>
       </div>
     </aside>
   </div>
 
-  <!-- Pie de Página -->
   <footer class="main-footer">
-    <div class="footer-content">
-      <h4>Enlaces de Interés</h4>
-      <ul class="footer-links">
-        <li><a href="https://github.com/Williamzryg/Angel" target="_blank" rel="noopener noreferrer">Mi Repositorio GitHub</a></li>
-        <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Página del Instructor</a></li>
-        <li><a href="https://senati.blackboard.com/" target="_blank" rel="noopener noreferrer">Blackboard SENATI</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
-    </div>
+    <p>&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
   </footer>
 
 </body>
