@@ -17,6 +17,7 @@
     .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
     .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
+    .list-box { background: #edf2f7; padding: 15px 25px; border-radius: 6px; margin-bottom: 20px; }
     .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
     .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; }
     .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
@@ -33,25 +34,46 @@
   </header>
 
   <nav class="main-nav">
-  <ul>
-    <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
-    <li><a href="listas.html" class="nav-btn">Listas</a></li>
-    <li><a href="tablas.html" class="nav-btn">Tablas</a></li>
-    <li><a href="javascript.html" class="nav-btn">JavaScript</a></li>
-    <li><a href="formulario.html" class="nav-btn">Formulario</a></li>
-    <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
+      <li><a href="listas.html" class="nav-btn active">Listas</a></li>
+      <li><a href="tablas.html" class="nav-btn">Tablas</a></li>
+      <li><a href="javascript.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="formulario.html" class="nav-btn">Formulario</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
+    </ul>
+  </nav>
 
   <div class="layout-container">
     <main class="main-content">
       <section>
-        <h2>Estructura de Listas</h2>
-        <p>Contenido correspondiente a la sección de listas.</p>
+        <h2>Estructuras de Listas HTML</h2>
+        <p>Demostración de los diferentes tipos de listas en HTML5:</p><br>
+
+        <article class="list-box">
+          <h3>Lista Ordenada (Secuencial)</h3>
+          <ol>
+            <li>Análisis de Requerimientos</li>
+            <li>Diseño de Interfaces y Wireframes</li>
+            <li>Maquetación HTML5 y Estilos CSS3</li>
+            <li>Programación de Funcionalidades JavaScript</li>
+            <li>Despliegue y Publicación en Servidor</li>
+          </ol>
+        </article>
+
+        <article class="list-box">
+          <h3>Lista Desordenada (Elementos)</h3>
+          <ul>
+            <li>Visual Studio Code</li>
+            <li>Navegadores Web (Chrome, Firefox)</li>
+            <li>Control de Versiones con Git</li>
+            <li>Repositorio Remoto GitHub</li>
+          </ul>
+        </article>
 
         <div class="page-navigation">
           <a href="index.html" class="nav-arrow-btn">&larr; Anterior: Inicio</a>
-          <a href="Tercera%20página%20Web.html" class="nav-arrow-btn">Siguiente: Tablas &rarr;</a>
+          <a href="tablas.html" class="nav-arrow-btn">Siguiente: Tablas &rarr;</a>
         </div>
       </section>
     </main>
@@ -59,7 +81,7 @@
     <aside class="sidebar">
       <div class="widget">
         <h3>Sección de Listas</h3>
-        <p>Navegación fluida dentro del sitio.</p>
+        <p>Representación semántica de contenidos en formato de listas ordenadas y desordenadas.</p>
       </div>
     </aside>
   </div>
