@@ -17,8 +17,6 @@
     .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
     .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
     .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
-    .interactive-box { background: #edf2f7; padding: 15px; border-radius: 6px; margin-bottom: 20px; }
-    .interactive-box ol, .interactive-box ul { margin-left: 20px; margin-top: 10px; }
     .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
     .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; }
     .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
@@ -29,65 +27,30 @@
 
   <header class="main-header">
     <div class="brand">
-      <a href="índice.html" class="logo-link"><img src="images/logo.png" alt="Logo" class="logo-img"></a>
+      <a href="index.html" class="logo-link"><img src="images/logo.png" alt="Logo" class="logo-img"></a>
       <h1 class="site-title">Proyecto Web HTML y CSS</h1>
     </div>
   </header>
 
- <nav class="main-nav">
-  <ul>
-    <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
-    <li><a href="Segunda%20página.html" class="nav-btn active">Listas</a></li>
-    <li><a href="Tercera%20página%20Web.html" class="nav-btn">Tablas</a></li>
-    <li><a href="Cuarta%20página%20Web.html" class="nav-btn">JavaScript</a></li>
-    <li><a href="Quinta%20página%20Web.html" class="nav-btn">Formulario</a></li>
-    <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
-  </ul>
-</nav>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio (Galería)</a></li>
+      <li><a href="Segunda%20página.html" class="nav-btn active">Listas</a></li>
+      <li><a href="Tercera%20página%20Web.html" class="nav-btn">Tablas</a></li>
+      <li><a href="Cuarta%20página%20Web.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="Quinta%20página%20Web.html" class="nav-btn">Formulario</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
+    </ul>
+  </nav>
 
   <div class="layout-container">
     <main class="main-content">
       <section>
-        <h2>Tarea 01 - Estructuras de Listas</h2>
-        <p>Uso de listas ordenadas y no ordenadas (2 ejemplos por tipo con mínimo 10 elementos):</p>
-        <br>
-
-        <article class="interactive-box">
-          <h3>1. Listas Ordenadas (&lt;ol&gt;)</h3>
-          <br>
-          <h4>Ejemplo A: Pasos para desplegar un Proyecto Web</h4>
-          <ol>
-            <li>Análisis de requerimientos</li><li>Diseño de maquetación (Wireframes)</li><li>Creación de estructura HTML5</li>
-            <li>Aplicación de hojas de estilo CSS3</li><li>Programación de lógica con JavaScript</li><li>Pruebas de diseño responsivo</li>
-            <li>Optimización de imágenes y recursos</li><li>Configuración de repositorio Git</li><li>Carga de archivos al servidor web</li>
-            <li>Verificación final y auditoría SEO</li>
-          </ol>
-          <br>
-          <h4>Ejemplo B: Ranking de Lenguajes de Programación</h4>
-          <ol>
-            <li>Python</li><li>JavaScript</li><li>Java</li><li>C++</li><li>C#</li>
-            <li>TypeScript</li><li>PHP</li><li>SQL</li><li>Go</li><li>Rust</li>
-          </ol>
-        </article>
-
-        <article class="interactive-box">
-          <h3>2. Listas No Ordenadas (&lt;ul&gt;)</h3>
-          <br>
-          <h4>Ejemplo A: Herramientas del Desarrollador Frontend</h4>
-          <ul>
-            <li>Visual Studio Code</li><li>Git & GitHub</li><li>Figma</li><li>Chrome DevTools</li><li>NPM (Node Package Manager)</li>
-            <li>Bootstrap Framework</li><li>Tailwind CSS</li><li>Sass / SCSS</li><li>Webpack / Vite</li><li>Postman</li>
-          </ul>
-          <br>
-          <h4>Ejemplo B: Conceptos Clave de CSS</h4>
-          <ul>
-            <li>Flexbox</li><li>CSS Grid</li><li>Media Queries</li><li>Especificidad</li><li>Modelo de Caja (Box Model)</li>
-            <li>Variables CSS</li><li>Animaciones y Transiciones</li><li>Pseudo-clases</li><li>Posicionamiento (Absolute/Relative)</li><li>Clean Architecture CSS</li>
-          </ul>
-        </article>
+        <h2>Estructura de Listas</h2>
+        <p>Contenido correspondiente a la sección de listas.</p>
 
         <div class="page-navigation">
-          <a href="índice.html" class="nav-arrow-btn">&larr; Anterior: Galería</a>
+          <a href="index.html" class="nav-arrow-btn">&larr; Anterior: Inicio</a>
           <a href="Tercera%20página%20Web.html" class="nav-arrow-btn">Siguiente: Tablas &rarr;</a>
         </div>
       </section>
@@ -95,8 +58,8 @@
 
     <aside class="sidebar">
       <div class="widget">
-        <h3>Estructuras HTML</h3>
-        <p>Las listas ordenadas (&lt;ol&gt;) emplean números correlativos, mientras que las listas no ordenadas (&lt;ul&gt;) utilizan viñetas estándar.</p>
+        <h3>Sección de Listas</h3>
+        <p>Navegación fluida dentro del sitio.</p>
       </div>
     </aside>
   </div>
