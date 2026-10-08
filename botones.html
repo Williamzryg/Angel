@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyecto Web - JavaScript Practicando</title>
+  <title>Proyecto Web - Botones (JavaScript Interactivo)</title>
+  <link rel="icon" href="images/logo.png" />
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -42,19 +43,19 @@
   <header class="main-header">
     <div class="brand">
       <a href="index.html" class="logo-link">
-        <img id="logo" src="images/logo.png" alt="esto me manda al inicio" class="logo-img">
+        <img id="logo" src="images/logo.png" alt="Logo Instituto" class="logo-img">
       </a>
-      <h1 id="titulo" class="site-title">Practicando JavaScript</h1>
+      <h1 id="titulo" class="site-title">Proyecto Web HTML y CSS</h1>
     </div>
   </header>
 
-<nav class="main-nav">
+  <nav class="main-nav">
     <ul>
       <li><a href="index.html" class="nav-btn">Inicio</a></li>
       <li><a href="segunda.html" class="nav-btn">Listas</a></li>
       <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
-      <li><a href="cuarta.html" class="nav-btn active">JavaScript</a></li>
-      <li><a href="quinta.html" class="nav-btn">Interactuando</a></li>
+      <li><a href="cuarta.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn active">Botones</a></li>
       <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
     </ul>
   </nav>
@@ -62,61 +63,61 @@
   <div class="layout-container">
     <main class="main-content">
       <section>
-        <h2>Ejemplos e Interacciones de JavaScript</h2>
-        <p>Haz clic en los distintos botones para ejecutar las funciones configuradas en el script:</p><br>
+        <h2>Botones Interáctivos - Ejemplos de Interacción JS</h2>
+        <p>A continuación se presentan los eventos y algoritmos de prueba vinculados con JavaScript:</p><br>
 
         <div class="interactive-box">
           <article>
             <button class="btn btn-info" onclick="saludar()">Haz Clic</button>
-            <button class="btn btn-danger" onclick="multiplicar()">multiplicar</button>
-            <button class="btn btn-primary" onclick="cuenta()">boton 1</button>
-            <button class="btn btn-outline-success" onclick="mayor()">boton 2</button>
-            <button class="btn btn-warning" onclick="buclecito()">boton 3</button>
+            <button class="btn btn-danger" onclick="multiplicar()">Multiplicar</button>
+            <button class="btn btn-primary" onclick="cuenta()">Botón 1</button>
+            <button class="btn btn-outline-success" onclick="mayor()">Botón 2</button>
+            <button class="btn btn-warning" onclick="buclecito()">Botón 3</button>
           </article>
 
           <article>
-            <button class="btn btn-outline-warning" onclick="cambiarTitulo()">Cambiar Titulo</button>
-            <button class="btn btn-outline-danger" onclick="cambiarMenu()">Cambiar Menu</button>
-            <button class="btn btn-outline-primary" onclick="cambiarLogo()">Cambiar logo</button>
+            <button class="btn btn-outline-warning" onclick="cambiarTitulo()">Cambiar Título</button>
+            <button class="btn btn-outline-danger" onclick="cambiarMenu()">Cambiar Menú</button>
+            <button class="btn btn-outline-primary" onclick="cambiarLogo()">Cambiar Logo</button>
           </article>
 
           <article>
-            <button class="btn btn-secondary" onclick="Pnombre()">saludar</button>
-            <button class="btn btn-secondary" onclick="ejemplo01()">Ejecutar el ejemplo 01</button>
+            <button class="btn btn-secondary" onclick="Pnombre()">Saludar</button>
+            <button class="btn btn-secondary" onclick="ejemplo01()">Ejecutar Ejemplo 01</button>
             <button class="btn btn-secondary" onclick="taxi()">Calcular Tarifa</button>
             <button class="btn btn-secondary" onclick="promedio()">Calcular Promedio</button>
           </article>
 
           <article>
-            <button id="botoncito" class="btn btn-dark">Pon el mouse aqui</button>
+            <button id="botoncito" class="btn btn-dark">Pon el mouse aquí</button>
           </article>
         </div>
 
         <div class="page-navigation">
-          <a href="tercera.html" class="nav-arrow-btn">&larr; Anterior: Tercera página</a>
-          <a href="quinta.html" class="nav-arrow-btn">Siguiente: Quinta página &rarr;</a>
+          <a href="cuarta.html" class="nav-arrow-btn">&larr; Anterior: JavaScript</a>
+          <a href="nosotros.html" class="nav-arrow-btn">Siguiente: Nosotros &rarr;</a>
         </div>
       </section>
     </main>
 
     <aside class="sidebar">
       <div class="card mb-3" style="width: 100%;">
-        <img id="fotAside" src="images/atm.jpg" class="card-img-top" alt="Atletico de Madrid" />
+        <img id="fotAside" src="images/atm.jpg" class="card-img-top" alt="Atlético de Madrid" />
         <div class="card-body">
-          <h5 class="card-title">Atletico de Madrid</h5>
+          <h5 class="card-title">Atlético de Madrid</h5>
           <p class="card-text">
-            Este es un equipo de futbol de España que no va a soltar a Julian Alvarez.
+            Equipo de fútbol de España que sirve como ejemplo para modificación de imágenes mediante eventos.
           </p>
           <a href="index.html" class="btn btn-primary">Volver Inicio</a>
         </div>
       </div>
 
       <div class="card" style="width: 100%;">
-        <img id="carita" src="https://media.istockphoto.com/id/689364180/es/vector/sonriente-icono-de-emoci%C3%B3n-de-personas-positivas-de-cara-de-dibujos-animados.jpg?s=612x612&w=0&k=20&c=WmsDAjUpqWkPR7eGixUhWjfnC1_jcyEaUiB5h1nEWVc=" class="card-img-top" alt="Estado de animo" />
+        <img id="carita" src="https://media.istockphoto.com/id/689364180/es/vector/sonriente-icono-de-emoci%C3%B3n-de-personas-positivas-de-cara-de-dibujos-animados.jpg?s=612x612&w=0&k=20&c=WmsDAjUpqWkPR7eGixUhWjfnC1_jcyEaUiB5h1nEWVc=" class="card-img-top" alt="Estado de ánimo" />
         <div class="card-body">
-          <h5 class="card-title">Estado de Animo</h5>
+          <h5 class="card-title">Estado de Ánimo</h5>
           <p class="card-text">
-            Con el boton de abajo podemos cambiar la carita.
+            Con los botones de abajo puedes alternar el estado de ánimo en tiempo real.
           </p>
           <button class="btn btn-primary" onclick="sad()">Sad</button>
           <button class="btn btn-primary" onclick="happy()">Happy</button>
@@ -128,15 +129,15 @@
   <footer class="main-footer">
     <h4>Enlaces de Interés</h4>
     <ul>
-      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
-      <li><a href="#" target="_blank">Mi Repositorio</a></li>
-      <li><a href="https://arnoldbgq.github.io/cursofrontend/">Pagina del Instructor</a></li>
-      <li><a href="https://github.com/arnoldbgq/cursofrontend/tree/main" target="_blank">Repositorio del Instructor</a></li>
-      <li><a href="https://startbootstrap.com/?showPro=false&showAngular=false&showVue=false" target="_blank">Plantillas de Bootstrap</a></li>
+      <li><a href="https://senati.blackboard.com/" target="_blank" rel="noopener noreferrer">Blackboard SENATI</a></li>
+      <li><a href="https://github.com/Williamzryg/Angel" target="_blank" rel="noopener noreferrer">Mi Repositorio GitHub</a></li>
+      <li><a href="https://arnoldbgq.github.io/cursofrontend/" target="_blank" rel="noopener noreferrer">Página del Instructor</a></li>
+      <li><a href="https://github.com/arnoldbgq/cursofrontend/tree/main" target="_blank" rel="noopener noreferrer">Repositorio del Instructor</a></li>
     </ul>
     <p class="mt-3">&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Scripts JS -->
   <script src="js/practicandoJS.js"></script>
   <script src="js/eventos.js"></script>
 </body>
