@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Web - JavaScript Practicando</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+    .main-header { background-color: #0d233a; color: #ffffff; padding: 1.5rem; text-align: center; }
+    .brand { display: flex; align-items: center; justify-content: center; gap: 15px; }
+    .logo-img { max-height: 50px; }
+    .main-nav { background-color: #1a365d; padding: 0.8rem; }
+    .main-nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 0; padding-left: 0; }
+    .nav-btn { color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: 500; display: inline-block; }
+    .nav-btn:hover, .nav-btn.active { background-color: #2b6cb0; color: #ffffff; }
+    .layout-container { display: flex; max-width: 1200px; margin: 20px auto; gap: 20px; padding: 0 15px; }
+    .main-content { flex: 3; background: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+    .sidebar { flex: 1; background: #e2e8f0; padding: 20px; border-radius: 8px; height: fit-content; }
+    .interactive-box { background: #edf2f7; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+    .interactive-box article { margin-bottom: 15px; }
+    .interactive-box button { margin: 4px 2px; }
+    .page-navigation { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 15px; border-top: 1px solid #e2e8f0; }
+    .nav-arrow-btn { background-color: #2b6cb0; color: white; padding: 10px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; border: none; cursor: pointer; display: inline-block; }
+    .nav-arrow-btn:hover { background-color: #1a365d; color: #ffffff; }
+    .main-footer { background-color: #0d233a; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    .main-footer ul { list-style: none; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 10px; }
+    .main-footer a { color: #63b3ed; text-decoration: none; }
+    .main-footer a:hover { text-decoration: underline; }
+    @media (max-width: 768px) { .layout-container { flex-direction: column; } }
+  </style>
+
+  <script src="js/ejemplo01.js"></script>
+</head>
+
+<body>
+
+  <header class="main-header">
+    <div class="brand">
+      <a href="index.html" class="logo-link">
+        <img id="logo" src="images/logo.png" alt="esto me manda al inicio" class="logo-img">
+      </a>
+      <h1 id="titulo" class="site-title">Practicando JavaScript</h1>
+    </div>
+  </header>
+
+<nav class="main-nav">
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="segunda.html" class="nav-btn">Listas</a></li>
+      <li><a href="tercera.html" class="nav-btn">Tablas</a></li>
+      <li><a href="cuarta.html" class="nav-btn active">JavaScript</a></li>
+      <li><a href="quinta.html" class="nav-btn">Interactuando</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
+    </ul>
+  </nav>
+
+  <div class="layout-container">
+    <main class="main-content">
+      <section>
+        <h2>Ejemplos e Interacciones de JavaScript</h2>
+        <p>Haz clic en los distintos botones para ejecutar las funciones configuradas en el script:</p><br>
+
+        <div class="interactive-box">
+          <article>
+            <button class="btn btn-info" onclick="saludar()">Haz Clic</button>
+            <button class="btn btn-danger" onclick="multiplicar()">multiplicar</button>
+            <button class="btn btn-primary" onclick="cuenta()">boton 1</button>
+            <button class="btn btn-outline-success" onclick="mayor()">boton 2</button>
+            <button class="btn btn-warning" onclick="buclecito()">boton 3</button>
+          </article>
+
+          <article>
+            <button class="btn btn-outline-warning" onclick="cambiarTitulo()">Cambiar Titulo</button>
+            <button class="btn btn-outline-danger" onclick="cambiarMenu()">Cambiar Menu</button>
+            <button class="btn btn-outline-primary" onclick="cambiarLogo()">Cambiar logo</button>
+          </article>
+
+          <article>
+            <button class="btn btn-secondary" onclick="Pnombre()">saludar</button>
+            <button class="btn btn-secondary" onclick="ejemplo01()">Ejecutar el ejemplo 01</button>
+            <button class="btn btn-secondary" onclick="taxi()">Calcular Tarifa</button>
+            <button class="btn btn-secondary" onclick="promedio()">Calcular Promedio</button>
+          </article>
+
+          <article>
+            <button id="botoncito" class="btn btn-dark">Pon el mouse aqui</button>
+          </article>
+        </div>
+
+        <div class="page-navigation">
+          <a href="tercera.html" class="nav-arrow-btn">&larr; Anterior: Tercera página</a>
+          <a href="quinta.html" class="nav-arrow-btn">Siguiente: Quinta página &rarr;</a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="sidebar">
+      <div class="card mb-3" style="width: 100%;">
+        <img id="fotAside" src="images/atm.jpg" class="card-img-top" alt="Atletico de Madrid" />
+        <div class="card-body">
+          <h5 class="card-title">Atletico de Madrid</h5>
+          <p class="card-text">
+            Este es un equipo de futbol de España que no va a soltar a Julian Alvarez.
+          </p>
+          <a href="index.html" class="btn btn-primary">Volver Inicio</a>
+        </div>
+      </div>
+
+      <div class="card" style="width: 100%;">
+        <img id="carita" src="https://media.istockphoto.com/id/689364180/es/vector/sonriente-icono-de-emoci%C3%B3n-de-personas-positivas-de-cara-de-dibujos-animados.jpg?s=612x612&w=0&k=20&c=WmsDAjUpqWkPR7eGixUhWjfnC1_jcyEaUiB5h1nEWVc=" class="card-img-top" alt="Estado de animo" />
+        <div class="card-body">
+          <h5 class="card-title">Estado de Animo</h5>
+          <p class="card-text">
+            Con el boton de abajo podemos cambiar la carita.
+          </p>
+          <button class="btn btn-primary" onclick="sad()">Sad</button>
+          <button class="btn btn-primary" onclick="happy()">Happy</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="main-footer">
+    <h4>Enlaces de Interés</h4>
+    <ul>
+      <li><a href="https://senati.blackboard.com/" target="_blank">Blackboard</a></li>
+      <li><a href="#" target="_blank">Mi Repositorio</a></li>
+      <li><a href="https://arnoldbgq.github.io/cursofrontend/">Pagina del Instructor</a></li>
+      <li><a href="https://github.com/arnoldbgq/cursofrontend/tree/main" target="_blank">Repositorio del Instructor</a></li>
+      <li><a href="https://startbootstrap.com/?showPro=false&showAngular=false&showVue=false" target="_blank">Plantillas de Bootstrap</a></li>
+    </ul>
+    <p class="mt-3">&copy; 2026 Proyecto Web - Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/practicandoJS.js"></script>
+  <script src="js/eventos.js"></script>
+</body>
+
+</html>
