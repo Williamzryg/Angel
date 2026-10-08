@@ -50,15 +50,15 @@
   </header>
 
   <nav class="main-nav">
-  <ul>
-    <li><a href="index.html" class="nav-btn">Inicio</a></li>
-    <li><a href="listas.html" class="nav-btn">Listas</a></li>
-    <li><a href="tablas.html" class="nav-btn">Tablas</a></li>
-    <li><a href="javascript.html" class="nav-btn">JavaScript</a></li>
-    <li><a href="botones.html" class="nav-btn">Botones</a></li>
-    <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html" class="nav-btn">Inicio</a></li>
+      <li><a href="listas.html" class="nav-btn">Listas</a></li>
+      <li><a href="tablas.html" class="nav-btn">Tablas</a></li>
+      <li><a href="javascript.html" class="nav-btn">JavaScript</a></li>
+      <li><a href="botones.html" class="nav-btn active">Botones</a></li>
+      <li><a href="nosotros.html" class="nav-btn">Nosotros</a></li>
+    </ul>
+  </nav>
 
   <div class="layout-container">
     <main class="main-content">
@@ -68,59 +68,65 @@
 
         <div class="interactive-box">
           <article>
-            <button class="btn btn-info" onclick="saludar()">Haz Clic</button>
+            <button class="btn btn-success" onclick="saludar()">Haz Clic</button>
             <button class="btn btn-danger" onclick="multiplicar()">Multiplicar</button>
             <button class="btn btn-primary" onclick="cuenta()">Botón 1</button>
-            <button class="btn btn-outline-success" onclick="mayor()">Botón 2</button>
-            <button class="btn btn-warning" onclick="buclecito()">Botón 3</button>
+            <button class="btn btn-warning text-dark" onclick="mayor()">Botón 2</button>
+            <button class="btn btn-info text-white" onclick="buclecito()">Botón 3</button>
           </article>
 
           <article>
-            <button class="btn btn-outline-warning" onclick="cambiarTitulo()">Cambiar Título</button>
-            <button class="btn btn-outline-danger" onclick="cambiarMenu()">Cambiar Menú</button>
-            <button class="btn btn-outline-primary" onclick="cambiarLogo()">Cambiar Logo</button>
+            <button class="btn btn-outline-danger" onclick="cambiarTitulo()">Cambiar Título</button>
+            <button class="btn btn-outline-warning" onclick="cambiarMenu()">Cambiar Menú</button>
+            <button class="btn btn-outline-success" onclick="cambiarLogo()">Cambiar Logo</button>
           </article>
 
           <article>
-            <button class="btn btn-secondary" onclick="Pnombre()">Saludar</button>
-            <button class="btn btn-secondary" onclick="ejemplo01()">Ejecutar Ejemplo 01</button>
-            <button class="btn btn-secondary" onclick="taxi()">Calcular Tarifa</button>
-            <button class="btn btn-secondary" onclick="promedio()">Calcular Promedio</button>
+            <button class="btn btn-dark" onclick="Pnombre()">Saludar</button>
+            <button class="btn btn-primary" onclick="ejemplo01()">Ejecutar Ejemplo 01</button>
+            <button class="btn btn-danger" onclick="taxi()">Calcular Tarifa</button>
+            <button class="btn btn-success" onclick="promedio()">Calcular Promedio</button>
           </article>
 
           <article>
-            <button id="botoncito" class="btn btn-dark">Pon el mouse aquí</button>
+            <button id="botoncito" class="btn btn-warning text-dark">Pon el mouse aquí</button>
           </article>
         </div>
 
         <div class="page-navigation">
-          <a href="cuarta.html" class="nav-arrow-btn">&larr; Anterior: JavaScript</a>
+          <a href="javascript.html" class="nav-arrow-btn">&larr; Anterior: JavaScript</a>
           <a href="nosotros.html" class="nav-arrow-btn">Siguiente: Nosotros &rarr;</a>
         </div>
       </section>
     </main>
 
     <aside class="sidebar">
+      <!-- Tarjeta 1: Milo J -->
       <div class="card mb-3" style="width: 100%;">
-        <img id="fotAside" src="images/atm.jpg" class="card-img-top" alt="Atlético de Madrid" />
+        <img id="fotAside" src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&auto=format&fit=crop&q=60" class="card-img-top" alt="Milo J - Artista" />
         <div class="card-body">
-          <h5 class="card-title">Atlético de Madrid</h5>
+          <h5 class="card-title">Milo J</h5>
           <p class="card-text">
-            Equipo de fútbol de España que sirve como ejemplo para modificación de imágenes mediante eventos.
+            Mantenlo activo: artista urbano y musical destacado. Servirá como demostración para interacción y dinámicas de medios.
           </p>
-          <a href="index.html" class="btn btn-primary">Volver Inicio</a>
+          <a href="index.html" class="btn btn-dark w-100">Escuchar Temas</a>
         </div>
       </div>
 
+      <!-- Tarjeta 2: Reacciones / Caras -->
       <div class="card" style="width: 100%;">
         <img id="carita" src="https://media.istockphoto.com/id/689364180/es/vector/sonriente-icono-de-emoci%C3%B3n-de-personas-positivas-de-cara-de-dibujos-animados.jpg?s=612x612&w=0&k=20&c=WmsDAjUpqWkPR7eGixUhWjfnC1_jcyEaUiB5h1nEWVc=" class="card-img-top" alt="Estado de ánimo" />
         <div class="card-body">
-          <h5 class="card-title">Estado de Ánimo</h5>
+          <h5 class="card-title">Expresiones y Caras</h5>
           <p class="card-text">
-            Con los botones de abajo puedes alternar el estado de ánimo en tiempo real.
+            Selecciona una emoción para cambiar el rostro interactivo en tiempo real:
           </p>
-          <button class="btn btn-primary" onclick="sad()">Sad</button>
-          <button class="btn btn-primary" onclick="happy()">Happy</button>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-sm btn-primary" onclick="happy()">Feliz</button>
+            <button class="btn btn-sm btn-secondary" onclick="sad()">Triste</button>
+            <button class="btn btn-sm btn-danger" onclick="angry()">Enojado</button>
+            <button class="btn btn-sm btn-warning" onclick="surprised()">Sorprendido</button>
+          </div>
         </div>
       </div>
     </aside>
@@ -140,6 +146,15 @@
   <!-- Scripts JS -->
   <script src="js/practicandoJS.js"></script>
   <script src="js/eventos.js"></script>
+
+  <script>
+    function angry() {
+      document.getElementById('carita').src = "https://cdn-icons-png.flaticon.com/512/742/742752.png";
+    }
+    function surprised() {
+      document.getElementById('carita').src = "https://cdn-icons-png.flaticon.com/512/742/742774.png";
+    }
+  </script>
 </body>
 
 </html>
